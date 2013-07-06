@@ -1,1 +1,6 @@
-Change design to include friend functions for "Attach()" and "Detach()"
+TODOs
+  a) Change design to include friend functions for "Attach()" and "Detach()" -> Done
+  b) Make the structures and functions generic, allowing any type of link and node
+  c) Add checking for traversals, right now even if link weight is 0, we attach it. During traversals, we need to do something for this.
+     like using a special value to indicate that there is no link between two nodes.
+
