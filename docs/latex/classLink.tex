@@ -1,0 +1,50 @@
+\hypertarget{classLink}{\section{Link Class Reference}
+\label{classLink}\index{Link@{Link}}
+}
+
+
+\hyperlink{classLink}{Link} Class.  
+
+
+
+
+{\ttfamily \#include $<$link.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classLink_a7d1f0fba2d522bae401cac8602820cce}{\hyperlink{classLink_a7d1f0fba2d522bae401cac8602820cce}{Link} (int weight=1)}\label{classLink_a7d1f0fba2d522bae401cac8602820cce}
+
+\begin{DoxyCompactList}\small\item\em Constructor which initializes the weight to 1. \end{DoxyCompactList}\item 
+\hypertarget{classLink_aac6fc336b263d742d2d72ccc28b8d34a}{int \hyperlink{classLink_aac6fc336b263d742d2d72ccc28b8d34a}{get\-Id} ()}\label{classLink_aac6fc336b263d742d2d72ccc28b8d34a}
+
+\begin{DoxyCompactList}\small\item\em Member function which returns the unique index of the link. \end{DoxyCompactList}\item 
+\hypertarget{classLink_aef6e5d265556b37090bb59e1bc842ede}{int \hyperlink{classLink_aef6e5d265556b37090bb59e1bc842ede}{add\-Node\-To\-Edge} (\hyperlink{classNode}{Node} $\ast$node, int edge)}\label{classLink_aef6e5d265556b37090bb59e1bc842ede}
+
+\begin{DoxyCompactList}\small\item\em Member function used to add a \hyperlink{classNode}{Node} to one of the edges of the link. \end{DoxyCompactList}\item 
+\hypertarget{classLink_ae70cfdb53e4e84f74fccf32672bba0ff}{int \hyperlink{classLink_ae70cfdb53e4e84f74fccf32672bba0ff}{node\-I\-D\-Attached\-To\-Edge} (int edge)}\label{classLink_ae70cfdb53e4e84f74fccf32672bba0ff}
+
+\begin{DoxyCompactList}\small\item\em Member function that returns the node I\-D of the node attached to the specified edge. \end{DoxyCompactList}\item 
+\hypertarget{classLink_a16589e17a3f22a5038b3c708d70bf5ea}{void \hyperlink{classLink_a16589e17a3f22a5038b3c708d70bf5ea}{detach\-Node\-By\-Edge} (int edge)}\label{classLink_a16589e17a3f22a5038b3c708d70bf5ea}
+
+\begin{DoxyCompactList}\small\item\em Member function to detach the node attached to an edge of the link. \end{DoxyCompactList}\item 
+\hypertarget{classLink_a901e3ffdb61055396977a5418d446535}{\hyperlink{classNode}{Node} $\ast$ \hyperlink{classLink_a901e3ffdb61055396977a5418d446535}{get\-Node\-At\-Edge} (int edge)}\label{classLink_a901e3ffdb61055396977a5418d446535}
+
+\begin{DoxyCompactList}\small\item\em Member function that returns the \hyperlink{classNode}{Node} object at the given edge. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classLink_a1cccce22df97e21e1e0e0cd3ca6526b0}{int \hyperlink{classLink_a1cccce22df97e21e1e0e0cd3ca6526b0}{add\-Link\-Edge\-To\-Node} (\hyperlink{classNode}{Node} $\ast$node, \hyperlink{classLink}{Link} $\ast$link, int edge)}\label{classLink_a1cccce22df97e21e1e0e0cd3ca6526b0}
+
+\begin{DoxyCompactList}\small\item\em Friend function to attach nodes to edges. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classLink}{Link} Class. 
+
+The \hyperlink{classLink}{Link} class represents the link between two nodes. Each link has two edges, and the link itself has an integral weight. Two static integers are used to keep track of the number of links created and the link indices in use 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+link.\-hpp\item 
+link.\-cpp\end{DoxyCompactItemize}

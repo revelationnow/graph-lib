@@ -1,0 +1,62 @@
+\hypertarget{classNode}{\section{Node Class Reference}
+\label{classNode}\index{Node@{Node}}
+}
+
+
+\hyperlink{classNode}{Node} class.  
+
+
+
+
+{\ttfamily \#include $<$node.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classNode_ade1e047dd798bfbcb525c829e5a54d06}{\hyperlink{classNode_ade1e047dd798bfbcb525c829e5a54d06}{Node} (int value=0)}\label{classNode_ade1e047dd798bfbcb525c829e5a54d06}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classNode}{Node} constructor which initializes the value to 0. \end{DoxyCompactList}\item 
+\hypertarget{classNode_ab06afc516052033f763b45d8b893ce03}{int \hyperlink{classNode_ab06afc516052033f763b45d8b893ce03}{get\-Degree} ()}\label{classNode_ab06afc516052033f763b45d8b893ce03}
+
+\begin{DoxyCompactList}\small\item\em Member function that returns the cardinality of the node. \end{DoxyCompactList}\item 
+\hypertarget{classNode_affbe7f986fd7ed645c5bc361363e96ec}{int \hyperlink{classNode_affbe7f986fd7ed645c5bc361363e96ec}{get\-Value} ()}\label{classNode_affbe7f986fd7ed645c5bc361363e96ec}
+
+\begin{DoxyCompactList}\small\item\em Member function that returns the data in the node. \end{DoxyCompactList}\item 
+\hypertarget{classNode_a3c7b8ccf4dab44216b997c5f63f11d9f}{int \hyperlink{classNode_a3c7b8ccf4dab44216b997c5f63f11d9f}{get\-Id} ()}\label{classNode_a3c7b8ccf4dab44216b997c5f63f11d9f}
+
+\begin{DoxyCompactList}\small\item\em Member function that returns the unique index of the node. \end{DoxyCompactList}\item 
+\hypertarget{classNode_a9e337c1790152faf945a87207d7e1125}{void \hyperlink{classNode_a9e337c1790152faf945a87207d7e1125}{set\-Value} (int value)}\label{classNode_a9e337c1790152faf945a87207d7e1125}
+
+\begin{DoxyCompactList}\small\item\em Member fuction that sets the value within the node. \end{DoxyCompactList}\item 
+\hypertarget{classNode_ac757cd0455bc4a34e36669c13bed7935}{int \hyperlink{classNode_ac757cd0455bc4a34e36669c13bed7935}{add\-Link\-Edge} (\hyperlink{classLink}{Link} $\ast$link, int edge)}\label{classNode_ac757cd0455bc4a34e36669c13bed7935}
+
+\begin{DoxyCompactList}\small\item\em Member function that adds a particular edge of a link to the node. \end{DoxyCompactList}\item 
+\hypertarget{classNode_ae071717ba42566e4ce15a1fc7e04fb43}{boolean \hyperlink{classNode_ae071717ba42566e4ce15a1fc7e04fb43}{link\-Attached\-To\-Node} (\hyperlink{classLink}{Link} $\ast$link)}\label{classNode_ae071717ba42566e4ce15a1fc7e04fb43}
+
+\begin{DoxyCompactList}\small\item\em Member function that returns whether or not a link is attached to the node. \end{DoxyCompactList}\item 
+\hypertarget{classNode_a0b5614c3ffee7bcdf4f4582a27aee16d}{int \hyperlink{classNode_a0b5614c3ffee7bcdf4f4582a27aee16d}{remove\-Link\-Edge} (\hyperlink{classLink}{Link} $\ast$link, int edge)}\label{classNode_a0b5614c3ffee7bcdf4f4582a27aee16d}
+
+\begin{DoxyCompactList}\small\item\em Member function to remove a link from the node at a particular edge. \end{DoxyCompactList}\item 
+\hypertarget{classNode_a255a6bebb84adfb6668207a53095d983}{int \hyperlink{classNode_a255a6bebb84adfb6668207a53095d983}{remove\-Link} (\hyperlink{classLink}{Link} $\ast$link)}\label{classNode_a255a6bebb84adfb6668207a53095d983}
+
+\begin{DoxyCompactList}\small\item\em Member function to remove a link from the node at any edge. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classNode_a6a3a35dc10c66f0658f4003074059fcd}{int \hyperlink{classNode_a6a3a35dc10c66f0658f4003074059fcd}{display\-Graph} (\hyperlink{classNode}{Node} $\ast$start)}\label{classNode_a6a3a35dc10c66f0658f4003074059fcd}
+
+\begin{DoxyCompactList}\small\item\em Friend function to visualize the graph. \end{DoxyCompactList}\item 
+\hypertarget{classNode_a1cccce22df97e21e1e0e0cd3ca6526b0}{int \hyperlink{classNode_a1cccce22df97e21e1e0e0cd3ca6526b0}{add\-Link\-Edge\-To\-Node} (\hyperlink{classNode}{Node} $\ast$node, \hyperlink{classLink}{Link} $\ast$link, int edge)}\label{classNode_a1cccce22df97e21e1e0e0cd3ca6526b0}
+
+\begin{DoxyCompactList}\small\item\em Friend function to add a link at a particular edge to the node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classNode}{Node} class. 
+
+This class represents each of the nodes of the graph. Each node has a list of links that it shares with other nodes A node is attached to another node by the link that it shares with the other node. Each node has an integer as its data 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+node.\-hpp\item 
+node.\-cpp\end{DoxyCompactItemize}
