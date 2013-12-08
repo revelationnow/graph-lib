@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['setvalue',['setValue',['../classNode.html#a9e337c1790152faf945a87207d7e1125',1,'Node']]]
+  ['removelink',['removeLink',['../classNode.html#a255a6bebb84adfb6668207a53095d983',1,'Node']]],
+  ['removelinkedge',['removeLinkEdge',['../classNode.html#a0b5614c3ffee7bcdf4f4582a27aee16d',1,'Node']]]
 ];

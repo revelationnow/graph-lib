@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['removelink',['removeLink',['../classNode.html#a255a6bebb84adfb6668207a53095d983',1,'Node']]],
-  ['removelinkedge',['removeLinkEdge',['../classNode.html#a0b5614c3ffee7bcdf4f4582a27aee16d',1,'Node']]]
+  ['node',['Node',['../classNode.html#ade1e047dd798bfbcb525c829e5a54d06',1,'Node']]],
+  ['nodeidattachedtoedge',['nodeIDAttachedToEdge',['../classLink.html#ae70cfdb53e4e84f74fccf32672bba0ff',1,'Link']]]
 ];
