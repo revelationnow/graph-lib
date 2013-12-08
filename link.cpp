@@ -1,5 +1,6 @@
 #include <iostream>
 #include "graph.hpp"
+#include "errHandler.hpp"
 
 using namespace std;
 
@@ -25,7 +26,7 @@ Node* Link::getNodeAtEdge(int edge)
 {
   if(edge != 0 && edge != 1)
   {
-    cout<<"ERR : Link ID : "<<link_id_<<" trying to get node at unsupported Edge : "<<edge<<endl;
+    cout<<PRINT_TAG<<"ERR : Link ID : "<<link_id_<<" trying to get node at unsupported Edge : "<<edge<<endl;
     return NULL;
   }
   else
@@ -36,7 +37,7 @@ Node* Link::getNodeAtEdge(int edge)
     }
     else
     {
-      cout<<"ERR : Link ID : "<<link_id_<<" has no node at Edge : "<<edge<<endl;
+      cout<<PRINT_TAG<<"ERR : Link ID : "<<link_id_<<" has no node at Edge : "<<edge<<endl;
       return node_[edge];
     }
   }
@@ -50,6 +51,6 @@ void Link::detachNodeByEdge(int edge)
   }
   else
   {
-    cout<<"ERR : Link ID : "<<link_id_<<" trying to detach node at unsupported Edge : "<<edge<<endl;
+    cout<<PRINT_TAG<<"ERR : Link ID : "<<link_id_<<" trying to detach node at unsupported Edge : "<<edge<<endl;
   }
 }

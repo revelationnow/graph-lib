@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "graph.hpp"
+#include "errHandler.hpp"
 
 using namespace std;
 

@@ -1,11 +1,12 @@
 #include <iostream>
 #include "graph.hpp"
+#include "errHandler.hpp"
 
 using namespace std;
 
 int main()
 {
-  cout<<"Starting Program"<<endl;
+  cout<<PRINT_TAG<<"Starting Program"<<endl;
 
 
   Node node[5];
@@ -23,6 +24,6 @@ int main()
   }
   displayGraph(&node[0]);
 
-  cout<<"I just created 2 nodes and a link"<<endl;
+  cout<<PRINT_TAG<<"I just created 2 nodes and a link"<<endl;
   return 0;
 }

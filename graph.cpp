@@ -1,5 +1,6 @@
 #include <iostream>
 #include "graph.hpp"
+#include "errHandler.hpp"
 
 using namespace std;
 int displayGraph(Node *start)
@@ -19,12 +20,12 @@ int displayGraph(Node *start)
     {
       break;
     }
-    cout<<"Node : "<<t_node->getId()<<endl;
+    cout<<PRINT_TAG<<"Node : "<<t_node->getId()<<endl;
     visited[t_node->getId()] = TRUE;
     total_visited++;
     for(list<Link*>::iterator link_iterator = t_node->links_.begin();link_iterator != t_node->links_.end(); ++link_iterator)
     {
-      cout<<"\tLink : "<<(*link_iterator)->getId()<<endl;
+      cout<<PRINT_TAG<<"\tLink : "<<(*link_iterator)->getId()<<endl;
       l_node[0] = (*link_iterator)->getNodeAtEdge(0);
       l_node[1] = (*link_iterator)->getNodeAtEdge(1);
 
@@ -52,15 +53,15 @@ int removeLinkEdgeFromNode(Node *node, Link* link, int edge)
   
   if(node == NULL)
   {
-    cout<<"ERR : Can't remove Link from null Node"<<endl;
+    cout<<PRINT_TAG<<"ERR : Can't remove Link from null Node"<<endl;
   }
   else if(link == NULL)
   {
-    cout<<"ERR : Can't remove Node from null Link"<<endl;
+    cout<<PRINT_TAG<<"ERR : Can't remove Node from null Link"<<endl;
   }
   else if(edge != 0 && edge != 1)
   {
-    cout<<"ERR : Can't remove Node from Link at invalid Edge : "<<edge<<endl;
+    cout<<PRINT_TAG<<"ERR : Can't remove Node from Link at invalid Edge : "<<edge<<endl;
   }
   else
   {
@@ -80,27 +81,27 @@ int addLinkEdgeToNode(Node* node, Link* link, int edge)
 {
   if(node == NULL)
   {
-    cout<<"ERR : Can't attach Link to null Node"<<endl;
+    cout<<PRINT_TAG<<"ERR : Can't attach Link to null Node"<<endl;
   }
   else if(link == NULL)
   {
-    cout<<"ERR : Can't attach Node to null Link"<<endl;
+    cout<<PRINT_TAG<<"ERR : Can't attach Node to null Link"<<endl;
   }
   else if(edge != 0 && edge != 1)
   {
-    cout<<"ERR : Can't attach Node to Link at invalid Edge : "<<edge<<endl;
+    cout<<PRINT_TAG<<"ERR : Can't attach Node to Link at invalid Edge : "<<edge<<endl;
   }
   else
   {
     if(link->getNodeAtEdge(edge) != NULL)
     {
-      cout<<"ERR : Can't add Node : "<<node->getId()<<" to Link : "<<link->getId()<<" at Edge : "<<edge<<" as another node already exists there"<<endl;
+      cout<<PRINT_TAG<<"ERR : Can't add Node : "<<node->getId()<<" to Link : "<<link->getId()<<" at Edge : "<<edge<<" as another node already exists there"<<endl;
     }
     else
     {
       link->node_[edge] = node;
       node->links_.push_back(link);
-      cout<<"Added Link : "<<link->getId()<<" to Node : "<<node->getId()<<" at Edge : "<<edge<<endl;
+      cout<<PRINT_TAG<<"Added Link : "<<link->getId()<<" to Node : "<<node->getId()<<" at Edge : "<<edge<<endl;
     }
   }
 }
