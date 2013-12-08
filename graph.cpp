@@ -25,8 +25,8 @@ int displayGraph(Node *start)
     for(list<Link*>::iterator link_iterator = t_node->links_.begin();link_iterator != t_node->links_.end(); ++link_iterator)
     {
       cout<<"\tLink : "<<(*link_iterator)->getId()<<endl;
-      l_node[0] = (*link_iterator)->node_[0];
-      l_node[1] = (*link_iterator)->node_[1];
+      l_node[0] = (*link_iterator)->getNodeAtEdge(0);
+      l_node[1] = (*link_iterator)->getNodeAtEdge(1);
 
       if(l_node[0] != NULL)
       {
@@ -69,7 +69,7 @@ int removeLinkEdgeFromNode(Node *node, Link* link, int edge)
     {
       if(t_node->getId() == node->getId())
       {
-        link->node_[edge] = NULL;
+        link->detachNodeByEdge(edge);
         node->removeLink(link);
       }
     }
@@ -92,7 +92,7 @@ int addLinkEdgeToNode(Node* node, Link* link, int edge)
   }
   else
   {
-    if(link->node_[edge] != NULL)
+    if(link->getNodeAtEdge(edge) != NULL)
     {
       cout<<"ERR : Can't add Node : "<<node->getId()<<" to Link : "<<link->getId()<<" at Edge : "<<edge<<" as another node already exists there"<<endl;
     }

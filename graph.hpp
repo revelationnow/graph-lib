@@ -6,6 +6,7 @@
 
 using namespace std;
 int displayGraph(Node *start);
-
+int removeLinkEdgeFromNode(Node *node, Link* link, int edge);
+int addLinkEdgeToNode(Node* node, Link* link, int edge);
 
 #endif

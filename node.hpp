@@ -13,6 +13,7 @@ class Node
     int value_;
     int node_id_;
     static int total_nodes;
+    static int total_node_ids;
   public:
     Node(int value = 0);
     int getDegree();
@@ -22,7 +23,9 @@ class Node
     int addLinkEdge(Link* link,int edge);
     boolean linkAttachedToNode(Link* link);
     int removeLinkEdge(Link* link,int edge);
+    int removeLink(Link* link);
     friend int displayGraph(Node* start);
+    friend int addLinkEdgeToNode(Node *node, Link* link, int edge);
 };
 
 #endif 
