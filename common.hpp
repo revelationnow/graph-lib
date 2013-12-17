@@ -1,3 +1,4 @@
+/// \file common.hpp
 #ifndef __COMMON_HPP_
 #define __COMMON_HPP_
 

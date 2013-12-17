@@ -1,3 +1,4 @@
+/// \file errHandler.hpp
 #ifndef _ERRHANDLER_HPP_
 #define _ERRHANDLER_HPP_
 

@@ -1,3 +1,4 @@
+/// \file node.cpp
 #include <iostream>
 #include <vector>
 #include "graph.hpp"

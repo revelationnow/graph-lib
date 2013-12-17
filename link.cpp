@@ -1,3 +1,4 @@
+/// \file link.cpp
 #include <iostream>
 #include "graph.hpp"
 #include "errHandler.hpp"
@@ -37,7 +38,6 @@ Node* Link::getNodeAtEdge(int edge)
     }
     else
     {
-      cout<<PRINT_TAG<<"ERR : Link ID : "<<link_id_<<" has no node at Edge : "<<edge<<endl;
       return node_[edge];
     }
   }
