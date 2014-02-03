@@ -27,7 +27,7 @@ Node* Link::getNodeAtEdge(int edge)
 {
   if(edge != 0 && edge != 1)
   {
-    cout<<PRINT_TAG<<"ERR : Link ID : "<<link_id_<<" trying to get node at unsupported Edge : "<<edge<<endl;
+    OUTPUT_MSG(ERR, "Link ID : "<<link_id_<<" trying to get node at unsupported Edge : "<<edge);
     return NULL;
   }
   else
@@ -51,6 +51,6 @@ void Link::detachNodeByEdge(int edge)
   }
   else
   {
-    cout<<PRINT_TAG<<"ERR : Link ID : "<<link_id_<<" trying to detach node at unsupported Edge : "<<edge<<endl;
+    OUTPUT_MSG(ERR, "Link ID : "<<link_id_<<" trying to detach node at unsupported Edge : "<<edge);
   }
 }

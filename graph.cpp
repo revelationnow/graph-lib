@@ -21,12 +21,12 @@ int displayGraph(Node *start)
     {
       break;
     }
-    cout<<PRINT_TAG<<"Node : "<<t_node->getId()<<endl;
+    OUTPUT_MSG(INFO,"Node : "<<t_node->getId());
     visited[t_node->getId()] = TRUE;
     total_visited++;
     for(list<Link*>::iterator link_iterator = t_node->links_.begin();link_iterator != t_node->links_.end(); ++link_iterator)
     {
-      cout<<PRINT_TAG<<"\tLink : "<<(*link_iterator)->getId()<<endl;
+      OUTPUT_MSG(INFO,"\tLink : "<<(*link_iterator)->getId());
       l_node[0] = (*link_iterator)->getNodeAtEdge(0);
       l_node[1] = (*link_iterator)->getNodeAtEdge(1);
 
@@ -54,15 +54,15 @@ int removeLinkEdgeFromNode(Node *node, Link* link, int edge)
   
   if(node == NULL)
   {
-    cout<<PRINT_TAG<<"ERR : Can't remove Link from null Node"<<endl;
+    OUTPUT_MSG(ERR, "Can't remove Link from null Node");
   }
   else if(link == NULL)
   {
-    cout<<PRINT_TAG<<"ERR : Can't remove Node from null Link"<<endl;
+    OUTPUT_MSG(ERR, "Can't remove Node from null Link");
   }
   else if(edge != 0 && edge != 1)
   {
-    cout<<PRINT_TAG<<"ERR : Can't remove Node from Link at invalid Edge : "<<edge<<endl;
+    OUTPUT_MSG(ERR, "Can't remove Node from Link at invalid Edge : "<<edge);
   }
   else
   {
@@ -82,27 +82,27 @@ int addLinkEdgeToNode(Node* node, Link* link, int edge)
 {
   if(node == NULL)
   {
-    cout<<PRINT_TAG<<"ERR : Can't attach Link to null Node"<<endl;
+    OUTPUT_MSG(ERR, "Can't attach Link to null Node");
   }
   else if(link == NULL)
   {
-    cout<<PRINT_TAG<<"ERR : Can't attach Node to null Link"<<endl;
+    OUTPUT_MSG(ERR, "Can't attach Node to null Link");
   }
   else if(edge != 0 && edge != 1)
   {
-    cout<<PRINT_TAG<<"ERR : Can't attach Node to Link at invalid Edge : "<<edge<<endl;
+    OUTPUT_MSG(ERR, "Can't attach Node to Link at invalid Edge : "<<edge);
   }
   else
   {
     if(link->getNodeAtEdge(edge) != NULL)
     {
-      cout<<PRINT_TAG<<"ERR : Can't add Node : "<<node->getId()<<" to Link : "<<link->getId()<<" at Edge : "<<edge<<" as another node already exists there"<<endl;
+      OUTPUT_MSG(ERR, "Can't add Node : "<<node->getId()<<" to Link : "<<link->getId()<<" at Edge : "<<edge<<" as another node already exists there");
     }
     else
     {
       link->node_[edge] = node;
       node->links_.push_back(link);
-      cout<<PRINT_TAG<<"Added Link : "<<link->getId()<<" to Node : "<<node->getId()<<" at Edge : "<<edge<<endl;
+      OUTPUT_MSG(INFO, "Added Link : "<<link->getId()<<" to Node : "<<node->getId()<<" at Edge : "<<edge);
     }
   }
 }
@@ -124,12 +124,12 @@ int Graph::displayGraph()
     {
       break;
     }
-    cout<<PRINT_TAG<<"Node : "<<t_node->getId()<<endl;
+    OUTPUT_MSG(INFO, "Node : "<<t_node->getId());
     visited[t_node->getId()] = TRUE;
     total_visited++;
     for(list<Link*>::iterator link_iterator = t_node->links_.begin();link_iterator != t_node->links_.end(); ++link_iterator)
     {
-      cout<<PRINT_TAG<<"\tLink : "<<(*link_iterator)->getId()<<endl;
+      OUTPUT_MSG(INFO, "\tLink : "<<(*link_iterator)->getId());
       l_node[0] = (*link_iterator)->getNodeAtEdge(0);
       l_node[1] = (*link_iterator)->getNodeAtEdge(1);
 
@@ -158,31 +158,31 @@ int Graph::attachLinkToNodeAtEdge(int lid, int nid, int edge)
   Link* link = getLinkById(lid);
   if(NULL == node)
   {
-    cout<<PRINT_TAG<<"ERR : Can't find Node ID : "<<nid<<" in Graph : "<<graph_id_<<endl;
+    OUTPUT_MSG(ERR, "Can't find Node ID : "<<nid<<" in Graph : "<<graph_id_);
     return -1;
   }
   else if(NULL == link)
   {
-    cout<<PRINT_TAG<<"ERR : Can't find Link ID : "<<lid<<" in Graph : "<<graph_id_<<endl;
+    OUTPUT_MSG(ERR, "Can't find Link ID : "<<lid<<" in Graph : "<<graph_id_);
     return -1;
   }
   
   if((0 != edge) && (1 != edge))
   {
-    cout<<PRINT_TAG<<"ERR : Edge : "<<edge<<" is out of bounds"<<endl;
+    OUTPUT_MSG(ERR, "Edge : "<<edge<<" is out of bounds");
     return -1;
   }
   
   if(NULL != link->getNodeAtEdge(edge))
   {
-    cout<<PRINT_TAG<<"ERR : Link ID : "<<lid<<" already has another Node : "<<(link->getNodeAtEdge(edge))->getId()<<" at Edge : "<<edge<<endl;
+    OUTPUT_MSG(ERR, "Link ID : "<<lid<<" already has another Node : "<<(link->getNodeAtEdge(edge))->getId()<<" at Edge : "<<edge);
     return -2;
   }
   else
   {
     link->node_[edge] = node;
     node->links_.push_back(link);
-    cout<<PRINT_TAG<<"Added Link : "<<link->getId()<<" to Node : "<<node->getId()<<" at Edge : "<<edge<<endl;
+    OUTPUT_MSG(INFO, "Added Link : "<<link->getId()<<" to Node : "<<node->getId()<<" at Edge : "<<edge);
     return 0;
   }
 }
@@ -194,23 +194,23 @@ int Graph::detachLinkFromNodeAtEdge(int lid, int nid, int edge)
   Link* link = getLinkById(lid);
   if(NULL == node)
   {
-    cout<<PRINT_TAG<<"ERR : Can't find Node ID : "<<nid<<" in Graph : "<<graph_id_<<endl;
+    OUTPUT_MSG(ERR, "Can't find Node ID : "<<nid<<" in Graph : "<<graph_id_);
     return -1;
   }
   else if(NULL == link)
   {
-    cout<<PRINT_TAG<<"ERR : Can't find Link ID : "<<lid<<" in Graph : "<<graph_id_<<endl;
+    OUTPUT_MSG(ERR, "Can't find Link ID : "<<lid<<" in Graph : "<<graph_id_);
     return -1;
   }
 
   if((0 != edge) && (1 != edge))
   {
-    cout<<PRINT_TAG<<"ERR : Edge : "<<edge<<" is out of bounds"<<endl;
+    OUTPUT_MSG(ERR, "Edge : "<<edge<<" is out of bounds");
     return -1;
   }
   if(link->node_[edge] != node)
   {
-    cout<<PRINT_TAG<<"ERR : Can't find Node ID "<<nid<<" at Edge : "<<edge<<" of Link ID : "<<lid<<endl;
+    OUTPUT_MSG(ERR,"Can't find Node ID "<<nid<<" at Edge : "<<edge<<" of Link ID : "<<lid);
     return -2;
   }
   else

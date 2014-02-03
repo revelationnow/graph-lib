@@ -11,6 +11,7 @@ int main()
 {
   OUTPUT_MSG(INFO,"Starting Program");
 
+
   Node node[5];
   Link link[10];
 
@@ -29,6 +30,7 @@ int main()
 
   /** Display the generated graph */
   displayGraph(&node[0]);
+
   OUTPUT_MSG(INFO,"I just created 2 nodes and a link");
   return 0;
 }
