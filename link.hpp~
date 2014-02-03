@@ -41,8 +41,6 @@ class Link
     Node* getNodeAtEdge(int edge);
     //! Friend function to attach nodes to edges
     friend int addLinkEdgeToNode(Node *node, Link* link, int edge);
-    //! Fried class Graph to manipulate the link
-    friend class Graph;
 };
 
 #endif

@@ -51,8 +51,6 @@ class Node
     friend int displayGraph(Node* start);
     //! Friend function to add a link at a particular edge to the node
     friend int addLinkEdgeToNode(Node *node, Link* link, int edge);
-    //! Fried class Graph
-    friend class Graph;
 };
 
 #endif 

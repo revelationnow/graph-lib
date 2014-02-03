@@ -114,7 +114,7 @@ int Graph::displayGraph()
   list<Node*> t_nodes;
   Node* t_node;
   Node* l_node[2];
-  t_nodes.push_back((nodes_.front()));
+  t_nodes.push_back(nodes_[0]);
 
   while(total_visited < Node::total_nodes)
   {
