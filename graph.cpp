@@ -4,6 +4,10 @@
 #include "errHandler.hpp"
 
 using namespace std;
+/** \fn displayGraph()
+    @brief This function prints out the graph of which start is a member. It uses Djikstra's Graph search algorithm.
+    @param start a variable of type Node*, can be any node within the graph
+*/
 int displayGraph(Node *start)
 {
   boolean* visited = new boolean[Node::total_nodes];
@@ -49,6 +53,12 @@ int displayGraph(Node *start)
   }
 }
 
+/** \fn removeLinkEdgeFromNode()
+    @brief This function detaches a Link from a Node at a given Edge
+    @param node a variable of type Node*
+    @param link a variable of type Link*
+    @param edge a variable of type int
+*/
 int removeLinkEdgeFromNode(Node *node, Link* link, int edge)
 {
   
@@ -78,6 +88,12 @@ int removeLinkEdgeFromNode(Node *node, Link* link, int edge)
   }
 }
 
+/** \fn addLinkEdgeToNode()
+    @brief This function adds a Link to a Node at a given Edge.
+    @param node a variable of type Node*
+    @param link a variable of type Link*
+    @param edge a variable of type int
+*/
 int addLinkEdgeToNode(Node* node, Link* link, int edge)
 {
   if(node == NULL)
