@@ -122,6 +122,16 @@ int addLinkEdgeToNode(Node* node, Link* link, int edge)
     }
   }
 }
+int Graph::total_graphs = 0;
+int Graph::total_graph_ids = 0;
+
+Graph::Graph()
+{
+  graph_id_ = total_graph_ids;
+  total_graphs++;
+  total_graph_ids++;
+  
+}
 
 int Graph::displayGraph()
 {
@@ -262,4 +272,33 @@ Link* Graph::getLinkById(int lid)
     }
   }
   return NULL;
+}
+
+int Graph::addLinkToGraph(Link* link)
+{
+  if(link != NULL)
+  {
+    links_.push_front(link);
+    return 0;
+  }
+  else
+  {
+    OUTPUT_MSG(ERR,"Can't add NULL link to Graph ID : "<<graph_id_);
+    return -1;
+  }
+}
+
+
+int Graph::addNodeToGraph(Node* node)
+{
+  if(node != NULL)
+  {
+    nodes_.push_front(node);
+    return 0;
+  }
+  else
+  {
+    OUTPUT_MSG(ERR,"Can't add NULL node to Graph ID : "<<graph_id_);
+    return -1;
+  }
 }

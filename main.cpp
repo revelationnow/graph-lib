@@ -13,6 +13,15 @@ int main()
 
   Node node[5];
   Link link[10];
+  Graph graph;
+  for(int i = 0;i<5;i++)
+  {
+    graph.addNodeToGraph(&node[i]);
+  }
+  for(int i=0;i<10;i++)
+  {
+    graph.addLinkToGraph(&link[i]);
+  }
 
   int k = 0;
   /** \code{.cpp} Code block to generate the initial graph */
@@ -20,8 +29,8 @@ int main()
   {
     for(int j = i+1;j<5;j++)
     {
-      addLinkEdgeToNode(&node[i], &link[k], 0);
-      addLinkEdgeToNode(&node[j], &link[k], 1);
+      graph.attachLinkToNodeAtEdge(link[k].getId(),node[i].getId(), 0);
+      graph.attachLinkToNodeAtEdge(link[k].getId(),node[j].getId(), 1);
       k++;
     }
   }

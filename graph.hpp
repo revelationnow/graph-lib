@@ -28,6 +28,8 @@ class Graph
     int destroyNode(int nid);
     Node* getNodeById(int nid);
     Link* getLinkById(int lid);
+    int addLinkToGraph(Link *link);
+    int addNodeToGraph(Node *node);
     int attachLinkToNodeAtEdge(int lid,int nid, int edge);
     int detachLinkFromNodeAtEdge(int lid,int nid, int edge);
 };
