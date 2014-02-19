@@ -1,0 +1,2782 @@
+cscope 15 $HOME/work/graph-lib/graph-lib               0000014156
+	@/home/anoop/work/graph-lib/graph-lib/common.hpp
+
+2 #i‚de‡
+__COMMON_HPP_
+
+
+3 
+	#__COMMON_HPP_
+
+
+	)
+
+5 
+usög
+ 
+«me•a˚
+ 
+	g°d
+;
+
+6 
+˛ass
+ 
+	gNode
+;
+
+7 
+˛ass
+ 
+	gLök
+;
+
+8 
+	eboﬁón
+ {
+	mFALSE
+, 
+	mTRUE
+};
+
+	@/home/anoop/work/graph-lib/graph-lib/errHandler.hpp
+
+2 #i‚de‡
+_ERRHANDLER_HPP_
+
+
+3 
+	#_ERRHANDLER_HPP_
+
+
+	)
+
+5 
+	#PRINT_TAG
+ 
+__FILE__
+<<"\t"<<
+__LINE__
+<<"\t"<<
+__DATE__
+<<"\t"<<
+__TIME__
+<<"\t"
+
+	)
+
+6 
+	#OUTPUT_MSG
+(
+TAG
+, 
+MSG
+Ë
+cout
+<<
+PRINT_TAG
+<< #TAG" : " << MSG << 
+ídl
+;
+
+	)
+
+	@/home/anoop/work/graph-lib/graph-lib/graph.cpp
+
+2 
+	~<io°ªam
+>
+
+3 
+	~"gøph.hµ
+"
+
+4 
+	~"îrH™dÀr.hµ
+"
+
+6 
+usög
+ 
+«me•a˚
+ 
+	g°d
+;
+
+11 
+	$di•œyGøph
+(
+Node
+ *
+°¨t
+)
+
+13 
+boﬁón
+* 
+visôed
+ = 
+√w
+ boﬁón[
+Node
+::
+tŸÆ_nodes
+];
+
+14 
+tŸÆ_visôed
+ = 0;
+
+15 
+li°
+<
+Node
+*> 
+t_nodes
+;
+
+16 
+Node
+* 
+t_node
+;
+
+17 
+Node
+* 
+l_node
+[2];
+
+18 
+t_nodes
+.
+	`push_back
+(
+°¨t
+);
+
+20 
+tŸÆ_visôed
+ < 
+Node
+::
+tŸÆ_nodes
+)
+
+22 
+Node
+* 
+t_node
+ = 
+t_nodes
+.
+	`‰⁄t
+();
+
+23 
+t_nodes
+.
+	`p›_‰⁄t
+();
+
+24 if(
+t_node
+ =
+NULL
+)
+
+28 
+	`OUTPUT_MSG
+(
+INFO
+,"Nodê: "<<
+t_node
+->
+	`gëId
+());
+
+29 
+visôed
+[
+t_node
+->
+	`gëId
+()] = 
+TRUE
+;
+
+30 
+tŸÆ_visôed
+++;
+
+31 
+li°
+<
+Lök
+*>::
+ôî©‹
+ 
+lök_ôî©‹
+ = 
+t_node
+->
+löks_
+.
+	`begö
+();lök_ôî©‹ !t_node->löks_.
+	`íd
+(); ++link_iterator)
+
+33 
+	`OUTPUT_MSG
+(
+INFO
+,"\tLök : "<<(*
+lök_ôî©‹
+)->
+	`gëId
+());
+
+34 
+l_node
+[0] = (*
+lök_ôî©‹
+)->
+	`gëNodeAtEdge
+(0);
+
+35 
+l_node
+[1] = (*
+lök_ôî©‹
+)->
+	`gëNodeAtEdge
+(1);
+
+37 if(
+l_node
+[0] !
+NULL
+)
+
+39 if(
+visôed
+[
+l_node
+[0]->
+	`gëId
+()] !
+TRUE
+)
+
+41 
+t_nodes
+.
+	`push_back
+(
+l_node
+[0]);
+
+45 if(
+l_node
+[1] !
+NULL
+)
+
+47 if(
+visôed
+[
+l_node
+[1]->
+	`gëId
+()] !
+TRUE
+)
+
+49 
+t_nodes
+.
+	`push_back
+(
+l_node
+[1]);
+
+54 
+	}
+}
+
+62 
+	$ªmoveLökEdgeFromNode
+(
+Node
+ *
+node
+, 
+Lök
+* 
+lök
+, 
+edge
+)
+
+65 if(
+node
+ =
+NULL
+)
+
+67 
+	`OUTPUT_MSG
+(
+ERR
+, "Can'tÑemove Link fromÇull Node");
+
+69 if(
+lök
+ =
+NULL
+)
+
+71 
+	`OUTPUT_MSG
+(
+ERR
+, "Can'tÑemove Node fromÇull Link");
+
+73 if(
+edge
+ != 0 &&Édge != 1)
+
+75 
+	`OUTPUT_MSG
+(
+ERR
+, "C™'àªmovêNodê‰om LökáàövÆid Edgê: "<<
+edge
+);
+
+79 
+Node
+* 
+t_node
+ = 
+lök
+->
+	`gëNodeAtEdge
+(
+edge
+);
+
+80 if(
+t_node
+ !
+NULL
+)
+
+82 if(
+t_node
+->
+	`gëId
+(Ë=
+node
+->getId())
+
+84 
+lök
+->
+	`dëachNodeByEdge
+(
+edge
+);
+
+85 
+node
+->
+	`ªmoveLök
+(
+lök
+);
+
+89 
+	}
+}
+
+97 
+	$addLökEdgeToNode
+(
+Node
+* 
+node
+, 
+Lök
+* 
+lök
+, 
+edge
+)
+
+99 if(
+node
+ =
+NULL
+)
+
+101 
+	`OUTPUT_MSG
+(
+ERR
+, "Can'táttach LinkÅoÇull Node");
+
+103 if(
+lök
+ =
+NULL
+)
+
+105 
+	`OUTPUT_MSG
+(
+ERR
+, "Can'táttach NodeÅoÇull Link");
+
+107 if(
+edge
+ != 0 &&Édge != 1)
+
+109 
+	`OUTPUT_MSG
+(
+ERR
+, "C™'à©èch NodêtÿLökáàövÆid Edgê: "<<
+edge
+);
+
+113 if(
+lök
+->
+	`gëNodeAtEdge
+(
+edge
+Ë!
+NULL
+)
+
+115 
+	`OUTPUT_MSG
+(
+ERR
+, "C™'àadd Nodê: "<<
+node
+->
+	`gëId
+()<<"ÅÿLök : "<<
+lök
+->gëId()<<"áàEdgê: "<<
+edge
+<<"ásánotherÇodeálreadyÉxistsÅhere");
+
+119 
+lök
+->
+node_
+[
+edge
+] = 
+node
+;
+
+120 
+node
+->
+löks_
+.
+	`push_back
+(
+lök
+);
+
+121 
+	`OUTPUT_MSG
+(
+INFO
+, "Added Lök : "<<
+lök
+->
+	`gëId
+()<<"ÅÿNodê: "<<
+node
+->gëId()<<"áàEdgê: "<<
+edge
+);
+
+124 
+	}
+}
+
+125 
+	gGøph
+::
+tŸÆ_gøphs
+ = 0;
+
+126 
+	gGøph
+::
+tŸÆ_gøph_ids
+ = 0;
+
+128 
+	gGøph
+::
+	$Gøph
+()
+
+130 
+gøph_id_
+ = 
+tŸÆ_gøph_ids
+;
+
+131 
+tŸÆ_gøphs
+++;
+
+132 
+tŸÆ_gøph_ids
+++;
+
+134 
+	}
+}
+
+136 
+	gGøph
+::
+	$di•œyGøph
+()
+
+138 
+boﬁón
+* 
+visôed
+ = 
+√w
+ boﬁón[
+nodes_
+.
+	`size
+()];
+
+139 
+tŸÆ_visôed
+ = 0;
+
+140 
+li°
+<
+Node
+*> 
+t_nodes
+;
+
+141 
+Node
+* 
+t_node
+;
+
+142 
+Node
+* 
+l_node
+[2];
+
+143 
+t_nodes
+.
+	`push_back
+((
+nodes_
+.
+	`‰⁄t
+()));
+
+145 
+tŸÆ_visôed
+ < 
+Node
+::
+tŸÆ_nodes
+)
+
+147 
+Node
+* 
+t_node
+ = 
+t_nodes
+.
+	`‰⁄t
+();
+
+148 
+t_nodes
+.
+	`p›_‰⁄t
+();
+
+149 if(
+t_node
+ =
+NULL
+)
+
+153 
+	`OUTPUT_MSG
+(
+INFO
+, "Nodê: "<<
+t_node
+->
+	`gëId
+());
+
+154 
+visôed
+[
+t_node
+->
+	`gëId
+()] = 
+TRUE
+;
+
+155 
+tŸÆ_visôed
+++;
+
+156 
+li°
+<
+Lök
+*>::
+ôî©‹
+ 
+lök_ôî©‹
+ = 
+t_node
+->
+löks_
+.
+	`begö
+();lök_ôî©‹ !t_node->löks_.
+	`íd
+(); ++link_iterator)
+
+158 
+	`OUTPUT_MSG
+(
+INFO
+, "\tLök : "<<(*
+lök_ôî©‹
+)->
+	`gëId
+());
+
+159 
+l_node
+[0] = (*
+lök_ôî©‹
+)->
+	`gëNodeAtEdge
+(0);
+
+160 
+l_node
+[1] = (*
+lök_ôî©‹
+)->
+	`gëNodeAtEdge
+(1);
+
+162 if(
+l_node
+[0] !
+NULL
+)
+
+164 if(
+visôed
+[
+l_node
+[0]->
+	`gëId
+()] !
+TRUE
+)
+
+166 
+t_nodes
+.
+	`push_back
+(
+l_node
+[0]);
+
+170 if(
+l_node
+[1] !
+NULL
+)
+
+172 if(
+visôed
+[
+l_node
+[1]->
+	`gëId
+()] !
+TRUE
+)
+
+174 
+t_nodes
+.
+	`push_back
+(
+l_node
+[1]);
+
+179 
+	}
+}
+
+181 
+	gGøph
+::
+	$©èchLökToNodeAtEdge
+(
+lid
+, 
+nid
+, 
+edge
+)
+
+183 
+Node
+* 
+node
+ = 
+	`gëNodeById
+(
+nid
+);
+
+184 
+Lök
+* 
+lök
+ = 
+	`gëLökById
+(
+lid
+);
+
+185 if(
+NULL
+ =
+node
+)
+
+187 
+	`OUTPUT_MSG
+(
+ERR
+, "C™'àföd NodêID : "<<
+nid
+<<" i¿Gøph : "<<
+gøph_id_
+);
+
+190 if(
+NULL
+ =
+lök
+)
+
+192 
+	`OUTPUT_MSG
+(
+ERR
+, "C™'àföd Lök ID : "<<
+lid
+<<" i¿Gøph : "<<
+gøph_id_
+);
+
+196 if((0 !
+edge
+) && (1 !=Édge))
+
+198 
+	`OUTPUT_MSG
+(
+ERR
+, "Edgê: "<<
+edge
+<<" is out of bounds");
+
+202 if(
+NULL
+ !
+lök
+->
+	`gëNodeAtEdge
+(
+edge
+))
+
+204 
+	`OUTPUT_MSG
+(
+ERR
+, "Lök ID : "<<
+lid
+<<"áÃódy ha†™Ÿhî Nodê: "<<(
+lök
+->
+	`gëNodeAtEdge
+(
+edge
+))->
+	`gëId
+()<<"át Edge : "<<edge);
+
+209 
+lök
+->
+node_
+[
+edge
+] = 
+node
+;
+
+210 
+node
+->
+löks_
+.
+	`push_back
+(
+lök
+);
+
+211 
+	`OUTPUT_MSG
+(
+INFO
+, "Added Lök : "<<
+lök
+->
+	`gëId
+()<<"ÅÿNodê: "<<
+node
+->gëId()<<"áàEdgê: "<<
+edge
+);
+
+214 
+	}
+}
+
+216 
+	gGøph
+::
+	$dëachLökFromNodeAtEdge
+(
+lid
+, 
+nid
+, 
+edge
+)
+
+219 
+Node
+* 
+node
+ = 
+	`gëNodeById
+(
+nid
+);
+
+220 
+Lök
+* 
+lök
+ = 
+	`gëLökById
+(
+lid
+);
+
+221 if(
+NULL
+ =
+node
+)
+
+223 
+	`OUTPUT_MSG
+(
+ERR
+, "C™'àföd NodêID : "<<
+nid
+<<" i¿Gøph : "<<
+gøph_id_
+);
+
+226 if(
+NULL
+ =
+lök
+)
+
+228 
+	`OUTPUT_MSG
+(
+ERR
+, "C™'àföd Lök ID : "<<
+lid
+<<" i¿Gøph : "<<
+gøph_id_
+);
+
+232 if((0 !
+edge
+) && (1 !=Édge))
+
+234 
+	`OUTPUT_MSG
+(
+ERR
+, "Edgê: "<<
+edge
+<<" is out of bounds");
+
+237 if(
+lök
+->
+node_
+[
+edge
+] !
+node
+)
+
+239 
+	`OUTPUT_MSG
+(
+ERR
+,"C™'àföd NodêID "<<
+nid
+<<"áàEdgê: "<<
+edge
+<<" o‡Lök ID : "<<
+lid
+);
+
+244 
+lök
+->
+	`dëachNodeByEdge
+(
+edge
+);
+
+245 
+node
+->
+	`ªmoveLök
+(
+lök
+);
+
+249 
+	}
+}
+
+252 
+Node
+* 
+	gGøph
+::
+	$gëNodeById
+(
+nid
+)
+
+254 
+li°
+<
+Node
+*>::
+ôî©‹
+ 
+node_ôî©‹
+ = 
+nodes_
+.
+	`begö
+();Çode_ôî©‹ !nodes_.
+	`íd
+(); ++node_iterator)
+
+256 if((*
+node_ôî©‹
+)->
+	`gëId
+(Ë=
+nid
+)
+
+258  (*
+node_ôî©‹
+);
+
+261  
+NULL
+;
+
+262 
+	}
+}
+
+265 
+Lök
+* 
+	gGøph
+::
+	$gëLökById
+(
+lid
+)
+
+267 
+li°
+<
+Lök
+*>::
+ôî©‹
+ 
+lök_ôî©‹
+ = 
+löks_
+.
+	`begö
+();Üök_ôî©‹ !löks_.
+	`íd
+(); ++link_iterator)
+
+269 if((*
+lök_ôî©‹
+)->
+	`gëId
+(Ë=
+lid
+)
+
+271  (*
+lök_ôî©‹
+);
+
+274  
+NULL
+;
+
+275 
+	}
+}
+
+277 
+	gGøph
+::
+	$addLökToGøph
+(
+Lök
+* 
+lök
+)
+
+279 if(
+lök
+ !
+NULL
+)
+
+281 
+löks_
+.
+	`push_‰⁄t
+(
+lök
+);
+
+286 
+	`OUTPUT_MSG
+(
+ERR
+,"C™'àadd NULLÜökÅÿGøph ID : "<<
+gøph_id_
+);
+
+289 
+	}
+}
+
+292 
+	gGøph
+::
+	$addNodeToGøph
+(
+Node
+* 
+node
+)
+
+294 if(
+node
+ !
+NULL
+)
+
+296 
+nodes_
+.
+	`push_‰⁄t
+(
+node
+);
+
+301 
+	`OUTPUT_MSG
+(
+ERR
+,"C™'àadd NULLÇodêtÿGøph ID : "<<
+gøph_id_
+);
+
+304 
+	}
+}
+
+	@/home/anoop/work/graph-lib/graph-lib/graph.hpp
+
+2 #i‚de‡
+__GRAPH_HPP_
+
+
+3 
+	#__GRAPH_HPP_
+
+
+	)
+
+4 
+	~"comm⁄.hµ
+"
+
+5 
+	~"node.hµ
+"
+
+6 
+	~"lök.hµ
+"
+
+8 
+usög
+ 
+«me•a˚
+ 
+	g°d
+;
+
+9 
+di•œyGøph
+(
+Node
+ *
+°¨t
+);
+
+10 
+ªmoveLökEdgeFromNode
+(
+Node
+ *
+node
+, 
+Lök
+* 
+lök
+, 
+edge
+);
+
+11 
+addLökEdgeToNode
+(
+Node
+* 
+node
+, 
+Lök
+* 
+lök
+, 
+edge
+);
+
+13 ˛as†
+	cGøph
+
+
+15 
+	m¥iv©e
+:
+
+16 
+li°
+<
+Node
+*> 
+nodes_
+;
+
+17 
+	mli°
+<
+	mLök
+*> 
+	mlöks_
+;
+
+18 
+	mgøph_id_
+;
+
+19 
+	mtŸÆ_gøphs
+;
+
+20 
+	mtŸÆ_gøph_ids
+;
+
+21 
+	mpublic
+:
+
+22 
+Gøph
+();
+
+23 
+Gøph
+(
+li°
+<
+Node
+*>,Üi°<
+Lök
+*>);
+
+24 
+di•œyGøph
+();
+
+25 
+¸óãLök
+();
+
+26 
+¸óãNode
+();
+
+27 
+de°royLök
+(
+lid
+);
+
+28 
+de°royNode
+(
+nid
+);
+
+29 
+Node
+* 
+gëNodeById
+(
+nid
+);
+
+30 
+Lök
+* 
+gëLökById
+(
+lid
+);
+
+31 
+addLökToGøph
+(
+Lök
+ *
+lök
+);
+
+32 
+addNodeToGøph
+(
+Node
+ *
+node
+);
+
+33 
+©èchLökToNodeAtEdge
+(
+lid
+,
+nid
+, 
+edge
+);
+
+34 
+dëachLökFromNodeAtEdge
+(
+lid
+,
+nid
+, 
+edge
+);
+
+	@/home/anoop/work/graph-lib/graph-lib/link.cpp
+
+2 
+	~<io°ªam
+>
+
+3 
+	~"gøph.hµ
+"
+
+4 
+	~"îrH™dÀr.hµ
+"
+
+6 
+usög
+ 
+«me•a˚
+ 
+	g°d
+;
+
+8 
+	gLök
+::
+tŸÆ_löks
+ = 0;
+
+9 
+	gLök
+::
+tŸÆ_lök_ids
+ = 0;
+
+11 
+	gLök
+::
+	$Lök
+(
+weight
+)
+
+13 
+weight_
+ = 
+weight
+;
+
+14 
+lök_id_
+ = 
+tŸÆ_löks
+;
+
+15 
+tŸÆ_löks
+++;
+
+16 
+node_
+[0] = 
+NULL
+;
+
+17 
+node_
+[1] = 
+NULL
+;
+
+18 
+	}
+}
+
+20 
+	gLök
+::
+	$gëId
+()
+
+22  
+lök_id_
+;
+
+23 
+	}
+}
+
+26 
+Node
+* 
+	gLök
+::
+	$gëNodeAtEdge
+(
+edge
+)
+
+28 if(
+edge
+ != 0 &&Édge != 1)
+
+30 
+	`OUTPUT_MSG
+(
+ERR
+, "Lök ID : "<<
+lök_id_
+<<"ÅryögÅÿgëÇodê© unsuµ‹ãd Edgê: "<<
+edge
+);
+
+31  
+NULL
+;
+
+35 if(
+NULL
+ !
+node_
+[
+edge
+])
+
+37  
+node_
+[
+edge
+];
+
+41  
+node_
+[
+edge
+];
+
+44 
+	}
+}
+
+46 
+	gLök
+::
+	$dëachNodeByEdge
+(
+edge
+)
+
+48 if((0==
+edge
+) || (1==edge))
+
+50 
+node_
+[
+edge
+] = 
+NULL
+;
+
+54 
+	`OUTPUT_MSG
+(
+ERR
+, "Lök ID : "<<
+lök_id_
+<<"ÅryögÅÿdëachÇodê© unsuµ‹ãd Edgê: "<<
+edge
+);
+
+56 
+	}
+}
+
+	@/home/anoop/work/graph-lib/graph-lib/link.hpp
+
+2 #i‚de‡
+__LINK_HPP_
+
+
+3 
+	#__LINK_HPP_
+
+
+	)
+
+5 
+	~"gøph.hµ
+"
+
+6 
+usög
+ 
+«me•a˚
+ 
+	g°d
+;
+
+16 ˛as†
+	cLök
+
+
+18 
+	m¥iv©e
+:
+
+20 
+weight_
+;
+
+22 
+Node
+* 
+	mnode_
+[2];
+
+24 
+	mlök_id_
+;
+
+26 
+	mtŸÆ_löks
+;
+
+28 
+	mtŸÆ_lök_ids
+;
+
+29 
+	mpublic
+:
+
+31 
+Lök
+(
+weight
+=1);
+
+33 
+gëId
+();
+
+35 
+addNodeToEdge
+(
+Node
+* 
+node
+,
+edge
+);
+
+37 
+nodeIDAâachedToEdge
+(
+edge
+);
+
+39 
+dëachNodeByEdge
+(
+edge
+);
+
+41 
+Node
+* 
+gëNodeAtEdge
+(
+edge
+);
+
+43 
+‰õnd
+ 
+addLökEdgeToNode
+(
+Node
+ *
+node
+, 
+Lök
+* 
+lök
+, 
+edge
+);
+
+45 
+‰õnd
+ 
+˛ass
+ 
+	mGøph
+;
+
+	@/home/anoop/work/graph-lib/graph-lib/main.cpp
+
+2 
+	~<io°ªam
+>
+
+3 
+	~"gøph.hµ
+"
+
+4 
+	~"îrH™dÀr.hµ
+"
+
+6 
+usög
+ 
+«me•a˚
+ 
+	g°d
+;
+
+10 
+	$maö
+()
+
+12 
+	`OUTPUT_MSG
+(
+INFO
+,"Starting Program");
+
+14 
+Node
+ 
+node
+[5];
+
+15 
+Lök
+ 
+lök
+[10];
+
+16 
+Gøph
+ 
+gøph
+;
+
+17 
+i
+ = 0;i<5;i++)
+
+19 
+gøph
+.
+	`addNodeToGøph
+(&
+node
+[
+i
+]);
+
+21 
+i
+=0;i<10;i++)
+
+23 
+gøph
+.
+	`addLökToGøph
+(&
+lök
+[
+i
+]);
+
+26 
+k
+ = 0;
+
+28 
+i
+ = 0;i<5;i++)
+
+30 
+j
+ = 
+i
++1;j<5;j++)
+
+32 
+gøph
+.
+	`©èchLökToNodeAtEdge
+(
+lök
+[
+k
+].
+	`gëId
+(),
+node
+[
+i
+].getId(), 0);
+
+33 
+gøph
+.
+	`©èchLökToNodeAtEdge
+(
+lök
+[
+k
+].
+	`gëId
+(),
+node
+[
+j
+].getId(), 1);
+
+34 
+k
+++;
+
+40 
+	`di•œyGøph
+(&
+node
+[0]);
+
+41 
+	`OUTPUT_MSG
+(
+INFO
+,"I just created 2ÇodesándáÜink");
+
+43 
+	}
+}
+
+	@/home/anoop/work/graph-lib/graph-lib/node.cpp
+
+2 
+	~<io°ªam
+>
+
+3 
+	~<ve˘‹
+>
+
+4 
+	~"gøph.hµ
+"
+
+5 
+	~"îrH™dÀr.hµ
+"
+
+7 
+usög
+ 
+«me•a˚
+ 
+	g°d
+;
+
+9 
+	gNode
+::
+tŸÆ_nodes
+ = 0;
+
+11 
+	gNode
+::
+tŸÆ_node_ids
+ = 0;
+
+13 
+	gNode
+::
+	$Node
+(
+vÆue
+)
+
+15 
+vÆue_
+ = 
+vÆue
+;
+
+16 
+node_id_
+ = 
+tŸÆ_node_ids
+;
+
+17 
+tŸÆ_nodes
+++;
+
+18 
+tŸÆ_node_ids
+++;
+
+19 
+	}
+}
+
+21 
+	gNode
+::
+	$gëDegªe
+()
+
+23  
+löks_
+.
+	`size
+();
+
+24 
+	}
+}
+
+26 
+	gNode
+::
+	$gëVÆue
+()
+
+28  
+vÆue_
+;
+
+29 
+	}
+}
+
+31 
+	gNode
+::
+	$gëId
+()
+
+33  
+node_id_
+;
+
+34 
+	}
+}
+
+36 
+	gNode
+::
+	$£tVÆue
+(
+vÆue
+)
+
+38 
+vÆue_
+ = 
+vÆue
+;
+
+39 
+	}
+}
+
+41 
+boﬁón
+ 
+	gNode
+::
+	$lökAâachedToNode
+(
+Lök
+* 
+lök
+)
+
+43 
+li°
+<
+Lök
+*>::
+ôî©‹
+ 
+lök_ôî©‹
+ = 
+löks_
+.
+	`begö
+();lök_ôî©‹ !löks_.
+	`íd
+();++link_iterator)
+
+45 if((*
+lök_ôî©‹
+)->
+	`gëId
+(Ë=
+lök
+->getId())
+
+47  
+TRUE
+;
+
+50  
+FALSE
+;
+
+51 
+	}
+}
+
+53 
+	gNode
+::
+	$ªmoveLök
+(
+Lök
+* 
+lök
+)
+
+55 
+li°
+<
+Lök
+*>::
+ôî©‹
+ 
+lök_ôî©‹
+ = 
+löks_
+.
+	`begö
+();lök_ôî©‹ !löks_.
+	`íd
+(); ++link_iterator)
+
+57 if((*
+lök_ôî©‹
+)->
+	`gëId
+(Ë=
+lök
+->getId())
+
+59 
+löks_
+.
+	`îa£
+(
+lök_ôî©‹
+);
+
+64 
+	}
+}
+
+	@/home/anoop/work/graph-lib/graph-lib/node.hpp
+
+2 #i‚de‡
+__NODE_HPP_
+
+
+3 
+	#__NODE_HPP_
+
+
+	)
+
+5 
+	~<li°
+>
+
+7 
+	~"gøph.hµ
+"
+
+9 
+usög
+ 
+«me•a˚
+ 
+	g°d
+;
+
+18 ˛as†
+	cNode
+
+
+20 
+	m¥iv©e
+:
+
+22 
+li°
+<
+Lök
+*> 
+löks_
+;
+
+24 
+	mvÆue_
+;
+
+26 
+	mnode_id_
+;
+
+28 
+	mtŸÆ_nodes
+;
+
+30 
+	mtŸÆ_node_ids
+;
+
+31 
+	mpublic
+:
+
+33 
+Node
+(
+vÆue
+ = 0);
+
+35 
+gëDegªe
+();
+
+37 
+gëVÆue
+();
+
+39 
+gëId
+();
+
+41 
+£tVÆue
+(
+vÆue
+);
+
+43 
+addLökEdge
+(
+Lök
+* 
+lök
+,
+edge
+);
+
+45 
+boﬁón
+ 
+lökAâachedToNode
+(
+Lök
+* 
+lök
+);
+
+47 
+ªmoveLökEdge
+(
+Lök
+* 
+lök
+,
+edge
+);
+
+49 
+ªmoveLök
+(
+Lök
+* 
+lök
+);
+
+51 
+‰õnd
+ 
+di•œyGøph
+(
+Node
+* 
+°¨t
+);
+
+53 
+‰õnd
+ 
+addLökEdgeToNode
+(
+Node
+ *
+node
+, 
+Lök
+* 
+lök
+, 
+edge
+);
+
+55 
+‰õnd
+ 
+˛ass
+ 
+	mGøph
+;
+
+	@common.hpp
+
+2 #i‚de‡
+__COMMON_HPP_
+
+
+3 
+	#__COMMON_HPP_
+
+
+	)
+
+5 
+usög
+ 
+«me•a˚
+ 
+	g°d
+;
+
+6 
+˛ass
+ 
+	gNode
+;
+
+7 
+˛ass
+ 
+	gLök
+;
+
+8 
+	eboﬁón
+ {
+	mFALSE
+, 
+	mTRUE
+};
+
+	@errHandler.hpp
+
+2 #i‚de‡
+_ERRHANDLER_HPP_
+
+
+3 
+	#_ERRHANDLER_HPP_
+
+
+	)
+
+5 
+	#PRINT_TAG
+ 
+__FILE__
+<<"\t"<<
+__LINE__
+<<"\t"<<
+__DATE__
+<<"\t"<<
+__TIME__
+<<"\t"
+
+	)
+
+6 
+	#OUTPUT_MSG
+(
+TAG
+, 
+MSG
+Ë
+cout
+<<
+PRINT_TAG
+<< #TAG" : " << MSG << 
+ídl
+;
+
+	)
+
+	@graph.hpp
+
+2 #i‚de‡
+__GRAPH_HPP_
+
+
+3 
+	#__GRAPH_HPP_
+
+
+	)
+
+4 
+	~"comm⁄.hµ
+"
+
+5 
+	~"node.hµ
+"
+
+6 
+	~"lök.hµ
+"
+
+8 
+usög
+ 
+«me•a˚
+ 
+	g°d
+;
+
+9 
+di•œyGøph
+(
+Node
+ *
+°¨t
+);
+
+10 
+ªmoveLökEdgeFromNode
+(
+Node
+ *
+node
+, 
+Lök
+* 
+lök
+, 
+edge
+);
+
+11 
+addLökEdgeToNode
+(
+Node
+* 
+node
+, 
+Lök
+* 
+lök
+, 
+edge
+);
+
+13 ˛as†
+	cGøph
+
+
+15 
+	m¥iv©e
+:
+
+16 
+li°
+<
+Node
+*> 
+nodes_
+;
+
+17 
+	mli°
+<
+	mLök
+*> 
+	mlöks_
+;
+
+18 
+	mgøph_id_
+;
+
+19 
+	mtŸÆ_gøphs
+;
+
+20 
+	mtŸÆ_gøph_ids
+;
+
+21 
+	mpublic
+:
+
+22 
+Gøph
+();
+
+23 
+Gøph
+(
+li°
+<
+Node
+*>,Üi°<
+Lök
+*>);
+
+24 
+di•œyGøph
+();
+
+25 
+¸óãLök
+();
+
+26 
+¸óãNode
+();
+
+27 
+de°royLök
+(
+lid
+);
+
+28 
+de°royNode
+(
+nid
+);
+
+29 
+Node
+* 
+gëNodeById
+(
+nid
+);
+
+30 
+Lök
+* 
+gëLökById
+(
+lid
+);
+
+31 
+addLökToGøph
+(
+Lök
+ *
+lök
+);
+
+32 
+addNodeToGøph
+(
+Node
+ *
+node
+);
+
+33 
+©èchLökToNodeAtEdge
+(
+lid
+,
+nid
+, 
+edge
+);
+
+34 
+dëachLökFromNodeAtEdge
+(
+lid
+,
+nid
+, 
+edge
+);
+
+	@link.hpp
+
+2 #i‚de‡
+__LINK_HPP_
+
+
+3 
+	#__LINK_HPP_
+
+
+	)
+
+5 
+	~"gøph.hµ
+"
+
+6 
+usög
+ 
+«me•a˚
+ 
+	g°d
+;
+
+16 ˛as†
+	cLök
+
+
+18 
+	m¥iv©e
+:
+
+20 
+weight_
+;
+
+22 
+Node
+* 
+	mnode_
+[2];
+
+24 
+	mlök_id_
+;
+
+26 
+	mtŸÆ_löks
+;
+
+28 
+	mtŸÆ_lök_ids
+;
+
+29 
+	mpublic
+:
+
+31 
+Lök
+(
+weight
+=1);
+
+33 
+gëId
+();
+
+35 
+addNodeToEdge
+(
+Node
+* 
+node
+,
+edge
+);
+
+37 
+nodeIDAâachedToEdge
+(
+edge
+);
+
+39 
+dëachNodeByEdge
+(
+edge
+);
+
+41 
+Node
+* 
+gëNodeAtEdge
+(
+edge
+);
+
+43 
+‰õnd
+ 
+addLökEdgeToNode
+(
+Node
+ *
+node
+, 
+Lök
+* 
+lök
+, 
+edge
+);
+
+45 
+‰õnd
+ 
+˛ass
+ 
+	mGøph
+;
+
+	@node.hpp
+
+2 #i‚de‡
+__NODE_HPP_
+
+
+3 
+	#__NODE_HPP_
+
+
+	)
+
+5 
+	~<li°
+>
+
+7 
+	~"gøph.hµ
+"
+
+9 
+usög
+ 
+«me•a˚
+ 
+	g°d
+;
+
+18 ˛as†
+	cNode
+
+
+20 
+	m¥iv©e
+:
+
+22 
+li°
+<
+Lök
+*> 
+löks_
+;
+
+24 
+	mvÆue_
+;
+
+26 
+	mnode_id_
+;
+
+28 
+	mtŸÆ_nodes
+;
+
+30 
+	mtŸÆ_node_ids
+;
+
+31 
+	mpublic
+:
+
+33 
+Node
+(
+vÆue
+ = 0);
+
+35 
+gëDegªe
+();
+
+37 
+gëVÆue
+();
+
+39 
+gëId
+();
+
+41 
+£tVÆue
+(
+vÆue
+);
+
+43 
+addLökEdge
+(
+Lök
+* 
+lök
+,
+edge
+);
+
+45 
+boﬁón
+ 
+lökAâachedToNode
+(
+Lök
+* 
+lök
+);
+
+47 
+ªmoveLökEdge
+(
+Lök
+* 
+lök
+,
+edge
+);
+
+49 
+ªmoveLök
+(
+Lök
+* 
+lök
+);
+
+51 
+‰õnd
+ 
+di•œyGøph
+(
+Node
+* 
+°¨t
+);
+
+53 
+‰õnd
+ 
+addLökEdgeToNode
+(
+Node
+ *
+node
+, 
+Lök
+* 
+lök
+, 
+edge
+);
+
+55 
+‰õnd
+ 
+˛ass
+ 
+	mGøph
+;
+
+	@
+1
+.
+1
+/usr/include
+14
+478
+/home/anoop/work/graph-lib/graph-lib/common.hpp
+/home/anoop/work/graph-lib/graph-lib/errHandler.hpp
+/home/anoop/work/graph-lib/graph-lib/graph.cpp
+/home/anoop/work/graph-lib/graph-lib/graph.hpp
+/home/anoop/work/graph-lib/graph-lib/link.cpp
+/home/anoop/work/graph-lib/graph-lib/link.hpp
+/home/anoop/work/graph-lib/graph-lib/main.cpp
+/home/anoop/work/graph-lib/graph-lib/node.cpp
+/home/anoop/work/graph-lib/graph-lib/node.hpp
+common.hpp
+errHandler.hpp
+graph.hpp
+link.hpp
+node.hpp
