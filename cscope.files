@@ -1,9 +1,6 @@
 common.hpp
 errHandler.hpp
-graph.cpp
 graph.hpp
-link.cpp
 link.hpp
 main.cpp
-node.cpp
 node.hpp

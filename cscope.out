@@ -1,4 +1,4 @@
-cscope 15 $HOME/work/graph-lib/graph-lib               0000012127
+cscope 15 $HOME/work/graph-lib/graph-lib               0000012144
 	@common.hpp
 
 2 #iâdeà
@@ -84,20 +84,6 @@ PRINT_TAG
 ;
 
 	)
-
-	@graph.cpp
-
-2 
-	~<io¡»am
->
-
-4 
-usšg
- 
-Çme¥aû
- 
-	g¡d
-;
 
 	@graph.hpp
 
@@ -452,7 +438,7 @@ t_nodes
 ((
 nodes_
 .
-	`äÚt
+	`back
 ()));
 
 60 
@@ -545,11 +531,13 @@ lšks_
 	`OUTPUT_MSG
 (
 INFO
-, "\tLšk : "<<(*
+, "\t|| "<<((*
 lšk_™”©Ü
 )->
+	`g‘NodeAtEdge
+(0))->
 	`g‘Id
-());
+()<<" ||----------<"<<(*link_iterator)->getId()<<">----------|| "<<((*link_iterator)->getNodeAtEdge(1))->getId()<<" ||");
 
 74 
 l_node
@@ -1167,20 +1155,6 @@ ERR
 g¿ph_id_
 );
 
-	@link.cpp
-
-2 
-	~<io¡»am
->
-
-4 
-usšg
- 
-Çme¥aû
- 
-	g¡d
-;
-
 	@link.hpp
 
 2 #iâdeà
@@ -1233,7 +1207,11 @@ usšg
 
 10 
 	$maš
-()
+(
+¬gc
+, * 
+¬gv
+[])
 
 12 
 	`OUTPUT_MSG
@@ -1243,7 +1221,7 @@ INFO
 
 14 cÚ¡ 
 num_nodes
- = 5;
+ = 10;
 
 15 cÚ¡ 
 num_lšks
@@ -1389,7 +1367,11 @@ g¿ph
 	`OUTPUT_MSG
 (
 INFO
-,"I just created 2‚odes‡nd‡†ink");
+,"I ju¡ c»©ed "<<
+num_nodes
+<<"‚ode ªd "<<
+num_lšks
+<<"†inks");
 
 46 
 i
@@ -1422,20 +1404,6 @@ i
 55 
 	}
 }
-
-	@node.cpp
-
-2 
-	~<io¡»am
->
-
-4 
-usšg
- 
-Çme¥aû
- 
-	g¡d
-;
 
 	@node.hpp
 
@@ -2452,14 +2420,11 @@ edge
 .
 1
 /usr/include
-9
-91
+6
+63
 common.hpp
 errHandler.hpp
-graph.cpp
 graph.hpp
-link.cpp
 link.hpp
 main.cpp
-node.cpp
 node.hpp
