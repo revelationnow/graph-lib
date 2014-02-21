@@ -1,0 +1,7 @@
+syn keyword CTagsMember total_node_ids nodes_ node_id_ total_graphs link_id_ links_ value_ graph_id_ weight_ node_ total_graph_ids total_nodes total_link_ids total_links
+syn keyword CTagsEnumeratorName boolean
+syn keyword CTagsEnumerationValue TRUE FALSE
+syn keyword CTagsFunction Node addLinkToGraph main getDegree setValue detachLinkFromNodeAtEdge Graph addNodeToGraph attachLinkToNodeAtEdge getLinkById getNodeAtEdge removeLink getValue Link getId detachNodeByEdge getNodeById linkAttachedToNode displayGraph
+syn keyword CTagsDefinedName _ERRHANDLER_HPP_ PRINT_TAG __COMMON_HPP_ __NODE_HPP_ __GRAPH_HPP_ OUTPUT_MSG __LINK_HPP_
+syn keyword CTagsClass Node Graph Link Node_base Link_base
+

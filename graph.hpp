@@ -26,8 +26,8 @@ class Graph
     int destroyNode(int nid);
     Node<Tnode,Tlink>* getNodeById(int nid);
     Link<Tlink,Tnode>* getLinkById(int lid);
-    int addLinkToGraph(Link<Tlink,Tnode> **link);
-    int addNodeToGraph(Node<Tnode,Tlink> *node);
+    int addLinkToGraph(Link<Tlink,Tnode> * link);
+    int addNodeToGraph(Node<Tnode,Tlink> * node);
     int attachLinkToNodeAtEdge(int lid,int nid, int edge);
     int detachLinkFromNodeAtEdge(int lid,int nid, int edge);
 };
@@ -60,19 +60,19 @@ int Graph<Tnode,Tlink>::displayGraph()
   while(total_visited < Node<Tnode,Tlink>::total_nodes)
   {
     Node<Tnode,Tlink>* t_node = t_nodes.front();
-    t_nodes.pop_front();
     if(t_node == NULL)
     {
       break;
     }
+    t_nodes.pop_front();
     OUTPUT_MSG(INFO, "Node : "<<t_node->getId());
     visited[t_node->getId()] = TRUE;
     total_visited++;
     for(typename list<Link<Tlink,Tnode>*>::iterator link_iterator = t_node->links_.begin();link_iterator != t_node->links_.end(); ++link_iterator)
     {
-      OUTPUT_MSG(INFO, "\tLink : "<<((Link<Tlink,Tnode>*)&(*link_iterator))->getId());
-      l_node[0] = ((Link<Tlink,Tnode>*)&(*link_iterator))->getNodeAtEdge(0);
-      l_node[1] = ((Link<Tlink,Tnode>*)&(*link_iterator))->getNodeAtEdge(1);
+      OUTPUT_MSG(INFO, "\tLink : "<<(*link_iterator)->getId());
+      l_node[0] = (*link_iterator)->getNodeAtEdge(0);
+      l_node[1] = (*link_iterator)->getNodeAtEdge(1);
 
       if(l_node[0] != NULL)
       {
@@ -99,7 +99,6 @@ int Graph<Tnode,Tlink>::attachLinkToNodeAtEdge(int lid, int nid, int edge)
   Node<Tnode,Tlink>* node = getNodeById(nid);
   Link<Tlink,Tnode>* link = getLinkById(lid);
 
-  OUTPUT_MSG(LOW,"Node 0 at link id : "<<link->getId()<<" is : "<<link->getNodeAtEdge(0));
   if(NULL == node)
   {
     OUTPUT_MSG(ERR, "Can't find Node ID : "<<nid<<" in Graph : "<<graph_id_);
@@ -172,14 +171,11 @@ int Graph<Tnode,Tlink>::detachLinkFromNodeAtEdge(int lid, int nid, int edge)
 template<class Tnode,class Tlink>
 Node<Tnode,Tlink>* Graph<Tnode,Tlink>::getNodeById(int nid)
 {
-  OUTPUT_MSG(LOW,"Requested Node ID : "<<nid);
   for(typename list<Node<Tnode,Tlink>*>::iterator node_iterator = nodes_.begin(); node_iterator != nodes_.end(); ++node_iterator)
   {
-    OUTPUT_MSG(LOW,"Checking Node ID : "<<((Node<Tnode,Tlink>*)&(*node_iterator))->getId());
-    if(((Node<Tnode,Tlink>*)&(*node_iterator))->getId() == nid)
+    if((*node_iterator)->getId() == nid)
     {
-      OUTPUT_MSG(LOW,"Found Node ID : "<<((Node<Tnode,Tlink>*)&(*node_iterator))->getId());
-      return ((Node<Tnode,Tlink>*)&(*node_iterator));
+      return (*node_iterator);
     }
   }
   return NULL;
@@ -189,29 +185,22 @@ Node<Tnode,Tlink>* Graph<Tnode,Tlink>::getNodeById(int nid)
 template<class Tnode,class Tlink>
 Link<Tlink,Tnode>* Graph<Tnode,Tlink>::getLinkById(int lid)
 {
-  OUTPUT_MSG(LOW,"Checking Link ID : "<<((Link<Tlink,Tnode>*)&(*links_.begin()))->getId()<<" : Node : "<<((Link<Tlink,Tnode>*)&(*links_.begin()))->getNodeAtEdge(0));
-  OUTPUT_MSG(LOW,"Requested Link ID : "<<lid);
   for(typename list<Link<Tlink,Tnode>*>::iterator link_iterator = links_.begin(); link_iterator != links_.end(); ++link_iterator)
   {
-    OUTPUT_MSG(LOW,"Checking Link ID : "<<((Link<Tlink,Tnode>*)&(*link_iterator))->getId());
-    if(((Link<Tlink,Tnode>*)&(*link_iterator))->getId() == lid)
+    if((*link_iterator)->getId() == lid)
     {
-      OUTPUT_MSG(LOW,"Found Link ID : "<<((Link<Tlink,Tnode>*)&(*link_iterator))->getId()<<" : Node at Edge 0 : "<<((Link<Tlink,Tnode>*)&(*link_iterator))->getNodeAtEdge(0));
-      return ((Link<Tlink,Tnode>*)&(*link_iterator));
+      return (*link_iterator);
     }
   }
   return NULL;
 }
 
 template<class Tnode,class Tlink>
-int Graph<Tnode,Tlink>::addLinkToGraph(Link<Tlink,Tnode>** link)
+int Graph<Tnode,Tlink>::addLinkToGraph(Link<Tlink,Tnode>* link)
 {
   if(link != NULL)
   {
-    OUTPUT_MSG(LOW,"Added Link : "<<(*link)->getId()<<" to Graph : "<<graph_id_);
-    links_.push_front((Link<Tlink,Tnode>*)(*link));
-    OUTPUT_MSG(LOW,"Checking Link ID : "<<((Link<Tlink,Tnode>*)&(**links_.begin()))->getId()<<" : Node : "<<(*link)->getNodeAtEdge(0));
-    OUTPUT_MSG(LOW,"Checking Link ID : "<<((Link<Tlink,Tnode>*)&(*links_.begin()))->getId()<<" : Node : "<<((Link<Tlink,Tnode>*)&(*links_.begin()))->getNodeAtEdge(0));
+    links_.push_front((link));
     return 0;
   }
   else
@@ -227,8 +216,8 @@ int Graph<Tnode,Tlink>::addNodeToGraph(Node<Tnode,Tlink>* node)
 {
   if(node != NULL)
   {
-    OUTPUT_MSG(LOW,"Added Node : "<<node->getId()<<" to Graph : "<<graph_id_);
     nodes_.push_front(node);
+    Node<Tnode,Tlink> *temp = nodes_.front();
     return 0;
   }
   else

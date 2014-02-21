@@ -24,21 +24,16 @@ int main()
   for(int i=0;i<num_links;i++)
   {
     link[i] = new Link<int,int>(1);
-    graph.addLinkToGraph(&link[i]);
-    OUTPUT_MSG(LOW,"Node 0 at link id : "<<link[0]->getId()<<" is : "<<link[0]->getNodeAtEdge(0));
+    graph.addLinkToGraph(link[i]);
   }
 
   int k = 0;
   /** \code{.cpp} Code block to generate the initial graph */
-  for(int i = 0;i<2;i++)
+  for(int i = 0;i<num_nodes;i++)
   {
-    for(int j = i+1;j<2;j++)
+    for(int j = i+1;j<num_nodes;j++)
     {
-      OUTPUT_MSG(LOW,"Node 0 at link id : "<<link[0]->getId()<<" is : "<<link[0]->getNodeAtEdge(0));
-      OUTPUT_MSG(LOW,"Attaching Link : "<<link[k]->getId()<<" to Node : "<<node[i]->getId()<<" and Node : "<<node[j]->getId());
-      OUTPUT_MSG(LOW,"Node 0 at link id : "<<link[0]->getId()<<" is : "<<link[0]->getNodeAtEdge(0));
       graph.attachLinkToNodeAtEdge(link[k]->getId(),node[i]->getId(), 0);
-      OUTPUT_MSG(LOW,"Node 0 at link id : "<<link[0]->getId()<<" is : "<<link[0]->getNodeAtEdge(0));
       graph.attachLinkToNodeAtEdge(link[k]->getId(),node[j]->getId(), 1);
       k++;
     }

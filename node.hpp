@@ -204,7 +204,6 @@ Link<Tlink,Tnode>::Link(Tlink weight)
   total_links++;
   node_[0] = NULL;
   node_[1] = NULL;
-  OUTPUT_MSG(LOW,"Set nodes to Null for Link ID : "<<link_id_);
 }
 
 template <class Tlink,class Tnode>
@@ -223,7 +222,6 @@ Node<Tnode,Tlink>* Link<Tlink,Tnode>::getNodeAtEdge(int edge)
   }
   else
   {
-    OUTPUT_MSG(LOW, "Link ID : "<<link_id_<<" going to return Node at Edge : "<<edge<<" as : "<<node_[edge]);
     if(NULL != node_[edge])
     {
       return node_[edge];
