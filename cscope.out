@@ -1,2624 +1,4 @@
-cscope 15 $HOME/work/graph-lib/graph-lib               0000025985
-	@/home/anoop/work/graph-lib/graph-lib/common.hpp
-
-2 #i‚de‡
-__COMMON_HPP_
-
-
-3 
-	#__COMMON_HPP_
-
-
-	)
-
-5 
-usög
- 
-«me•a˚
- 
-	g°d
-;
-
-6 ˛as†
-	cNode_ba£
-
-
-8 
-	mpublic
-:
-
-12 ˛as†
-	cLök_ba£
-
-
-14 
-	mpublic
-:
-
-16 
-	eboﬁón
- {
-	mFALSE
-, 
-	mTRUE
-};
-
-	@/home/anoop/work/graph-lib/graph-lib/errHandler.hpp
-
-2 #i‚de‡
-_ERRHANDLER_HPP_
-
-
-3 
-	#_ERRHANDLER_HPP_
-
-
-	)
-
-5 
-	#PRINT_TAG
- 
-__FILE__
-<<"\t"<<
-__LINE__
-<<"\t"<<
-__DATE__
-<<"\t"<<
-__TIME__
-<<"\t"
-
-	)
-
-6 
-	#OUTPUT_MSG
-(
-TAG
-, 
-MSG
-Ë
-cout
-<<
-PRINT_TAG
-<< #TAG" : " << MSG << 
-ídl
-;
-
-	)
-
-	@/home/anoop/work/graph-lib/graph-lib/graph.cpp
-
-2 
-	~<io°ªam
->
-
-4 
-usög
- 
-«me•a˚
- 
-	g°d
-;
-
-	@/home/anoop/work/graph-lib/graph-lib/graph.hpp
-
-2 #i‚de‡
-__GRAPH_HPP_
-
-
-3 
-	#__GRAPH_HPP_
-
-
-	)
-
-4 
-	~"comm⁄.hµ
-"
-
-5 
-	~"node.hµ
-"
-
-6 
-	~"lök.hµ
-"
-
-8 
-usög
- 
-«me•a˚
- 
-	g°d
-;
-
-10 
-	gãm∂©e
-<
-˛ass
- 
-	gTnode
-, cœs†
-	gTlök
->
-
-11 ˛as†
-	cGøph
-
-
-13 
-	m¥iv©e
-:
-
-14 
-li°
-<
-Node
-<
-Tnode
-,
-	mTlök
->*> 
-	mnodes_
-;
-
-15 
-	mli°
-<
-	mLök
-<
-	mTlök
-,
-	mTnode
->*> 
-	mlöks_
-;
-
-16 
-	mgøph_id_
-;
-
-17 
-	mtŸÆ_gøphs
-;
-
-18 
-	mtŸÆ_gøph_ids
-;
-
-19 
-	mpublic
-:
-
-20 
-Gøph
-();
-
-21 
-Gøph
-(
-li°
-<
-Node
-<
-Tnode
-,
-Tlök
->*>,Üi°<
-Lök
-<Tlink,Tnode>*>);
-
-22 
-di•œyGøph
-();
-
-23 
-¸óãLök
-();
-
-24 
-¸óãNode
-();
-
-25 
-de°royLök
-(
-lid
-);
-
-26 
-de°royNode
-(
-nid
-);
-
-27 
-	mNode
-<
-	mTnode
-,
-	mTlök
->* 
-gëNodeById
-(
-nid
-);
-
-28 
-	mLök
-<
-	mTlök
-,
-	mTnode
->* 
-gëLökById
-(
-lid
-);
-
-29 
-addLökToGøph
-(
-Lök
-<
-Tlök
-,
-Tnode
-> *
-lök
-);
-
-30 
-addNodeToGøph
-(
-Node
-<
-Tnode
-,
-Tlök
-> *
-node
-);
-
-31 
-©èchLökToNodeAtEdge
-(
-lid
-,
-nid
-, 
-edge
-);
-
-32 
-dëachLökFromNodeAtEdge
-(
-lid
-,
-nid
-, 
-edge
-);
-
-35 
-	gãm∂©e
-<
-˛ass
- 
-	gTnode
-,˛as†
-	gTlök
->
-
-36 
-	gGøph
-<
-	gTnode
-,
-	gTlök
->::
-tŸÆ_gøphs
- = 0;
-
-38 
-	gãm∂©e
-<
-˛ass
- 
-	gTnode
-,˛as†
-	gTlök
->
-
-39 
-	gGøph
-<
-	gTnode
-,
-	gTlök
->::
-tŸÆ_gøph_ids
- = 0;
-
-41 
-	gãm∂©e
-<
-˛ass
- 
-	gTnode
-,˛as†
-	gTlök
->
-
-42 
-	gGøph
-<
-	gTnode
-,
-	gTlök
->::
-	$Gøph
-()
-
-44 
-gøph_id_
- = 
-tŸÆ_gøph_ids
-;
-
-45 
-tŸÆ_gøphs
-++;
-
-46 
-tŸÆ_gøph_ids
-++;
-
-48 
-	}
-}
-
-50 
-	gãm∂©e
-<
-˛ass
- 
-	gTnode
-,˛as†
-	gTlök
->
-
-51 
-	gGøph
-<
-	gTnode
-,
-	gTlök
->::
-	$di•œyGøph
-()
-
-53 
-boﬁón
-* 
-visôed
- = 
-√w
- boﬁón[
-nodes_
-.
-	`size
-()];
-
-54 
-tŸÆ_visôed
- = 0;
-
-55 
-li°
-<
-Node
-<
-Tnode
-,
-Tlök
->*> 
-t_nodes
-;
-
-56 
-Node
-<
-Tnode
-,
-Tlök
->* 
-t_node
-;
-
-57 
-Node
-<
-Tnode
-,
-Tlök
->* 
-l_node
-[2];
-
-58 
-t_nodes
-.
-	`push_back
-((
-nodes_
-.
-	`‰⁄t
-()));
-
-60 
-tŸÆ_visôed
- < 
-Node
-<
-Tnode
-,
-Tlök
->::
-tŸÆ_nodes
-)
-
-62 
-Node
-<
-Tnode
-,
-Tlök
->* 
-t_node
- = 
-t_nodes
-.
-	`‰⁄t
-();
-
-63 
-t_nodes
-.
-	`p›_‰⁄t
-();
-
-64 if(
-t_node
- =
-NULL
-)
-
-68 
-	`OUTPUT_MSG
-(
-INFO
-, "Nodê: "<<
-t_node
-->
-	`gëId
-());
-
-69 
-visôed
-[
-t_node
-->
-	`gëId
-()] = 
-TRUE
-;
-
-70 
-tŸÆ_visôed
-++;
-
-71 
-ty≥«me
- 
-li°
-<
-Lök
-<
-Tlök
-,
-Tnode
->*>::
-ôî©‹
- 
-lök_ôî©‹
- = 
-t_node
-->
-löks_
-.
-	`begö
-();lök_ôî©‹ !t_node->löks_.
-	`íd
-(); ++link_iterator)
-
-73 
-	`OUTPUT_MSG
-(
-INFO
-, "\tLök : "<<((
-Lök
-<
-Tlök
-,
-Tnode
->*)&(*
-lök_ôî©‹
-))->
-	`gëId
-());
-
-74 
-l_node
-[0] = ((
-Lök
-<
-Tlök
-,
-Tnode
->*)&(*
-lök_ôî©‹
-))->
-	`gëNodeAtEdge
-(0);
-
-75 
-l_node
-[1] = ((
-Lök
-<
-Tlök
-,
-Tnode
->*)&(*
-lök_ôî©‹
-))->
-	`gëNodeAtEdge
-(1);
-
-77 if(
-l_node
-[0] !
-NULL
-)
-
-79 if(
-visôed
-[
-l_node
-[0]->
-	`gëId
-()] !
-TRUE
-)
-
-81 
-t_nodes
-.
-	`push_back
-(
-l_node
-[0]);
-
-85 if(
-l_node
-[1] !
-NULL
-)
-
-87 if(
-visôed
-[
-l_node
-[1]->
-	`gëId
-()] !
-TRUE
-)
-
-89 
-t_nodes
-.
-	`push_back
-(
-l_node
-[1]);
-
-94 
-	}
-}
-
-96 
-	gãm∂©e
-<
-˛ass
- 
-	gTnode
-,˛as†
-	gTlök
->
-
-97 
-	gGøph
-<
-	gTnode
-,
-	gTlök
->::
-	$©èchLökToNodeAtEdge
-(
-lid
-, 
-nid
-, 
-edge
-)
-
-99 
-Node
-<
-Tnode
-,
-Tlök
->* 
-node
- = 
-	`gëNodeById
-(
-nid
-);
-
-100 
-Lök
-<
-Tlök
-,
-Tnode
->* 
-lök
- = 
-	`gëLökById
-(
-lid
-);
-
-102 
-	`OUTPUT_MSG
-(
-LOW
-,"Nodê0áàlök id : "<<
-lök
-->
-	`gëId
-()<<" i†: "<<lök->
-	`gëNodeAtEdge
-(0));
-
-103 if(
-NULL
- =
-node
-)
-
-105 
-	`OUTPUT_MSG
-(
-ERR
-, "C™'àföd NodêID : "<<
-nid
-<<" i¿Gøph : "<<
-gøph_id_
-);
-
-108 if(
-NULL
- =
-lök
-)
-
-110 
-	`OUTPUT_MSG
-(
-ERR
-, "C™'àföd Lök ID : "<<
-lid
-<<" i¿Gøph : "<<
-gøph_id_
-);
-
-114 if((0 !
-edge
-) && (1 !=Édge))
-
-116 
-	`OUTPUT_MSG
-(
-ERR
-, "Edgê: "<<
-edge
-<<" is out of bounds");
-
-120 if(
-NULL
- !
-lök
-->
-	`gëNodeAtEdge
-(
-edge
-))
-
-122 
-	`OUTPUT_MSG
-(
-ERR
-, "Lök ID : "<<
-lid
-<<"áÃódy ha†™Ÿhî Nodê: "<<(
-lök
-->
-	`gëNodeAtEdge
-(
-edge
-))->
-	`gëId
-()<<"át Edge : "<<edge);
-
-127 
-	`OUTPUT_MSG
-(
-INFO
-, "GoögÅÿ©èch Lök : "<<
-lök
-->
-	`gëId
-()<<"ÅÿNodê: "<<
-node
-->gëId()<<"áàEdgê: "<<
-edge
-);
-
-128 
-lök
-->
-node_
-[
-edge
-] = 
-node
-;
-
-129 
-node
-->
-löks_
-.
-	`push_back
-(
-lök
-);
-
-130 
-	`OUTPUT_MSG
-(
-INFO
-, "Aâached Lök : "<<
-lök
-->
-	`gëId
-()<<"ÅÿNodê: "<<
-node
-->gëId()<<"áàEdgê: "<<
-edge
-);
-
-133 
-	}
-}
-
-135 
-	gãm∂©e
-<
-˛ass
- 
-	gTnode
-,˛as†
-	gTlök
->
-
-136 
-	gGøph
-<
-	gTnode
-,
-	gTlök
->::
-	$dëachLökFromNodeAtEdge
-(
-lid
-, 
-nid
-, 
-edge
-)
-
-139 
-Node
-<
-Tnode
-,
-Tlök
->* 
-node
- = 
-	`gëNodeById
-(
-nid
-);
-
-140 
-Lök
-<
-Tlök
-,
-Tnode
->* 
-lök
- = 
-	`gëLökById
-(
-lid
-);
-
-141 if(
-NULL
- =
-node
-)
-
-143 
-	`OUTPUT_MSG
-(
-ERR
-, "C™'àföd NodêID : "<<
-nid
-<<" i¿Gøph : "<<
-gøph_id_
-);
-
-146 if(
-NULL
- =
-lök
-)
-
-148 
-	`OUTPUT_MSG
-(
-ERR
-, "C™'àföd Lök ID : "<<
-lid
-<<" i¿Gøph : "<<
-gøph_id_
-);
-
-152 if((0 !
-edge
-) && (1 !=Édge))
-
-154 
-	`OUTPUT_MSG
-(
-ERR
-, "Edgê: "<<
-edge
-<<" is out of bounds");
-
-157 if(
-lök
-->
-node_
-[
-edge
-] !
-node
-)
-
-159 
-	`OUTPUT_MSG
-(
-ERR
-,"C™'àföd NodêID "<<
-nid
-<<"áàEdgê: "<<
-edge
-<<" o‡Lök ID : "<<
-lid
-);
-
-164 
-lök
-->
-	`dëachNodeByEdge
-(
-edge
-);
-
-165 
-node
-->
-	`ªmoveLök
-(
-lök
-);
-
-169 
-	}
-}
-
-172 
-	gãm∂©e
-<
-˛ass
- 
-	gTnode
-,˛as†
-	gTlök
->
-
-173 
-	gNode
-<
-	gTnode
-,
-	gTlök
->* 
-	gGøph
-<Tnode,Tlök>::
-	$gëNodeById
-(
-nid
-)
-
-175 
-	`OUTPUT_MSG
-(
-LOW
-,"Reque°ed NodêID : "<<
-nid
-);
-
-176 
-ty≥«me
- 
-li°
-<
-Node
-<
-Tnode
-,
-Tlök
->*>::
-ôî©‹
- 
-node_ôî©‹
- = 
-nodes_
-.
-	`begö
-();Çode_ôî©‹ !nodes_.
-	`íd
-(); ++node_iterator)
-
-178 
-	`OUTPUT_MSG
-(
-LOW
-,"Checkög NodêID : "<<((
-Node
-<
-Tnode
-,
-Tlök
->*)&(*
-node_ôî©‹
-))->
-	`gëId
-());
-
-179 if(((
-Node
-<
-Tnode
-,
-Tlök
->*)&(*
-node_ôî©‹
-))->
-	`gëId
-(Ë=
-nid
-)
-
-181 
-	`OUTPUT_MSG
-(
-LOW
-,"Found NodêID : "<<((
-Node
-<
-Tnode
-,
-Tlök
->*)&(*
-node_ôî©‹
-))->
-	`gëId
-());
-
-182  ((
-Node
-<
-Tnode
-,
-Tlök
->*)&(*
-node_ôî©‹
-));
-
-185  
-NULL
-;
-
-186 
-	}
-}
-
-189 
-	gãm∂©e
-<
-˛ass
- 
-	gTnode
-,˛as†
-	gTlök
->
-
-190 
-	gLök
-<
-	gTlök
-,
-	gTnode
->* 
-	gGøph
-<Tnode,Tlök>::
-	$gëLökById
-(
-lid
-)
-
-192 
-	`OUTPUT_MSG
-(
-LOW
-,"Reque°ed Lök ID : "<<
-lid
-);
-
-193 
-ty≥«me
- 
-li°
-<
-Lök
-<
-Tlök
-,
-Tnode
->*>::
-ôî©‹
- 
-lök_ôî©‹
- = 
-löks_
-.
-	`begö
-();Üök_ôî©‹ !löks_.
-	`íd
-(); ++link_iterator)
-
-195 
-	`OUTPUT_MSG
-(
-LOW
-,"Checkög Lök ID : "<<((
-Lök
-<
-Tlök
-,
-Tnode
->*)&(*
-lök_ôî©‹
-))->
-	`gëId
-());
-
-196 if(((
-Lök
-<
-Tlök
-,
-Tnode
->*)&(*
-lök_ôî©‹
-))->
-	`gëId
-(Ë=
-lid
-)
-
-198 
-	`OUTPUT_MSG
-(
-LOW
-,"Found Lök ID : "<<((
-Lök
-<
-Tlök
-,
-Tnode
->*)&(*
-lök_ôî©‹
-))->
-	`gëId
-()<<" : Nodê© Edgê0 : "<<((Lök<Tlök,Tnode>*)&(*lök_ôî©‹))->
-	`gëNodeAtEdge
-(0));
-
-199  ((
-Lök
-<
-Tlök
-,
-Tnode
->*)&(*
-lök_ôî©‹
-));
-
-202  
-NULL
-;
-
-203 
-	}
-}
-
-205 
-	gãm∂©e
-<
-˛ass
- 
-	gTnode
-,˛as†
-	gTlök
->
-
-206 
-	gGøph
-<
-	gTnode
-,
-	gTlök
->::
-addLökToGøph
-(
-Lök
-<
-Tlök
-,
-Tnode
->* 
-lök
-)
-
-208 if(
-	glök
- !
-NULL
-)
-
-210 
-OUTPUT_MSG
-(
-LOW
-,"Added Lök : "<<
-lök
-->
-gëId
-()<<"ÅÿGøph : "<<
-gøph_id_
-);
-
-211 
-	glöks_
-.
-push_‰⁄t
-(
-lök
-);
-
-216 
-OUTPUT_MSG
-(
-ERR
-,"C™'àadd NULLÜökÅÿGøph ID : "<<
-gøph_id_
-);
-
-222 
-	gãm∂©e
-<
-˛ass
- 
-	gTnode
-,˛as†
-	gTlök
->
-
-223 
-	gGøph
-<
-	gTnode
-,
-	gTlök
->::
-addNodeToGøph
-(
-Node
-<
-Tnode
-,
-Tlök
->* 
-node
-)
-
-225 if(
-	gnode
- !
-NULL
-)
-
-227 
-OUTPUT_MSG
-(
-LOW
-,"Added Nodê: "<<
-node
-->
-gëId
-()<<"ÅÿGøph : "<<
-gøph_id_
-);
-
-228 
-	gnodes_
-.
-push_‰⁄t
-(
-node
-);
-
-233 
-OUTPUT_MSG
-(
-ERR
-,"C™'àadd NULLÇodêtÿGøph ID : "<<
-gøph_id_
-);
-
-	@/home/anoop/work/graph-lib/graph-lib/link.cpp
-
-2 
-	~<io°ªam
->
-
-4 
-usög
- 
-«me•a˚
- 
-	g°d
-;
-
-	@/home/anoop/work/graph-lib/graph-lib/link.hpp
-
-2 #i‚de‡
-__LINK_HPP_
-
-
-3 
-	#__LINK_HPP_
-
-
-	)
-
-5 
-	~"îrH™dÀr.hµ
-"
-
-6 
-	~"comm⁄.hµ
-"
-
-7 
-usög
- 
-«me•a˚
- 
-	g°d
-;
-
-	@/home/anoop/work/graph-lib/graph-lib/main.cpp
-
-2 
-	~<io°ªam
->
-
-3 
-	~"gøph.hµ
-"
-
-4 
-	~"îrH™dÀr.hµ
-"
-
-6 
-usög
- 
-«me•a˚
- 
-	g°d
-;
-
-10 
-	$maö
-()
-
-12 
-	`OUTPUT_MSG
-(
-INFO
-,"Starting Program");
-
-14 
-Node
-<,>* 
-node
-[5];
-
-15 
-Lök
-<,>* 
-lök
-[10];
-
-16 
-Gøph
-<,> 
-gøph
-;
-
-17 
-i
- = 0;i<2;i++)
-
-19 
-node
-[
-i
-] = 
-√w
- 
-Node
-<,>(1);
-
-20 
-gøph
-.
-	`addNodeToGøph
-(
-node
-[
-i
-]);
-
-22 
-i
-=0;i<4;i++)
-
-24 
-lök
-[
-i
-] = 
-√w
- 
-Lök
-<,>(1);
-
-25 
-gøph
-.
-	`addLökToGøph
-(
-lök
-[
-i
-]);
-
-26 
-	`OUTPUT_MSG
-(
-LOW
-,"Nodê0áàlök id : "<<
-lök
-[0]->
-	`gëId
-()<<" i†: "<<lök[0]->
-	`gëNodeAtEdge
-(0));
-
-29 
-k
- = 0;
-
-31 
-i
- = 0;i<2;i++)
-
-33 
-j
- = 
-i
-+1;j<2;j++)
-
-35 
-	`OUTPUT_MSG
-(
-LOW
-,"Nodê0áàlök id : "<<
-lök
-[0]->
-	`gëId
-()<<" i†: "<<lök[0]->
-	`gëNodeAtEdge
-(0));
-
-36 
-	`OUTPUT_MSG
-(
-LOW
-,"Aâachög Lök : "<<
-lök
-[
-k
-]->
-	`gëId
-()<<"ÅÿNodê: "<<
-node
-[
-i
-]->gëId()<<"ánd Nodê: "<<node[
-j
-]->getId());
-
-37 
-gøph
-.
-	`©èchLökToNodeAtEdge
-(
-lök
-[
-k
-]->
-	`gëId
-(),
-node
-[
-i
-]->getId(), 0);
-
-38 
-gøph
-.
-	`©èchLökToNodeAtEdge
-(
-lök
-[
-k
-]->
-	`gëId
-(),
-node
-[
-j
-]->getId(), 1);
-
-39 
-k
-++;
-
-45 
-gøph
-.
-	`di•œyGøph
-();
-
-46 
-	`OUTPUT_MSG
-(
-INFO
-,"I just created 2ÇodesándáÜink");
-
-48 
-	}
-}
-
-	@/home/anoop/work/graph-lib/graph-lib/node.cpp
-
-2 
-	~<io°ªam
->
-
-4 
-usög
- 
-«me•a˚
- 
-	g°d
-;
-
-	@/home/anoop/work/graph-lib/graph-lib/node.hpp
-
-2 #i‚de‡
-__NODE_HPP_
-
-
-3 
-	#__NODE_HPP_
-
-
-	)
-
-5 
-	~<li°
->
-
-7 
-	~"îrH™dÀr.hµ
-"
-
-8 
-	~"comm⁄.hµ
-"
-
-9 
-usög
- 
-«me•a˚
- 
-	g°d
-;
-
-10 
-	gãm∂©e
- <
-˛ass
- 
-	gTlök
-,˛as†
-	gTnode
->
-
-11 
-˛ass
- 
-	gLök
-;
-
-13 
-	gãm∂©e
- <
-˛ass
- 
-	gTnode
-,˛as†
-	gTlök
->
-
-14 
-˛ass
- 
-	gGøph
-;
-
-24 
-	gãm∂©e
- <
-˛ass
- 
-	gTnode
-,˛as†
-	gTnodñök
->
-
-25 ˛as†
-	cNode
- : 
-public
- 
-Node_ba£
-
-
-27 
-¥iv©e
-:
-
-29 
-li°
-<
-Lök
-<
-Tnodñök
-,
-	mTnode
->*> 
-	mlöks_
-;
-
-31 
-Tnode
- 
-	mvÆue_
-;
-
-33 
-	mnode_id_
-;
-
-35 
-	mtŸÆ_nodes
-;
-
-37 
-	mtŸÆ_node_ids
-;
-
-38 
-	mpublic
-:
-
-40 
-Node
-();
-
-42 
-Node
-(
-Tnode
- 
-vÆue
- );
-
-44 
-gëDegªe
-();
-
-46 
-Tnode
- 
-gëVÆue
-();
-
-48 
-gëId
-();
-
-50 
-£tVÆue
-(
-Tnode
- 
-vÆue
-);
-
-52 
-addLökEdge
-(
-Lök
-<
-Tnodñök
-,
-Tnode
->* 
-lök
-,
-edge
-);
-
-54 
-boﬁón
- 
-lökAâachedToNode
-(
-Lök
-<
-Tnodñök
-,
-Tnode
->* 
-lök
-);
-
-56 
-ªmoveLökEdge
-(
-Lök
-<
-Tnodñök
-,
-Tnode
->* 
-lök
-,
-edge
-);
-
-58 
-ªmoveLök
-(
-Lök
-<
-Tnodñök
-,
-Tnode
->* 
-lök
-);
-
-60 
-‰õnd
- 
-˛ass
- 
-	mGøph
-<
-	mTnode
-,
-	mTnodñök
->;
-
-71 
-	gãm∂©e
-<
-˛ass
- 
-	gTlök
-,˛as†
-	gTnode
->
-
-72 ˛as†
-	cLök
- : 
-public
- 
-Lök_ba£
-
-
-74 
-¥iv©e
-:
-
-76 
-Tlök
- 
-weight_
-;
-
-78 
-	mNode
-<
-	mTnode
-,
-	mTlök
->* 
-	mnode_
-[2];
-
-80 
-	mlök_id_
-;
-
-82 
-	mtŸÆ_löks
-;
-
-84 
-	mtŸÆ_lök_ids
-;
-
-85 
-	mpublic
-:
-
-87 
-Lök
-();
-
-89 
-Lök
-(
-Tlök
- 
-weight
-);
-
-91 
-gëId
-();
-
-93 
-addNodeToEdge
-(
-Node
-<
-Tnode
-,
-Tlök
->* 
-node
-,
-edge
-);
-
-95 
-nodeIDAâachedToEdge
-(
-edge
-);
-
-97 
-dëachNodeByEdge
-(
-edge
-);
-
-99 
-	mNode
-<
-	mTnode
-,
-	mTlök
->* 
-gëNodeAtEdge
-(
-edge
-);
-
-101 
-‰õnd
- 
-˛ass
- 
-	mGøph
-<
-	mTnode
-,
-	mTlök
->;
-
-107 
-	gãm∂©e
-<
-˛ass
- 
-	gTnode
-,˛as†
-	gTlök
->
-
-108 
-	gNode
-<
-	gTnode
-,
-	gTlök
->::
-tŸÆ_nodes
- = 0;
-
-110 
-	gãm∂©e
-<
-˛ass
- 
-	gTnode
-,˛as†
-	gTlök
->
-
-111 
-	gNode
-<
-	gTnode
-,
-	gTlök
->::
-tŸÆ_node_ids
- = 0;
-
-113 
-	gãm∂©e
- <
-˛ass
- 
-	gTnode
-,˛as†
-	gTlök
->
-
-114 
-	gNode
-<
-	gTnode
-,
-	gTlök
->::
-	$Node
-()
-
-116 
-node_id_
- = 
-tŸÆ_node_ids
-;
-
-117 
-tŸÆ_nodes
-++;
-
-118 
-tŸÆ_node_ids
-++;
-
-119 
-	}
-}
-
-121 
-	gãm∂©e
- <
-˛ass
- 
-	gTnode
-,˛as†
-	gTlök
->
-
-122 
-	gNode
-<
-	gTnode
-,
-	gTlök
->::
-	$Node
-(
-Tnode
- 
-vÆue
-)
-
-124 
-vÆue_
- = 
-vÆue
-;
-
-125 
-node_id_
- = 
-tŸÆ_node_ids
-;
-
-126 
-tŸÆ_nodes
-++;
-
-127 
-tŸÆ_node_ids
-++;
-
-128 
-	}
-}
-
-130 
-	gãm∂©e
-<
-˛ass
- 
-	gTnode
-,˛as†
-	gTlök
->
-
-131 
-	gNode
-<
-	gTnode
-,
-	gTlök
->::
-	$gëDegªe
-()
-
-133  
-löks_
-.
-	`size
-();
-
-134 
-	}
-}
-
-136 
-	gãm∂©e
- <
-˛ass
- 
-	gTnode
-,˛as†
-	gTlök
->
-
-137 
-Tnode
- 
-	gNode
-<
-	gTnode
-,
-	gTlök
->::
-	$gëVÆue
-()
-
-139  
-vÆue_
-;
-
-140 
-	}
-}
-
-142 
-	gãm∂©e
-<
-˛ass
- 
-	gTnode
-,˛as†
-	gTlök
->
-
-143 
-	gNode
-<
-	gTnode
-,
-	gTlök
->::
-	$gëId
-()
-
-145  
-node_id_
-;
-
-146 
-	}
-}
-
-148 
-	gãm∂©e
-<
-˛ass
- 
-	gTnode
-,˛as†
-	gTlök
->
-
-149 
-	gNode
-<
-	gTnode
-,
-	gTlök
->::
-	$£tVÆue
-(
-Tnode
- 
-vÆue
-)
-
-151 
-vÆue_
- = 
-vÆue
-;
-
-152 
-	}
-}
-
-154 
-	gãm∂©e
-<
-˛ass
- 
-	gTnode
-,˛as†
-	gTlök
->
-
-155 
-boﬁón
- 
-	gNode
-<
-	gTnode
-,
-	gTlök
->::
-lökAâachedToNode
-(
-Lök
-<
-Tlök
-,
-Tnode
->* 
-lök
-)
-
-157 
-	gli°
-<
-	gLök_ba£
-*>::
-ôî©‹
- 
-lök_ôî©‹
- = 
-löks_
-.
-begö
-();
-	glök_ôî©‹
- !löks_.
-íd
-();++link_iterator)
-
-159 if((*(
-	gLök
-<
-	gTlök
-,
-	gTnode
->*)
-	glök_ôî©‹
-)->
-gëId
-(Ë=
-lök
-->getId())
-
-161  
-TRUE
-;
-
-164  
-	gFALSE
-;
-
-167 
-	gãm∂©e
-<
-˛ass
- 
-	gTnode
-,˛as†
-	gTlök
->
-
-168 
-	gNode
-<
-	gTnode
-,
-	gTlök
->::
-ªmoveLök
-(
-Lök
-<
-Tlök
-,
-Tnode
->* 
-lök
-)
-
-170 
-	gli°
-<
-	gLök_ba£
-*>::
-ôî©‹
- 
-lök_ôî©‹
- = 
-löks_
-.
-begö
-();
-	glök_ôî©‹
- !löks_.
-íd
-(); ++link_iterator)
-
-172 if((*(
-	gLök
-<
-	gTlök
-,
-	gTnode
->)
-	glök_ôî©‹
-)->
-gëId
-(Ë=
-lök
-->getId())
-
-174 
-löks_
-.
-îa£
-(
-lök_ôî©‹
-);
-
-186 
-	gãm∂©e
- <
-˛ass
- 
-	gTlök
-,˛as†
-	gTnode
->
-
-187 
-	gLök
-<
-	gTlök
-,
-	gTnode
->::
-tŸÆ_löks
- = 0;
-
-188 
-	gãm∂©e
- <
-˛ass
- 
-	gTlök
-,˛as†
-	gTnode
->
-
-189 
-	gLök
-<
-	gTlök
-,
-	gTnode
->::
-tŸÆ_lök_ids
- = 0;
-
-191 
-	gãm∂©e
- <
-˛ass
- 
-	gTlök
-,˛as†
-	gTnode
->
-
-192 
-	gLök
-<
-	gTlök
-,
-	gTnode
->::
-	$Lök
-()
-
-194 
-lök_id_
- = 
-tŸÆ_löks
-;
-
-195 
-tŸÆ_löks
-++;
-
-196 
-node_
-[0] = 
-NULL
-;
-
-197 
-node_
-[1] = 
-NULL
-;
-
-198 
-	}
-}
-
-199 
-	gãm∂©e
- <
-˛ass
- 
-	gTlök
-,˛as†
-	gTnode
->
-
-200 
-	gLök
-<
-	gTlök
-,
-	gTnode
->::
-	$Lök
-(
-Tlök
- 
-weight
-)
-
-202 
-weight_
- = 
-weight
-;
-
-203 
-lök_id_
- = 
-tŸÆ_löks
-;
-
-204 
-tŸÆ_löks
-++;
-
-205 
-node_
-[0] = 
-NULL
-;
-
-206 
-node_
-[1] = 
-NULL
-;
-
-207 
-	`OUTPUT_MSG
-(
-LOW
-,"SëÇode†tÿNuŒ f‹ Lök ID : "<<
-lök_id_
-);
-
-208 
-	}
-}
-
-210 
-	gãm∂©e
- <
-˛ass
- 
-	gTlök
-,˛as†
-	gTnode
->
-
-211 
-	gLök
-<
-	gTlök
-,
-	gTnode
->::
-	$gëId
-()
-
-213  
-lök_id_
-;
-
-214 
-	}
-}
-
-216 
-	gãm∂©e
- <
-˛ass
- 
-	gTlök
-,˛as†
-	gTnode
->
-
-217 
-	gNode
-<
-	gTnode
-,
-	gTlök
->* 
-	gLök
-<Tlök,Tnode>::
-	$gëNodeAtEdge
-(
-edge
-)
-
-219 if(
-edge
- != 0 &&Édge != 1)
-
-221 
-	`OUTPUT_MSG
-(
-ERR
-, "Lök ID : "<<
-lök_id_
-<<"ÅryögÅÿgëÇodê© unsuµ‹ãd Edgê: "<<
-edge
-);
-
-222  
-NULL
-;
-
-226 
-	`OUTPUT_MSG
-(
-LOW
-, "Lök ID : "<<
-lök_id_
-<<" goögÅÿªtu∫ Nodê© Edgê: "<<
-edge
-<<"á†: "<<
-node_
-[edge]);
-
-227 if(
-NULL
- !
-node_
-[
-edge
-])
-
-229  
-node_
-[
-edge
-];
-
-233  
-node_
-[
-edge
-];
-
-236 
-	}
-}
-
-238 
-	gãm∂©e
- <
-˛ass
- 
-	gTlök
-,˛as†
-	gTnode
->
-
-239 
-	gLök
-<
-	gTlök
-,
-	gTnode
->::
-	$dëachNodeByEdge
-(
-edge
-)
-
-241 if((0==
-edge
-) || (1==edge))
-
-243 
-node_
-[
-edge
-] = 
-NULL
-;
-
-247 
-	`OUTPUT_MSG
-(
-ERR
-, "Lök ID : "<<
-lök_id_
-<<"ÅryögÅÿdëachÇodê© unsuµ‹ãd Edgê: "<<
-edge
-);
-
-249 
-	}
-}
-
+cscope 15 $HOME/work/graph-lib/graph-lib               0000012127
 	@common.hpp
 
 2 #i‚de‡
@@ -2704,6 +84,20 @@ PRINT_TAG
 ;
 
 	)
+
+	@graph.cpp
+
+2 
+	~<io°ªam
+>
+
+4 
+usög
+ 
+«me•a˚
+ 
+	g°d
+;
 
 	@graph.hpp
 
@@ -2869,7 +263,7 @@ Lök
 Tlök
 ,
 Tnode
-> *
+> * 
 lök
 );
 
@@ -2881,7 +275,7 @@ Node
 Tnode
 ,
 Tlök
-> *
+> * 
 node
 );
 
@@ -3087,17 +481,17 @@ t_nodes
 	`‰⁄t
 ();
 
-63 
-t_nodes
-.
-	`p›_‰⁄t
-();
-
-64 if(
+63 if(
 t_node
  =
 NULL
 )
+
+67 
+t_nodes
+.
+	`p›_‰⁄t
+();
 
 68 
 	`OUTPUT_MSG
@@ -3151,43 +545,25 @@ löks_
 	`OUTPUT_MSG
 (
 INFO
-, "\tLök : "<<((
-Lök
-<
-Tlök
-,
-Tnode
->*)&(*
+, "\tLök : "<<(*
 lök_ôî©‹
-))->
+)->
 	`gëId
 ());
 
 74 
 l_node
-[0] = ((
-Lök
-<
-Tlök
-,
-Tnode
->*)&(*
+[0] = (*
 lök_ôî©‹
-))->
+)->
 	`gëNodeAtEdge
 (0);
 
 75 
 l_node
-[1] = ((
-Lök
-<
-Tlök
-,
-Tnode
->*)&(*
+[1] = (*
 lök_ôî©‹
-))->
+)->
 	`gëNodeAtEdge
 (1);
 
@@ -3297,25 +673,13 @@ lök
 lid
 );
 
-102 
-	`OUTPUT_MSG
-(
-LOW
-,"Nodê0áàlök id : "<<
-lök
-->
-	`gëId
-()<<" i†: "<<lök->
-	`gëNodeAtEdge
-(0));
-
-103 if(
+102 if(
 NULL
  =
 node
 )
 
-105 
+104 
 	`OUTPUT_MSG
 (
 ERR
@@ -3325,13 +689,13 @@ nid
 gøph_id_
 );
 
-108 if(
+107 if(
 NULL
  =
 lök
 )
 
-110 
+109 
 	`OUTPUT_MSG
 (
 ERR
@@ -3341,11 +705,11 @@ lid
 gøph_id_
 );
 
-114 if((0 !
+113 if((0 !
 edge
 ) && (1 !=Édge))
 
-116 
+115 
 	`OUTPUT_MSG
 (
 ERR
@@ -3353,7 +717,7 @@ ERR
 edge
 <<" is out of bounds");
 
-120 if(
+119 if(
 NULL
  !
 lök
@@ -3363,7 +727,7 @@ lök
 edge
 ))
 
-122 
+121 
 	`OUTPUT_MSG
 (
 ERR
@@ -3379,21 +743,7 @@ edge
 	`gëId
 ()<<"át Edge : "<<edge);
 
-127 
-	`OUTPUT_MSG
-(
-INFO
-, "GoögÅÿ©èch Lök : "<<
-lök
-->
-	`gëId
-()<<"ÅÿNodê: "<<
-node
-->gëId()<<"áàEdgê: "<<
-edge
-);
-
-128 
+126 
 lök
 ->
 node_
@@ -3403,7 +753,7 @@ edge
 node
 ;
 
-129 
+127 
 node
 ->
 löks_
@@ -3413,7 +763,7 @@ löks_
 lök
 );
 
-130 
+128 
 	`OUTPUT_MSG
 (
 INFO
@@ -3427,11 +777,11 @@ node
 edge
 );
 
-133 
+131 
 	}
 }
 
-135 
+133 
 	gãm∂©e
 <
 ˛ass
@@ -3441,7 +791,7 @@ edge
 	gTlök
 >
 
-136 
+134 
 	gGøph
 <
 	gTnode
@@ -3457,7 +807,7 @@ nid
 edge
 )
 
-139 
+137 
 Node
 <
 Tnode
@@ -3471,7 +821,7 @@ node
 nid
 );
 
-140 
+138 
 Lök
 <
 Tlök
@@ -3485,13 +835,13 @@ lök
 lid
 );
 
-141 if(
+139 if(
 NULL
  =
 node
 )
 
-143 
+141 
 	`OUTPUT_MSG
 (
 ERR
@@ -3501,13 +851,13 @@ nid
 gøph_id_
 );
 
-146 if(
+144 if(
 NULL
  =
 lök
 )
 
-148 
+146 
 	`OUTPUT_MSG
 (
 ERR
@@ -3517,11 +867,11 @@ lid
 gøph_id_
 );
 
-152 if((0 !
+150 if((0 !
 edge
 ) && (1 !=Édge))
 
-154 
+152 
 	`OUTPUT_MSG
 (
 ERR
@@ -3529,7 +879,7 @@ ERR
 edge
 <<" is out of bounds");
 
-157 if(
+155 if(
 lök
 ->
 node_
@@ -3539,7 +889,7 @@ edge
 node
 )
 
-159 
+157 
 	`OUTPUT_MSG
 (
 ERR
@@ -3551,7 +901,7 @@ edge
 lid
 );
 
-164 
+162 
 lök
 ->
 	`dëachNodeByEdge
@@ -3559,7 +909,7 @@ lök
 edge
 );
 
-165 
+163 
 node
 ->
 	`ªmoveLök
@@ -3567,11 +917,11 @@ node
 lök
 );
 
-169 
+167 
 	}
 }
 
-172 
+170 
 	gãm∂©e
 <
 ˛ass
@@ -3581,7 +931,7 @@ lök
 	gTlök
 >
 
-173 
+171 
 	gNode
 <
 	gTnode
@@ -3595,15 +945,7 @@ lök
 nid
 )
 
-175 
-	`OUTPUT_MSG
-(
-LOW
-,"Reque°ed NodêID : "<<
-nid
-);
-
-176 
+173 
 ty≥«me
  
 li°
@@ -3625,71 +967,27 @@ nodes_
 	`íd
 (); ++node_iterator)
 
-178 
-	`OUTPUT_MSG
-(
-LOW
-,"Checkög NodêID : "<<((
-Node
-<
-Tnode
-,
-Tlök
->*)&(*
+175 if((*
 node_ôî©‹
-))->
-	`gëId
-());
-
-179 if(((
-Node
-<
-Tnode
-,
-Tlök
->*)&(*
-node_ôî©‹
-))->
+)->
 	`gëId
 (Ë=
 nid
 )
 
-181 
-	`OUTPUT_MSG
-(
-LOW
-,"Found NodêID : "<<((
-Node
-<
-Tnode
-,
-Tlök
->*)&(*
+177  (*
 node_ôî©‹
-))->
-	`gëId
-());
+);
 
-182  ((
-Node
-<
-Tnode
-,
-Tlök
->*)&(*
-node_ôî©‹
-));
-
-185  
+180  
 NULL
 ;
 
-186 
+181 
 	}
 }
 
-189 
+184 
 	gãm∂©e
 <
 ˛ass
@@ -3699,7 +997,7 @@ NULL
 	gTlök
 >
 
-190 
+185 
 	gLök
 <
 	gTlök
@@ -3713,15 +1011,7 @@ NULL
 lid
 )
 
-192 
-	`OUTPUT_MSG
-(
-LOW
-,"Reque°ed Lök ID : "<<
-lid
-);
-
-193 
+187 
 ty≥«me
  
 li°
@@ -3743,73 +1033,27 @@ löks_
 	`íd
 (); ++link_iterator)
 
-195 
-	`OUTPUT_MSG
-(
-LOW
-,"Checkög Lök ID : "<<((
-Lök
-<
-Tlök
-,
-Tnode
->*)&(*
+189 if((*
 lök_ôî©‹
-))->
-	`gëId
-());
-
-196 if(((
-Lök
-<
-Tlök
-,
-Tnode
->*)&(*
-lök_ôî©‹
-))->
+)->
 	`gëId
 (Ë=
 lid
 )
 
-198 
-	`OUTPUT_MSG
-(
-LOW
-,"Found Lök ID : "<<((
-Lök
-<
-Tlök
-,
-Tnode
->*)&(*
+191  (*
 lök_ôî©‹
-))->
-	`gëId
-()<<" : Nodê© Edgê0 : "<<((Lök<Tlök,Tnode>*)&(*lök_ôî©‹))->
-	`gëNodeAtEdge
-(0));
+);
 
-199  ((
-Lök
-<
-Tlök
-,
-Tnode
->*)&(*
-lök_ôî©‹
-));
-
-202  
+194  
 NULL
 ;
 
-203 
+195 
 	}
 }
 
-205 
+197 
 	gãm∂©e
 <
 ˛ass
@@ -3819,7 +1063,7 @@ NULL
 	gTlök
 >
 
-206 
+198 
 	gGøph
 <
 	gTnode
@@ -3837,33 +1081,21 @@ Tnode
 lök
 )
 
-208 if(
+200 if(
 	glök
  !
 NULL
 )
 
-210 
-OUTPUT_MSG
-(
-LOW
-,"Added Lök : "<<
-lök
-->
-gëId
-()<<"ÅÿGøph : "<<
-gøph_id_
-);
-
-211 
-	glöks_
+202 
+löks_
 .
 push_‰⁄t
-(
+((
 lök
-);
+));
 
-216 
+207 
 OUTPUT_MSG
 (
 ERR
@@ -3871,7 +1103,7 @@ ERR
 gøph_id_
 );
 
-222 
+213 
 	gãm∂©e
 <
 ˛ass
@@ -3881,7 +1113,7 @@ gøph_id_
 	gTlök
 >
 
-223 
+214 
 	gGøph
 <
 	gTnode
@@ -3899,39 +1131,55 @@ Tlök
 node
 )
 
-225 if(
+216 if(
 	gnode
  !
 NULL
 )
 
-227 
-OUTPUT_MSG
-(
-LOW
-,"Added Nodê: "<<
-node
-->
-gëId
-()<<"ÅÿGøph : "<<
-gøph_id_
-);
-
-228 
-	gnodes_
+218 
+nodes_
 .
 push_‰⁄t
 (
 node
 );
 
-233 
+219 
+	gNode
+<
+	gTnode
+,
+	gTlök
+> *
+	gãmp
+ = 
+nodes_
+.
+‰⁄t
+();
+
+224 
 OUTPUT_MSG
 (
 ERR
 ,"C™'àadd NULLÇodêtÿGøph ID : "<<
 gøph_id_
 );
+
+	@link.cpp
+
+2 
+	~<io°ªam
+>
+
+4 
+usög
+ 
+«me•a˚
+ 
+	g°d
+;
 
 	@link.hpp
 
@@ -3954,6 +1202,234 @@ __LINK_HPP_
 "
 
 7 
+usög
+ 
+«me•a˚
+ 
+	g°d
+;
+
+	@main.cpp
+
+2 
+	~<io°ªam
+>
+
+3 
+	~"gøph.hµ
+"
+
+4 
+	~"îrH™dÀr.hµ
+"
+
+6 
+usög
+ 
+«me•a˚
+ 
+	g°d
+;
+
+10 
+	$maö
+()
+
+12 
+	`OUTPUT_MSG
+(
+INFO
+,"Starting Program");
+
+14 c⁄° 
+num_nodes
+ = 5;
+
+15 c⁄° 
+num_löks
+ = (
+num_nodes
+ * (num_nodes - 1))/2;
+
+16 
+Node
+<,>* 
+node
+[
+num_nodes
+];
+
+17 
+Lök
+<,>* 
+lök
+[
+num_löks
+];
+
+18 
+Gøph
+<,> 
+gøph
+;
+
+19 
+i
+ = 0;i<
+num_nodes
+;i++)
+
+21 
+node
+[
+i
+] = 
+√w
+ 
+Node
+<,>(1);
+
+22 
+gøph
+.
+	`addNodeToGøph
+(
+node
+[
+i
+]);
+
+24 
+i
+=0;i<
+num_löks
+;i++)
+
+26 
+lök
+[
+i
+] = 
+√w
+ 
+Lök
+<,>(1);
+
+27 
+gøph
+.
+	`addLökToGøph
+(
+lök
+[
+i
+]);
+
+30 
+k
+ = 0;
+
+32 
+i
+ = 0;i<
+num_nodes
+;i++)
+
+34 
+j
+ = 
+i
++1;j<
+num_nodes
+;j++)
+
+36 
+gøph
+.
+	`©èchLökToNodeAtEdge
+(
+lök
+[
+k
+]->
+	`gëId
+(),
+node
+[
+i
+]->getId(), 0);
+
+37 
+gøph
+.
+	`©èchLökToNodeAtEdge
+(
+lök
+[
+k
+]->
+	`gëId
+(),
+node
+[
+j
+]->getId(), 1);
+
+38 
+k
+++;
+
+44 
+gøph
+.
+	`di•œyGøph
+();
+
+45 
+	`OUTPUT_MSG
+(
+INFO
+,"I just created 2ÇodesándáÜink");
+
+46 
+i
+ = 0;i<
+num_nodes
+;i++)
+
+48 
+dñëe
+ 
+node
+[
+i
+];
+
+50 
+i
+ = 0;i<
+num_löks
+;i++)
+
+52 
+dñëe
+ 
+lök
+[
+i
+];
+
+55 
+	}
+}
+
+	@node.cpp
+
+2 
+	~<io°ªam
+>
+
+4 
 usög
  
 «me•a˚
@@ -4826,18 +2302,10 @@ NULL
 ;
 
 207 
-	`OUTPUT_MSG
-(
-LOW
-,"SëÇode†tÿNuŒ f‹ Lök ID : "<<
-lök_id_
-);
-
-208 
 	}
 }
 
-210 
+209 
 	gãm∂©e
  <
 ˛ass
@@ -4847,7 +2315,7 @@ lök_id_
 	gTnode
 >
 
-211 
+210 
 	gLök
 <
 	gTlök
@@ -4857,15 +2325,15 @@ lök_id_
 	$gëId
 ()
 
-213  
+212  
 lök_id_
 ;
 
-214 
+213 
 	}
 }
 
-216 
+215 
 	gãm∂©e
  <
 ˛ass
@@ -4875,7 +2343,7 @@ lök_id_
 	gTnode
 >
 
-217 
+216 
 	gNode
 <
 	gTnode
@@ -4889,11 +2357,11 @@ lök_id_
 edge
 )
 
-219 if(
+218 if(
 edge
  != 0 &&Édge != 1)
 
-221 
+220 
 	`OUTPUT_MSG
 (
 ERR
@@ -4903,23 +2371,11 @@ lök_id_
 edge
 );
 
-222  
+221  
 NULL
 ;
 
-226 
-	`OUTPUT_MSG
-(
-LOW
-, "Lök ID : "<<
-lök_id_
-<<" goögÅÿªtu∫ Nodê© Edgê: "<<
-edge
-<<"á†: "<<
-node_
-[edge]);
-
-227 if(
+225 if(
 NULL
  !
 node_
@@ -4927,23 +2383,23 @@ node_
 edge
 ])
 
-229  
+227  
 node_
 [
 edge
 ];
 
-233  
+231  
 node_
 [
 edge
 ];
 
-236 
+234 
 	}
 }
 
-238 
+236 
 	gãm∂©e
  <
 ˛ass
@@ -4953,7 +2409,7 @@ edge
 	gTnode
 >
 
-239 
+237 
 	gLök
 <
 	gTlök
@@ -4965,11 +2421,11 @@ edge
 edge
 )
 
-241 if((0==
+239 if((0==
 edge
 ) || (1==edge))
 
-243 
+241 
 node_
 [
 edge
@@ -4977,7 +2433,7 @@ edge
 NULL
 ;
 
-247 
+245 
 	`OUTPUT_MSG
 (
 ERR
@@ -4987,7 +2443,7 @@ lök_id_
 edge
 );
 
-249 
+247 
 	}
 }
 
@@ -4996,19 +2452,14 @@ edge
 .
 1
 /usr/include
-14
-478
-/home/anoop/work/graph-lib/graph-lib/common.hpp
-/home/anoop/work/graph-lib/graph-lib/errHandler.hpp
-/home/anoop/work/graph-lib/graph-lib/graph.cpp
-/home/anoop/work/graph-lib/graph-lib/graph.hpp
-/home/anoop/work/graph-lib/graph-lib/link.cpp
-/home/anoop/work/graph-lib/graph-lib/link.hpp
-/home/anoop/work/graph-lib/graph-lib/main.cpp
-/home/anoop/work/graph-lib/graph-lib/node.cpp
-/home/anoop/work/graph-lib/graph-lib/node.hpp
+9
+91
 common.hpp
 errHandler.hpp
+graph.cpp
 graph.hpp
+link.cpp
 link.hpp
+main.cpp
+node.cpp
 node.hpp

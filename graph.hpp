@@ -55,7 +55,7 @@ int Graph<Tnode,Tlink>::displayGraph()
   list<Node<Tnode,Tlink>*> t_nodes;
   Node<Tnode,Tlink>* t_node;
   Node<Tnode,Tlink>* l_node[2];
-  t_nodes.push_back((nodes_.front()));
+  t_nodes.push_back((nodes_.back()));
 
   while(total_visited < Node<Tnode,Tlink>::total_nodes)
   {
@@ -70,7 +70,7 @@ int Graph<Tnode,Tlink>::displayGraph()
     total_visited++;
     for(typename list<Link<Tlink,Tnode>*>::iterator link_iterator = t_node->links_.begin();link_iterator != t_node->links_.end(); ++link_iterator)
     {
-      OUTPUT_MSG(INFO, "\tLink : "<<(*link_iterator)->getId());
+      OUTPUT_MSG(INFO, "\t|| "<<((*link_iterator)->getNodeAtEdge(0))->getId()<<" ||----------<"<<(*link_iterator)->getId()<<">----------|| "<<((*link_iterator)->getNodeAtEdge(1))->getId()<<" ||");
       l_node[0] = (*link_iterator)->getNodeAtEdge(0);
       l_node[1] = (*link_iterator)->getNodeAtEdge(1);
 
@@ -123,7 +123,6 @@ int Graph<Tnode,Tlink>::attachLinkToNodeAtEdge(int lid, int nid, int edge)
   }
   else
   {
-    OUTPUT_MSG(INFO, "Going to attach Link : "<<link->getId()<<" to Node : "<<node->getId()<<" at Edge : "<<edge);
     link->node_[edge] = node;
     node->links_.push_back(link);
     OUTPUT_MSG(INFO, "Attached Link : "<<link->getId()<<" to Node : "<<node->getId()<<" at Edge : "<<edge);
