@@ -1,0 +1,5 @@
+g++ -c node.cpp
+g++ -c link.cpp
+g++ -c graph.cpp
+g++ -c main.cpp
+g++ main.o node.o link.o graph.o -o main

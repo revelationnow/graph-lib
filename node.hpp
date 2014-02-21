@@ -4,9 +4,15 @@
 
 #include <list>
 
-#include "graph.hpp"
-
+#include "errHandler.hpp"
+#include "common.hpp"
 using namespace std;
+template <class Tlink,class Tnode>
+class Link;
+
+template <class Tnode,class Tlink>
+class Graph;
+
 //! Node class
 /*!
   This class represents each of the nodes of the graph.
@@ -15,13 +21,14 @@ using namespace std;
   with the other node.
   Each node has an integer as its data
 */
-class Node
+template <class Tnode,class Tnodelink>
+class Node : public Node_base
 {
   private:
     //! The list of links that a particular node shares with the other nodes in the graph
-    list<Link*> links_;
+    list<Link<Tnodelink,Tnode>*> links_;
     //! The data that a paprticular node holds
-    int value_;
+    Tnode value_;
     //! The unique index of a particular node
     int node_id_;
     //! A static member that keeps track of the total number of active nodes
@@ -30,29 +37,214 @@ class Node
     static int total_node_ids;
   public:
     //! Node constructor which initializes the value to 0
-    Node(int value = 0);
+    Node();
+    //! Node constructor which initializes the value to 0
+    Node(Tnode value );
     //! Member function that returns the cardinality of the node
     int getDegree();
     //! Member function that returns the data in the node
-    int getValue();
+    Tnode getValue();
     //! Member function that returns the unique index of the node
     int getId();
     //! Member fuction that sets the value within the node
-    void setValue(int value);
+    void setValue(Tnode value);
     //! Member function that adds a particular edge of a link to the node
-    int addLinkEdge(Link* link,int edge);
+    int addLinkEdge(Link<Tnodelink,Tnode>* link,int edge);
     //! Member function that returns whether or not a link is attached to the node
-    boolean linkAttachedToNode(Link* link);
+    boolean linkAttachedToNode(Link<Tnodelink,Tnode>* link);
     //! Member function to remove a link from the node at a particular edge
-    int removeLinkEdge(Link* link,int edge);
+    int removeLinkEdge(Link<Tnodelink,Tnode>* link,int edge);
     //! Member function to remove a link from the node at any edge
-    int removeLink(Link* link);
-    //! Friend function to visualize the graph
-    friend int displayGraph(Node* start);
-    //! Friend function to add a link at a particular edge to the node
-    friend int addLinkEdgeToNode(Node *node, Link* link, int edge);
+    int removeLink(Link<Tnodelink,Tnode>* link);
     //! Fried class Graph
-    friend class Graph;
+    friend class Graph<Tnode,Tnodelink>;
 };
 
+//! Link Class
+/*!
+  The Link class represents the link between two nodes.
+  Each link has two edges, and the link itself has an
+  integral weight.
+  Two static integers are used to keep track of the number
+  of links created and the link indices in use
+*/
+template<class Tlink,class Tnode>
+class Link : public Link_base
+{
+  private:
+    //! Weight of the link, can be an integer. A higher weight implies a stronger link
+    Tlink weight_;
+    //! The two nodes connected to either edge of the link
+    Node<Tnode,Tlink>* node_[2];
+    //! The unique ID assigned to a particular link
+    int link_id_;
+    //! A static member used to keep track of the total number of available links
+    static int total_links;
+    //! A static member used to keep track of assigned indices
+    static int total_link_ids;
+  public:
+    //! Default Constructor
+    Link();
+    //! Constructor which initializes the weight to 1
+    Link(Tlink weight);
+    //! Member function which returns the unique index of the link
+    int getId();
+    //! Member function used to add a Node to one of the edges of the link
+    int addNodeToEdge(Node<Tnode,Tlink>* node,int edge);
+    //! Member function that returns the node ID of the node attached to the specified edge
+    int nodeIDAttachedToEdge(int edge);
+    //! Member function to detach the node attached to an edge of the link
+    void detachNodeByEdge(int edge);
+    //! Member function that returns the Node object at the given edge
+    Node<Tnode,Tlink>* getNodeAtEdge(int edge);
+    //! Fried class Graph to manipulate the link
+    friend class Graph<Tnode,Tlink>;
+};
+
+/*!
+  The Definitions for the Node class are below
+ */
+template<class Tnode,class Tlink>
+int Node<Tnode,Tlink>::total_nodes = 0;
+
+template<class Tnode,class Tlink>
+int Node<Tnode,Tlink>::total_node_ids = 0;
+
+template <class Tnode,class Tlink>
+Node<Tnode,Tlink>::Node()
+{
+  node_id_ = total_node_ids;
+  total_nodes++;
+  total_node_ids++;
+}
+
+template <class Tnode,class Tlink>
+Node<Tnode,Tlink>::Node(Tnode value)
+{
+  value_ = value;
+  node_id_ = total_node_ids;
+  total_nodes++;
+  total_node_ids++;
+}
+
+template<class Tnode,class Tlink>
+int Node<Tnode,Tlink>::getDegree()
+{
+  return links_.size();
+}
+
+template <class Tnode,class Tlink>
+Tnode Node<Tnode,Tlink>::getValue()
+{
+  return value_;
+}
+
+template<class Tnode,class Tlink>
+int Node<Tnode,Tlink>::getId()
+{
+  return node_id_;
+}
+
+template<class Tnode,class Tlink>
+void Node<Tnode,Tlink>::setValue(Tnode value)
+{
+  value_ = value;
+}
+
+template<class Tnode,class Tlink>
+boolean Node<Tnode,Tlink>::linkAttachedToNode(Link<Tlink,Tnode>* link)
+{
+  for(list<Link_base*>::iterator link_iterator = links_.begin();link_iterator != links_.end();++link_iterator)
+  {
+    if((*(Link<Tlink,Tnode>*)link_iterator)->getId() == link->getId())
+    {
+      return TRUE;
+    }
+  }
+  return FALSE;
+}
+
+template<class Tnode,class Tlink>
+int Node<Tnode,Tlink>::removeLink(Link<Tlink,Tnode>* link)
+{
+  for(list<Link_base*>::iterator link_iterator = links_.begin();link_iterator != links_.end(); ++link_iterator)
+  {
+    if((*(Link<Tlink,Tnode>)link_iterator)->getId() == link->getId())
+    {
+      links_.erase(link_iterator);
+      return 0;
+    }
+  }
+  return -1;
+}
+
+
+/*!
+  The Definitions for the Link class are below
+ */
+
+template <class Tlink,class Tnode>
+int Link<Tlink,Tnode>::total_links = 0;
+template <class Tlink,class Tnode>
+int Link<Tlink,Tnode>::total_link_ids = 0;
+
+template <class Tlink,class Tnode>
+Link<Tlink,Tnode>::Link()
+{
+  link_id_ = total_links;
+  total_links++;
+  node_[0] = NULL;
+  node_[1] = NULL;
+}
+template <class Tlink,class Tnode>
+Link<Tlink,Tnode>::Link(Tlink weight)
+{
+  weight_ = weight;
+  link_id_ = total_links;
+  total_links++;
+  node_[0] = NULL;
+  node_[1] = NULL;
+  OUTPUT_MSG(LOW,"Set nodes to Null for Link ID : "<<link_id_);
+}
+
+template <class Tlink,class Tnode>
+int Link<Tlink,Tnode>::getId()
+{
+  return link_id_;
+}
+
+template <class Tlink,class Tnode>
+Node<Tnode,Tlink>* Link<Tlink,Tnode>::getNodeAtEdge(int edge)
+{
+  if(edge != 0 && edge != 1)
+  {
+    OUTPUT_MSG(ERR, "Link ID : "<<link_id_<<" trying to get node at unsupported Edge : "<<edge);
+    return NULL;
+  }
+  else
+  {
+    OUTPUT_MSG(LOW, "Link ID : "<<link_id_<<" going to return Node at Edge : "<<edge<<" as : "<<node_[edge]);
+    if(NULL != node_[edge])
+    {
+      return node_[edge];
+    }
+    else
+    {
+      return node_[edge];
+    }
+  }
+}
+
+template <class Tlink,class Tnode>
+void Link<Tlink,Tnode>::detachNodeByEdge(int edge)
+{
+  if((0==edge) || (1==edge))
+  {
+    node_[edge] = NULL;
+  }
+  else
+  {
+    OUTPUT_MSG(ERR, "Link ID : "<<link_id_<<" trying to detach node at unsupported Edge : "<<edge);
+  }
+}
 #endif 
