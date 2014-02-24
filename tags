@@ -76,6 +76,8 @@ attachLinkToNodeAtEdge	graph.hpp	/^int Graph<Tnode,Tlink>::attachLinkToNodeAtEdg
 boolean	common.hpp	/^enum boolean {FALSE, TRUE};$/;"	g
 common.  -hpp File Reference	docs/latex/common_8hpp.tex	/^\\hypertarget{common_8hpp}{\\section{common.\\-hpp File Reference}$/;"	s
 convertToId	docs/html/search/search.js	/^function convertToId(search)$/;"	f
+createLink	graph.hpp	/^int Graph<Tnode, Tlink>::createLink(Tlink val)$/;"	f	class:Graph
+createNode	graph.hpp	/^int Graph<Tnode, Tlink>::createNode(Tnode val)$/;"	f	class:Graph
 createResults	docs/html/search/search.js	/^function createResults()$/;"	f
 define-members	docs/html/errHandler_8hpp.html	/^<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"><\/a>$/;"	a
 detachLinkFromNodeAtEdge	graph.hpp	/^int Graph<Tnode,Tlink>::detachLinkFromNodeAtEdge(int lid, int nid, int edge)$/;"	f	class:Graph
@@ -296,3 +298,6 @@ total_nodes	node.hpp	/^int Node<Tnode,Tlink>::total_nodes = 0;$/;"	m	class:Node
 updateStripes	docs/html/dynsections.js	/^function updateStripes()$/;"	f
 value_	node.hpp	/^    Tnode value_;$/;"	m	class:Node
 weight_	node.hpp	/^    Tlink weight_;$/;"	m	class:Link
+~Graph	graph.hpp	/^Graph<Tnode, Tlink>::~Graph()$/;"	f	class:Graph
+~Link	node.hpp	/^Link<Tlink, Tnode>::~Link()$/;"	f	class:Link
+~Node	node.hpp	/^Node<Tnode, Tlink>::~Node()$/;"	f	class:Node

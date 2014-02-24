@@ -16,18 +16,19 @@ class Graph
     int graph_id_;
     static int total_graphs;
     static int total_graph_ids;
+    int addLinkToGraph(Link<Tlink,Tnode> * link);
+    int addNodeToGraph(Node<Tnode,Tlink> * node);
   public:
     Graph();
     Graph(list<Node<Tnode,Tlink>*>, list<Link<Tlink,Tnode>*>);
+    ~Graph();
     int displayGraph();
-    int createLink();
-    int createNode();
-    int destroyLink(int lid);
-    int destroyNode(int nid);
+    int createLink(Tlink);
+    int createNode(Tnode);
+    Tlink destroyLink(int lid);
+    Tnode destroyNode(int nid);
     Node<Tnode,Tlink>* getNodeById(int nid);
     Link<Tlink,Tnode>* getLinkById(int lid);
-    int addLinkToGraph(Link<Tlink,Tnode> * link);
-    int addNodeToGraph(Node<Tnode,Tlink> * node);
     int attachLinkToNodeAtEdge(int lid,int nid, int edge);
     int detachLinkFromNodeAtEdge(int lid,int nid, int edge);
 };
@@ -44,13 +45,39 @@ Graph<Tnode,Tlink>::Graph()
   graph_id_ = total_graph_ids;
   total_graphs++;
   total_graph_ids++;
-  
+}
+
+template<class Tnode, class Tlink>
+Graph<Tnode, Tlink>::~Graph()
+{
+  Node<Tnode, Tlink> * t_node;
+  int num_nodes = nodes_.size();
+  for(int i =0; i < num_nodes; i++)
+  {
+    t_node = nodes_.front();
+    nodes_.pop_front();    
+    delete t_node;
+  }
+
+  Link<Tlink, Tnode> * t_link;
+  int num_links = links_.size();
+  for(int i=0; i < num_links; i++)
+  {
+    t_link = links_.front();
+    links_.pop_front();
+    delete t_link;
+  }
+  total_graphs--;
 }
 
 template<class Tnode,class Tlink>
 int Graph<Tnode,Tlink>::displayGraph()
 {
   boolean* visited = new boolean[nodes_.size()];
+  for(int i = 0; i < nodes_.size();i++)
+  {
+    visited[i] = FALSE;
+  }
   int total_visited = 0;
   list<Node<Tnode,Tlink>*> t_nodes;
   Node<Tnode,Tlink>* t_node;
@@ -91,6 +118,23 @@ int Graph<Tnode,Tlink>::displayGraph()
       }
     }
   }
+  delete[] visited;
+}
+
+template<class Tnode, class Tlink>
+int Graph<Tnode, Tlink>::createLink(Tlink val)
+{
+  Link<Tlink, Tnode>* t_link = new Link<Tlink,Tnode>(val);
+  addLinkToGraph(t_link);
+  return t_link->getId();
+}
+
+template<class Tnode, class Tlink>
+int Graph<Tnode, Tlink>::createNode(Tnode val)
+{
+  Node<Tnode, Tlink>* t_node = new Node<Tnode, Tlink>(val);
+  addNodeToGraph(t_node);
+  return t_node->getId();
 }
 
 template<class Tnode,class Tlink>

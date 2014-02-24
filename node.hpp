@@ -40,6 +40,8 @@ class Node : public Node_base
     Node();
     //! Node constructor which initializes the value to 0
     Node(Tnode value );
+    //! Destructor which handles total_nodes
+    ~Node();
     //! Member function that returns the cardinality of the node
     int getDegree();
     //! Member function that returns the data in the node
@@ -87,6 +89,8 @@ class Link : public Link_base
     Link();
     //! Constructor which initializes the weight to 1
     Link(Tlink weight);
+    //! Destructor which handles total_links
+    ~Link();
     //! Member function which returns the unique index of the link
     int getId();
     //! Member function used to add a Node to one of the edges of the link
@@ -125,6 +129,17 @@ Node<Tnode,Tlink>::Node(Tnode value)
   node_id_ = total_node_ids;
   total_nodes++;
   total_node_ids++;
+}
+
+template<class Tnode, class Tlink>
+Node<Tnode, Tlink>::~Node()
+{
+  Link<Tlink,Tnode> *t_link;
+  for(int i = 0;i<links_.size();i++)
+  {
+    links_.pop_front();
+  }    
+  total_nodes--;
 }
 
 template<class Tnode,class Tlink>
@@ -196,6 +211,13 @@ Link<Tlink,Tnode>::Link()
   node_[0] = NULL;
   node_[1] = NULL;
 }
+
+template<class Tlink, class Tnode>
+Link<Tlink, Tnode>::~Link()
+{
+  total_links--;
+}
+
 template <class Tlink,class Tnode>
 Link<Tlink,Tnode>::Link(Tlink weight)
 {
