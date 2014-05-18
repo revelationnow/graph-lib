@@ -140,11 +140,10 @@ Node<Tnode,Tlink>::Node(Tnode value)
   total_node_ids++;
 }
 
-<<<<<<< HEAD
-/** \fn Node::getDegree()
- * @brief Returns the degree of a node by counting the number of links it is attached to
+
+/** \fn Node::~Node()
+ * @brief Destructor
  */
-=======
 template<class Tnode, class Tlink>
 Node<Tnode, Tlink>::~Node()
 {
@@ -156,7 +155,10 @@ Node<Tnode, Tlink>::~Node()
   total_nodes--;
 }
 
->>>>>>> 3a63f7d58a0a07eb0e2a342f557f49e4082c931a
+
+/** \fn Node::getDegree()
+ * @brief Returns the degree of a node by counting the number of links it is attached to
+ */
 template<class Tnode,class Tlink>
 int Node<Tnode,Tlink>::getDegree()
 {
@@ -245,18 +247,20 @@ Link<Tlink,Tnode>::Link()
   node_[1] = NULL;
 }
 
-<<<<<<< HEAD
-/** \fn Link::Link(weight)
- * @brief Constructor, updates weight of the link and total links and total link ids.
+
+/** \fn Link::~Link()
+ * @brief Destructor
  */
-=======
 template<class Tlink, class Tnode>
 Link<Tlink, Tnode>::~Link()
 {
   total_links--;
 }
 
->>>>>>> 3a63f7d58a0a07eb0e2a342f557f49e4082c931a
+
+/** \fn Link::Link(weight)
+ * @brief Constructor, updates weight of the link and total links and total link ids.
+ */
 template <class Tlink,class Tnode>
 Link<Tlink,Tnode>::Link(Tlink weight)
 {

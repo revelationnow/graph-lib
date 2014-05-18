@@ -29,44 +29,40 @@ class Graph
     static int total_graphs;
     //! A static member to keep track of graph ids.
     static int total_graph_ids;
+    //! Adds the passed link to the graph
     int addLinkToGraph(Link<Tlink,Tnode> * link);
+    //! Adds the passed Node to the graph
     int addNodeToGraph(Node<Tnode,Tlink> * node);
   public:
     //! Graph constructor to initialize an empty graph
     Graph();
     //! Graph constructor which will start the graph with a list of unconnected nodes and links
     Graph(list<Node<Tnode,Tlink>*>, list<Link<Tlink,Tnode>*>);
-<<<<<<< HEAD
+    //! Graph destructor
+    ~Graph();
     //! Function to print the graph structure in a graphical format
     int displayGraph();
     //! Function to create a new link and add it to the graph
     int createLink();
+    //! Function to create a new link based on the passed weight and add it to the graph
+    int createLink(Tlink val);
     //! Function to create a new node and add it to the graph
     int createNode();
+    //! Function to create a new node based on the passed value and add it to the graph
+    int createNode(Tnode val);
     //! Function to destroy a link and free the memory associated with it. Only applicable to links which are part of this graph.
     int destroyLink(int lid);
     //! Function to destroy a node and free the memory associated with it. Only applicable to nodes which are part of this graph
     int destroyNode(int nid);
     //! Function to get the pointer to the Node whose ID is passed
-=======
-    ~Graph();
-    int displayGraph();
-    int createLink(Tlink);
-    int createNode(Tnode);
-    Tlink destroyLink(int lid);
-    Tnode destroyNode(int nid);
->>>>>>> 3a63f7d58a0a07eb0e2a342f557f49e4082c931a
     Node<Tnode,Tlink>* getNodeById(int nid);
     //! Function to get the pointer to the link whose ID is passed
     Link<Tlink,Tnode>* getLinkById(int lid);
-<<<<<<< HEAD
     //! Adds the passed link to the graph
-    int addLinkToGraph(Link<Tlink,Tnode> * link);
+    //int addLinkToGraph(Link<Tlink,Tnode> * link);
     //! Adds the passed Node to the graph
-    int addNodeToGraph(Node<Tnode,Tlink> * node);
+    //int addNodeToGraph(Node<Tnode,Tlink> * node);
     //! Attaches the node and link whose IDs are passed at the given edge of the link
-=======
->>>>>>> 3a63f7d58a0a07eb0e2a342f557f49e4082c931a
     int attachLinkToNodeAtEdge(int lid,int nid, int edge);
     //! Detaches the node and link at the given edge
     int detachLinkFromNodeAtEdge(int lid,int nid, int edge);
@@ -90,6 +86,9 @@ Graph<Tnode,Tlink>::Graph()
   total_graph_ids++;
 }
 
+/** \fn Graph::~Graph()
+ * @brief Destructor for the Graph class. frees all the associated memory for Links and Node
+ */
 template<class Tnode, class Tlink>
 Graph<Tnode, Tlink>::~Graph()
 {
@@ -112,6 +111,7 @@ Graph<Tnode, Tlink>::~Graph()
   }
   total_graphs--;
 }
+
 
 /** \fn Graph::displayGraph()
  * @brief Function to traverse the entire graph and print out the structure of the graph.
