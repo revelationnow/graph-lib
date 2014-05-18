@@ -29,11 +29,14 @@ class Graph
     static int total_graphs;
     //! A static member to keep track of graph ids.
     static int total_graph_ids;
+    int addLinkToGraph(Link<Tlink,Tnode> * link);
+    int addNodeToGraph(Node<Tnode,Tlink> * node);
   public:
     //! Graph constructor to initialize an empty graph
     Graph();
     //! Graph constructor which will start the graph with a list of unconnected nodes and links
     Graph(list<Node<Tnode,Tlink>*>, list<Link<Tlink,Tnode>*>);
+<<<<<<< HEAD
     //! Function to print the graph structure in a graphical format
     int displayGraph();
     //! Function to create a new link and add it to the graph
@@ -45,14 +48,25 @@ class Graph
     //! Function to destroy a node and free the memory associated with it. Only applicable to nodes which are part of this graph
     int destroyNode(int nid);
     //! Function to get the pointer to the Node whose ID is passed
+=======
+    ~Graph();
+    int displayGraph();
+    int createLink(Tlink);
+    int createNode(Tnode);
+    Tlink destroyLink(int lid);
+    Tnode destroyNode(int nid);
+>>>>>>> 3a63f7d58a0a07eb0e2a342f557f49e4082c931a
     Node<Tnode,Tlink>* getNodeById(int nid);
     //! Function to get the pointer to the link whose ID is passed
     Link<Tlink,Tnode>* getLinkById(int lid);
+<<<<<<< HEAD
     //! Adds the passed link to the graph
     int addLinkToGraph(Link<Tlink,Tnode> * link);
     //! Adds the passed Node to the graph
     int addNodeToGraph(Node<Tnode,Tlink> * node);
     //! Attaches the node and link whose IDs are passed at the given edge of the link
+=======
+>>>>>>> 3a63f7d58a0a07eb0e2a342f557f49e4082c931a
     int attachLinkToNodeAtEdge(int lid,int nid, int edge);
     //! Detaches the node and link at the given edge
     int detachLinkFromNodeAtEdge(int lid,int nid, int edge);
@@ -74,7 +88,29 @@ Graph<Tnode,Tlink>::Graph()
   graph_id_ = total_graph_ids;
   total_graphs++;
   total_graph_ids++;
-  
+}
+
+template<class Tnode, class Tlink>
+Graph<Tnode, Tlink>::~Graph()
+{
+  Node<Tnode, Tlink> * t_node;
+  int num_nodes = nodes_.size();
+  for(int i =0; i < num_nodes; i++)
+  {
+    t_node = nodes_.front();
+    nodes_.pop_front();    
+    delete t_node;
+  }
+
+  Link<Tlink, Tnode> * t_link;
+  int num_links = links_.size();
+  for(int i=0; i < num_links; i++)
+  {
+    t_link = links_.front();
+    links_.pop_front();
+    delete t_link;
+  }
+  total_graphs--;
 }
 
 /** \fn Graph::displayGraph()
@@ -86,6 +122,10 @@ int Graph<Tnode,Tlink>::displayGraph()
 {
   //! \code{.cpp} Initialize the parameters for Djikstra's search 
   boolean* visited = new boolean[nodes_.size()];
+  for(int i = 0; i < nodes_.size();i++)
+  {
+    visited[i] = FALSE;
+  }
   int total_visited = 0;
   list<Node<Tnode,Tlink>*> t_nodes;
   Node<Tnode,Tlink>* t_node;
@@ -130,6 +170,23 @@ int Graph<Tnode,Tlink>::displayGraph()
       }
     }
   }
+  delete[] visited;
+}
+
+template<class Tnode, class Tlink>
+int Graph<Tnode, Tlink>::createLink(Tlink val)
+{
+  Link<Tlink, Tnode>* t_link = new Link<Tlink,Tnode>(val);
+  addLinkToGraph(t_link);
+  return t_link->getId();
+}
+
+template<class Tnode, class Tlink>
+int Graph<Tnode, Tlink>::createNode(Tnode val)
+{
+  Node<Tnode, Tlink>* t_node = new Node<Tnode, Tlink>(val);
+  addNodeToGraph(t_node);
+  return t_node->getId();
 }
 
 /** \fn Graph::attachLinkToNodeAtEdge(int lid, int nid, int edge)
