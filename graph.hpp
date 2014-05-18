@@ -7,37 +7,67 @@
 
 using namespace std;
 
+//! Graph class
+/*!
+ * This class represents the overall graph.
+ * All the Nodes and Links will be members of this graph, and the interactions
+ * between the nodes and links will be handled through this class.
+ * This is a sort of external interface for graph-lib, all manipulations of the nodes and
+ * links should happen via this class.
+ */
 template<class Tnode, class Tlink>
 class Graph
 {
   private:
+    //! List of all the nodes in this graph
     list<Node<Tnode,Tlink>*> nodes_;
+    //! List of all the links in this graph
     list<Link<Tlink,Tnode>*> links_;
+    //! The ID of this graph. This is just one in a unvierse of graphs.
     int graph_id_;
+    //! A static member that keeps track of the number of graphs in the universe
     static int total_graphs;
+    //! A static member to keep track of graph ids.
     static int total_graph_ids;
   public:
+    //! Graph constructor to initialize an empty graph
     Graph();
+    //! Graph constructor which will start the graph with a list of unconnected nodes and links
     Graph(list<Node<Tnode,Tlink>*>, list<Link<Tlink,Tnode>*>);
+    //! Function to print the graph structure in a graphical format
     int displayGraph();
+    //! Function to create a new link and add it to the graph
     int createLink();
+    //! Function to create a new node and add it to the graph
     int createNode();
+    //! Function to destroy a link and free the memory associated with it. Only applicable to links which are part of this graph.
     int destroyLink(int lid);
+    //! Function to destroy a node and free the memory associated with it. Only applicable to nodes which are part of this graph
     int destroyNode(int nid);
+    //! Function to get the pointer to the Node whose ID is passed
     Node<Tnode,Tlink>* getNodeById(int nid);
+    //! Function to get the pointer to the link whose ID is passed
     Link<Tlink,Tnode>* getLinkById(int lid);
+    //! Adds the passed link to the graph
     int addLinkToGraph(Link<Tlink,Tnode> * link);
+    //! Adds the passed Node to the graph
     int addNodeToGraph(Node<Tnode,Tlink> * node);
+    //! Attaches the node and link whose IDs are passed at the given edge of the link
     int attachLinkToNodeAtEdge(int lid,int nid, int edge);
+    //! Detaches the node and link at the given edge
     int detachLinkFromNodeAtEdge(int lid,int nid, int edge);
 };
 
+//! Initialization of total graphs and total graph ids to 0
 template<class Tnode,class Tlink>
 int Graph<Tnode,Tlink>::total_graphs = 0;
 
 template<class Tnode,class Tlink>
 int Graph<Tnode,Tlink>::total_graph_ids = 0;
 
+/** \fn Graph::Graph()
+ * @brief The Default constructor
+ */
 template<class Tnode,class Tlink>
 Graph<Tnode,Tlink>::Graph()
 {
@@ -47,9 +77,14 @@ Graph<Tnode,Tlink>::Graph()
   
 }
 
+/** \fn Graph::displayGraph()
+ * @brief Function to traverse the entire graph and print out the structure of the graph.
+ * It uses Djikstra's algorithm to traverse the graph starting at the node at the back of the list of nodes.
+ */
 template<class Tnode,class Tlink>
 int Graph<Tnode,Tlink>::displayGraph()
 {
+  //! \code{.cpp} Initialize the parameters for Djikstra's search 
   boolean* visited = new boolean[nodes_.size()];
   int total_visited = 0;
   list<Node<Tnode,Tlink>*> t_nodes;
@@ -57,6 +92,7 @@ int Graph<Tnode,Tlink>::displayGraph()
   Node<Tnode,Tlink>* l_node[2];
   t_nodes.push_back((nodes_.back()));
 
+  //! \code{.cpp} Looping over the list of active nodes
   while(total_visited < Node<Tnode,Tlink>::total_nodes)
   {
     Node<Tnode,Tlink>* t_node = t_nodes.front();
@@ -66,14 +102,17 @@ int Graph<Tnode,Tlink>::displayGraph()
     }
     t_nodes.pop_front();
     OUTPUT_MSG(INFO, "Node : "<<t_node->getId());
+    //! \code{.cpp} Set the visited flag for the current node to TRUE
     visited[t_node->getId()] = TRUE;
     total_visited++;
+    //! \code{.cpp} Loop over all the neighbours of this node
     for(typename list<Link<Tlink,Tnode>*>::iterator link_iterator = t_node->links_.begin();link_iterator != t_node->links_.end(); ++link_iterator)
     {
       OUTPUT_MSG(INFO, "\t|| "<<((*link_iterator)->getNodeAtEdge(0))->getId()<<" ||----------<"<<(*link_iterator)->getId()<<">----------|| "<<((*link_iterator)->getNodeAtEdge(1))->getId()<<" ||");
       l_node[0] = (*link_iterator)->getNodeAtEdge(0);
       l_node[1] = (*link_iterator)->getNodeAtEdge(1);
 
+      //! \code{.cpp} Insert nodes connected to the current node into the list of active nodes
       if(l_node[0] != NULL)
       {
         if(visited[l_node[0]->getId()] != TRUE)
@@ -93,6 +132,9 @@ int Graph<Tnode,Tlink>::displayGraph()
   }
 }
 
+/** \fn Graph::attachLinkToNodeAtEdge(int lid, int nid, int edge)
+ * @brief Function to attach a link to a node at the given edge
+ */
 template<class Tnode,class Tlink>
 int Graph<Tnode,Tlink>::attachLinkToNodeAtEdge(int lid, int nid, int edge)
 {
@@ -130,6 +172,9 @@ int Graph<Tnode,Tlink>::attachLinkToNodeAtEdge(int lid, int nid, int edge)
   }
 }
 
+/** \fn Graph::detachLinkFromNodeAtEdge 
+ * @brief Function to detach the node and link attached the given edge of the link
+ */
 template<class Tnode,class Tlink>
 int Graph<Tnode,Tlink>::detachLinkFromNodeAtEdge(int lid, int nid, int edge)
 {
@@ -166,7 +211,9 @@ int Graph<Tnode,Tlink>::detachLinkFromNodeAtEdge(int lid, int nid, int edge)
 
 }
 
-
+/** \fn Graph::getNodeById(int nid)
+ * @brief Function to return the pointer to the node indicated by the given node id
+ */
 template<class Tnode,class Tlink>
 Node<Tnode,Tlink>* Graph<Tnode,Tlink>::getNodeById(int nid)
 {
@@ -180,7 +227,9 @@ Node<Tnode,Tlink>* Graph<Tnode,Tlink>::getNodeById(int nid)
   return NULL;
 }
 
-
+/** \fn Graph::getLinkById(int lid)
+ * @brief Function to return the pointer to the link indicated by the given link id
+ */
 template<class Tnode,class Tlink>
 Link<Tlink,Tnode>* Graph<Tnode,Tlink>::getLinkById(int lid)
 {
@@ -194,6 +243,9 @@ Link<Tlink,Tnode>* Graph<Tnode,Tlink>::getLinkById(int lid)
   return NULL;
 }
 
+/** \fn Graph::addLinkToGraph(Link* link)
+ * @brief Function to add the passed link to the graph.
+ */
 template<class Tnode,class Tlink>
 int Graph<Tnode,Tlink>::addLinkToGraph(Link<Tlink,Tnode>* link)
 {
@@ -210,6 +262,9 @@ int Graph<Tnode,Tlink>::addLinkToGraph(Link<Tlink,Tnode>* link)
 }
 
 
+/** \fn Graph::addNodeToGraph(Node* node)
+ * @brief Function to add the passed node to the graph.
+ */
 template<class Tnode,class Tlink>
 int Graph<Tnode,Tlink>::addNodeToGraph(Node<Tnode,Tlink>* node)
 {

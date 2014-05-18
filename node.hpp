@@ -104,12 +104,18 @@ class Link : public Link_base
 /*!
   The Definitions for the Node class are below
  */
+
+//! Initialize the number of total nodes to 0
 template<class Tnode,class Tlink>
 int Node<Tnode,Tlink>::total_nodes = 0;
 
+//! Initialize the number of total node IDs to 0
 template<class Tnode,class Tlink>
 int Node<Tnode,Tlink>::total_node_ids = 0;
 
+/** \fn Node::Node()
+ * @brief Default constructor : Just set the node_id_ and update the tota nodes and total node ids.
+ */
 template <class Tnode,class Tlink>
 Node<Tnode,Tlink>::Node()
 {
@@ -118,6 +124,9 @@ Node<Tnode,Tlink>::Node()
   total_node_ids++;
 }
 
+/** \fn Node::Node(Tnode value) 
+ * @brief Constructor to set the value and node_id_. Also update the total nodes and total node ids.
+ */
 template <class Tnode,class Tlink>
 Node<Tnode,Tlink>::Node(Tnode value)
 {
@@ -127,30 +136,45 @@ Node<Tnode,Tlink>::Node(Tnode value)
   total_node_ids++;
 }
 
+/** \fn Node::getDegree()
+ * @brief Returns the degree of a node by counting the number of links it is attached to
+ */
 template<class Tnode,class Tlink>
 int Node<Tnode,Tlink>::getDegree()
 {
   return links_.size();
 }
 
+/** \fn Node::getValue() 
+ * @brief Returns the value saved in the node
+ */
 template <class Tnode,class Tlink>
 Tnode Node<Tnode,Tlink>::getValue()
 {
   return value_;
 }
-
+ 
+/** \fn Node::getId()
+ * @brief Returns the node_id_
+ */
 template<class Tnode,class Tlink>
 int Node<Tnode,Tlink>::getId()
 {
   return node_id_;
 }
 
+/** \fn Node::setValue
+ * @brief Sets the value of the node
+ */
 template<class Tnode,class Tlink>
 void Node<Tnode,Tlink>::setValue(Tnode value)
 {
   value_ = value;
 }
 
+/** \fn Node::linkAttachedToNode(Link* link)
+ * @brief returns TRUE if passed link is attached to the node, else returns FALSE.
+ */
 template<class Tnode,class Tlink>
 boolean Node<Tnode,Tlink>::linkAttachedToNode(Link<Tlink,Tnode>* link)
 {
@@ -164,6 +188,9 @@ boolean Node<Tnode,Tlink>::linkAttachedToNode(Link<Tlink,Tnode>* link)
   return FALSE;
 }
 
+/** \fn Node::removeLink(Link* link)
+ * @brief Removes the passed link from the Node and returns 0 on success, if link is not found, returns -1
+ */
 template<class Tnode,class Tlink>
 int Node<Tnode,Tlink>::removeLink(Link<Tlink,Tnode>* link)
 {
@@ -188,6 +215,9 @@ int Link<Tlink,Tnode>::total_links = 0;
 template <class Tlink,class Tnode>
 int Link<Tlink,Tnode>::total_link_ids = 0;
 
+/** \fn Link::Link()
+ * @brief Deafult constructor, updates total links and total link ids.
+ */
 template <class Tlink,class Tnode>
 Link<Tlink,Tnode>::Link()
 {
@@ -196,6 +226,10 @@ Link<Tlink,Tnode>::Link()
   node_[0] = NULL;
   node_[1] = NULL;
 }
+
+/** \fn Link::Link(weight)
+ * @brief Constructor, updates weight of the link and total links and total link ids.
+ */
 template <class Tlink,class Tnode>
 Link<Tlink,Tnode>::Link(Tlink weight)
 {
@@ -206,12 +240,18 @@ Link<Tlink,Tnode>::Link(Tlink weight)
   node_[1] = NULL;
 }
 
+/** \fn Link::getId()
+ * @brief Retruns the ID of the link
+ */
 template <class Tlink,class Tnode>
 int Link<Tlink,Tnode>::getId()
 {
   return link_id_;
 }
 
+/** \fn Link::getNodeAtEdge(int edge)
+ * @brief returns the node attached to the link at the given edge. If no node is attached, it returns NULL.
+ */
 template <class Tlink,class Tnode>
 Node<Tnode,Tlink>* Link<Tlink,Tnode>::getNodeAtEdge(int edge)
 {
@@ -233,6 +273,9 @@ Node<Tnode,Tlink>* Link<Tlink,Tnode>::getNodeAtEdge(int edge)
   }
 }
 
+/** \fn Link::detachNodeByEdge(int Edge)
+ * @brief Detaches the node attached to the given edge, prints an error if no node is attached at the given edge.
+ */
 template <class Tlink,class Tnode>
 void Link<Tlink,Tnode>::detachNodeByEdge(int edge)
 {

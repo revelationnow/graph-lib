@@ -1,5 +1,5 @@
-\hypertarget{classNode}{\section{Node Class Reference}
-\label{classNode}\index{Node@{Node}}
+\hypertarget{classNode}{\section{Node$<$ Tnode, Tnodelink $>$ Class Template Reference}
+\label{classNode}\index{Node$<$ Tnode, Tnodelink $>$@{Node$<$ Tnode, Tnodelink $>$}}
 }
 
 
@@ -8,58 +8,148 @@
 
 
 
-{\ttfamily \#include $<$node.\-hpp$>$}
+{\ttfamily \#include $<$node.\+hpp$>$}
 
+Inheritance diagram for Node$<$ Tnode, Tnodelink $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classNode}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classNode_ade1e047dd798bfbcb525c829e5a54d06}{\hyperlink{classNode_ade1e047dd798bfbcb525c829e5a54d06}{Node} (int value=0)}\label{classNode_ade1e047dd798bfbcb525c829e5a54d06}
-
+\hyperlink{classNode_a93fa08e2d8c63f93e3cc9ab8202e3334}{Node} ()
 \begin{DoxyCompactList}\small\item\em \hyperlink{classNode}{Node} constructor which initializes the value to 0. \end{DoxyCompactList}\item 
-\hypertarget{classNode_ab06afc516052033f763b45d8b893ce03}{int \hyperlink{classNode_ab06afc516052033f763b45d8b893ce03}{get\-Degree} ()}\label{classNode_ab06afc516052033f763b45d8b893ce03}
-
+\hyperlink{classNode_a5e6d51ef5b0456c3fd48b8196baebea5}{Node} (Tnode value)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classNode}{Node} constructor which initializes the value to 0. \end{DoxyCompactList}\item 
+int \hyperlink{classNode_a58fa0d9e8d2099bb0afd533d8ae55d12}{get\+Degree} ()
 \begin{DoxyCompactList}\small\item\em Member function that returns the cardinality of the node. \end{DoxyCompactList}\item 
-\hypertarget{classNode_affbe7f986fd7ed645c5bc361363e96ec}{int \hyperlink{classNode_affbe7f986fd7ed645c5bc361363e96ec}{get\-Value} ()}\label{classNode_affbe7f986fd7ed645c5bc361363e96ec}
-
+Tnode \hyperlink{classNode_aa9067e2137ecc75ddd802d5a574612f1}{get\+Value} ()
 \begin{DoxyCompactList}\small\item\em Member function that returns the data in the node. \end{DoxyCompactList}\item 
-\hypertarget{classNode_a3c7b8ccf4dab44216b997c5f63f11d9f}{int \hyperlink{classNode_a3c7b8ccf4dab44216b997c5f63f11d9f}{get\-Id} ()}\label{classNode_a3c7b8ccf4dab44216b997c5f63f11d9f}
-
+int \hyperlink{classNode_a91639d810acda39b666715b07b5c2100}{get\+Id} ()
 \begin{DoxyCompactList}\small\item\em Member function that returns the unique index of the node. \end{DoxyCompactList}\item 
-\hypertarget{classNode_a9e337c1790152faf945a87207d7e1125}{void \hyperlink{classNode_a9e337c1790152faf945a87207d7e1125}{set\-Value} (int value)}\label{classNode_a9e337c1790152faf945a87207d7e1125}
-
+void \hyperlink{classNode_a39ea9f0c2d3af467734b5c78a001bbcb}{set\+Value} (Tnode value)
 \begin{DoxyCompactList}\small\item\em Member fuction that sets the value within the node. \end{DoxyCompactList}\item 
-\hypertarget{classNode_ac757cd0455bc4a34e36669c13bed7935}{int \hyperlink{classNode_ac757cd0455bc4a34e36669c13bed7935}{add\-Link\-Edge} (\hyperlink{classLink}{Link} $\ast$link, int edge)}\label{classNode_ac757cd0455bc4a34e36669c13bed7935}
+\hypertarget{classNode_a669f230accdef7328ef0c217c63b0dd4}{int \hyperlink{classNode_a669f230accdef7328ef0c217c63b0dd4}{add\+Link\+Edge} (\hyperlink{classLink}{Link}$<$ Tnodelink, Tnode $>$ $\ast$link, int edge)}\label{classNode_a669f230accdef7328ef0c217c63b0dd4}
 
 \begin{DoxyCompactList}\small\item\em Member function that adds a particular edge of a link to the node. \end{DoxyCompactList}\item 
-\hypertarget{classNode_ae071717ba42566e4ce15a1fc7e04fb43}{boolean \hyperlink{classNode_ae071717ba42566e4ce15a1fc7e04fb43}{link\-Attached\-To\-Node} (\hyperlink{classLink}{Link} $\ast$link)}\label{classNode_ae071717ba42566e4ce15a1fc7e04fb43}
-
+boolean \hyperlink{classNode_a9237bd16a22ee02c244d8cc95d6533bd}{link\+Attached\+To\+Node} (\hyperlink{classLink}{Link}$<$ Tnodelink, Tnode $>$ $\ast$link)
 \begin{DoxyCompactList}\small\item\em Member function that returns whether or not a link is attached to the node. \end{DoxyCompactList}\item 
-\hypertarget{classNode_a0b5614c3ffee7bcdf4f4582a27aee16d}{int \hyperlink{classNode_a0b5614c3ffee7bcdf4f4582a27aee16d}{remove\-Link\-Edge} (\hyperlink{classLink}{Link} $\ast$link, int edge)}\label{classNode_a0b5614c3ffee7bcdf4f4582a27aee16d}
+\hypertarget{classNode_ad469f4b48294f360d372b5765eee4f77}{int \hyperlink{classNode_ad469f4b48294f360d372b5765eee4f77}{remove\+Link\+Edge} (\hyperlink{classLink}{Link}$<$ Tnodelink, Tnode $>$ $\ast$link, int edge)}\label{classNode_ad469f4b48294f360d372b5765eee4f77}
 
 \begin{DoxyCompactList}\small\item\em Member function to remove a link from the node at a particular edge. \end{DoxyCompactList}\item 
-\hypertarget{classNode_a255a6bebb84adfb6668207a53095d983}{int \hyperlink{classNode_a255a6bebb84adfb6668207a53095d983}{remove\-Link} (\hyperlink{classLink}{Link} $\ast$link)}\label{classNode_a255a6bebb84adfb6668207a53095d983}
-
+int \hyperlink{classNode_aa7a762ea839eea52e9d2cae7f31780e8}{remove\+Link} (\hyperlink{classLink}{Link}$<$ Tnodelink, Tnode $>$ $\ast$link)
 \begin{DoxyCompactList}\small\item\em Member function to remove a link from the node at any edge. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classNode_afab89afd724f1b07b1aaad6bdc61c47a}{class \hyperlink{classNode_afab89afd724f1b07b1aaad6bdc61c47a}{Graph}}\label{classNode_afab89afd724f1b07b1aaad6bdc61c47a}
+\hypertarget{classNode_a73e2a6b342470c352a5bd3843e75d475}{class \hyperlink{classNode_a73e2a6b342470c352a5bd3843e75d475}{Graph$<$ Tnode, Tnodelink $>$}}\label{classNode_a73e2a6b342470c352a5bd3843e75d475}
 
-\begin{DoxyCompactList}\small\item\em Fried class \hyperlink{classGraph}{Graph}. \end{DoxyCompactList}\item 
-\hypertarget{classNode_a6a3a35dc10c66f0658f4003074059fcd}{int \hyperlink{classNode_a6a3a35dc10c66f0658f4003074059fcd}{display\-Graph} (\hyperlink{classNode}{Node} $\ast$start)}\label{classNode_a6a3a35dc10c66f0658f4003074059fcd}
-
-\begin{DoxyCompactList}\small\item\em Friend function to visualize the graph. \end{DoxyCompactList}\item 
-\hypertarget{classNode_a1cccce22df97e21e1e0e0cd3ca6526b0}{int \hyperlink{classNode_a1cccce22df97e21e1e0e0cd3ca6526b0}{add\-Link\-Edge\-To\-Node} (\hyperlink{classNode}{Node} $\ast$node, \hyperlink{classLink}{Link} $\ast$link, int edge)}\label{classNode_a1cccce22df97e21e1e0e0cd3ca6526b0}
-
-\begin{DoxyCompactList}\small\item\em Friend function to add a link at a particular edge to the node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Fried class \hyperlink{classGraph}{Graph}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
+\subsubsection*{template$<$class Tnode, class Tnodelink$>$class Node$<$ Tnode, Tnodelink $>$}
+
 \hyperlink{classNode}{Node} class. 
 
 This class represents each of the nodes of the graph. Each node has a list of links that it shares with other nodes A node is attached to another node by the link that it shares with the other node. Each node has an integer as its data 
 
-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classNode_a93fa08e2d8c63f93e3cc9ab8202e3334}{\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\subsubsection[{Node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tnode, class Tnodelink$>$ {\bf Node}$<$ Tnode, Tnodelink $>$\+::{\bf Node} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classNode_a93fa08e2d8c63f93e3cc9ab8202e3334}
+
+
+\hyperlink{classNode}{Node} constructor which initializes the value to 0. 
+
+Default constructor \+: Just set the node\+\_\+id\+\_\+ and update the tota nodes and total node ids. \hypertarget{classNode_a5e6d51ef5b0456c3fd48b8196baebea5}{\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\subsubsection[{Node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tnode, class Tnodelink$>$ {\bf Node}$<$ Tnode, Tnodelink $>$\+::{\bf Node} (
+\begin{DoxyParamCaption}
+\item[{Tnode}]{value}
+\end{DoxyParamCaption}
+)}}\label{classNode_a5e6d51ef5b0456c3fd48b8196baebea5}
+
+
+\hyperlink{classNode}{Node} constructor which initializes the value to 0. 
+
+Constructor to set the value and node\+\_\+id\+\_\+. Also update the total nodes and total node ids. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classNode_a58fa0d9e8d2099bb0afd533d8ae55d12}{\index{Node@{Node}!get\+Degree@{get\+Degree}}
+\index{get\+Degree@{get\+Degree}!Node@{Node}}
+\subsubsection[{get\+Degree}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tnode, class Tnodelink$>$ {\bf Node}$<$ Tnode, Tnodelink $>$\+::get\+Degree (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classNode_a58fa0d9e8d2099bb0afd533d8ae55d12}
+
+
+Member function that returns the cardinality of the node. 
+
+Returns the degree of a node by counting the number of links it is attached to. \hypertarget{classNode_a91639d810acda39b666715b07b5c2100}{\index{Node@{Node}!get\+Id@{get\+Id}}
+\index{get\+Id@{get\+Id}!Node@{Node}}
+\subsubsection[{get\+Id}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tnode, class Tnodelink$>$ {\bf Node}$<$ Tnode, Tnodelink $>$\+::get\+Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classNode_a91639d810acda39b666715b07b5c2100}
+
+
+Member function that returns the unique index of the node. 
+
+Returns the node\+\_\+id\+\_\+. \hypertarget{classNode_aa9067e2137ecc75ddd802d5a574612f1}{\index{Node@{Node}!get\+Value@{get\+Value}}
+\index{get\+Value@{get\+Value}!Node@{Node}}
+\subsubsection[{get\+Value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tnode, class Tnodelink$>$ {\bf Node}$<$ Tnode, Tnodelink $>$\+::get\+Value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classNode_aa9067e2137ecc75ddd802d5a574612f1}
+
+
+Member function that returns the data in the node. 
+
+Returns the value saved in the node. \hypertarget{classNode_a9237bd16a22ee02c244d8cc95d6533bd}{\index{Node@{Node}!link\+Attached\+To\+Node@{link\+Attached\+To\+Node}}
+\index{link\+Attached\+To\+Node@{link\+Attached\+To\+Node}!Node@{Node}}
+\subsubsection[{link\+Attached\+To\+Node}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tnode, class Tnodelink$>$ {\bf Node}$<$ Tnode, Tnodelink $>$\+::link\+Attached\+To\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Link}$<$ Tnodelink, Tnode $>$ $\ast$}]{link}
+\end{DoxyParamCaption}
+)}}\label{classNode_a9237bd16a22ee02c244d8cc95d6533bd}
+
+
+Member function that returns whether or not a link is attached to the node. 
+
+returns T\+R\+U\+E if passed link is attached to the node, else returns F\+A\+L\+S\+E. \hypertarget{classNode_aa7a762ea839eea52e9d2cae7f31780e8}{\index{Node@{Node}!remove\+Link@{remove\+Link}}
+\index{remove\+Link@{remove\+Link}!Node@{Node}}
+\subsubsection[{remove\+Link}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tnode, class Tnodelink$>$ {\bf Node}$<$ Tnode, Tnodelink $>$\+::remove\+Link (
+\begin{DoxyParamCaption}
+\item[{{\bf Link}$<$ Tnodelink, Tnode $>$ $\ast$}]{link}
+\end{DoxyParamCaption}
+)}}\label{classNode_aa7a762ea839eea52e9d2cae7f31780e8}
+
+
+Member function to remove a link from the node at any edge. 
+
+Removes the passed link from the \hyperlink{classNode}{Node} and returns 0 on success, if link is not found, returns -\/1. \hypertarget{classNode_a39ea9f0c2d3af467734b5c78a001bbcb}{\index{Node@{Node}!set\+Value@{set\+Value}}
+\index{set\+Value@{set\+Value}!Node@{Node}}
+\subsubsection[{set\+Value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tnode, class Tnodelink$>$ {\bf Node}$<$ Tnode, Tnodelink $>$\+::set\+Value (
+\begin{DoxyParamCaption}
+\item[{Tnode}]{value}
+\end{DoxyParamCaption}
+)}}\label{classNode_a39ea9f0c2d3af467734b5c78a001bbcb}
+
+
+Member fuction that sets the value within the node. 
+
+Sets the value of the node. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-\hyperlink{node_8hpp}{node.\-hpp}\item 
-\hyperlink{node_8cpp}{node.\-cpp}\end{DoxyCompactItemize}
+\hyperlink{node_8hpp}{node.\+hpp}\end{DoxyCompactItemize}

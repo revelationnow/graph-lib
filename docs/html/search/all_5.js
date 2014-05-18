@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['link',['Link',['../classLink.html',1,'Link'],['../classLink.html#a7d1f0fba2d522bae401cac8602820cce',1,'Link::Link()']]],
-  ['link_2ecpp',['link.cpp',['../link_8cpp.html',1,'']]],
+  ['link',['Link',['../classLink.html',1,'Link&lt; Tlink, Tnode &gt;'],['../classLink.html#aca77f38ecd59de8d21990ac5bbf91a8e',1,'Link::Link()'],['../classLink.html#ac99228207446f193a5e4736c6aeb6954',1,'Link::Link(Tlink weight)']]],
   ['link_2ehpp',['link.hpp',['../link_8hpp.html',1,'']]],
-  ['linkattachedtonode',['linkAttachedToNode',['../classNode.html#ae071717ba42566e4ce15a1fc7e04fb43',1,'Node']]]
+  ['link_3c_20tnodelink_2c_20tnode_20_3e',['Link&lt; Tnodelink, Tnode &gt;',['../classLink.html',1,'']]],
+  ['link_5fbase',['Link_base',['../classLink__base.html',1,'']]],
+  ['linkattachedtonode',['linkAttachedToNode',['../classNode.html#a9237bd16a22ee02c244d8cc95d6533bd',1,'Node']]]
 ];

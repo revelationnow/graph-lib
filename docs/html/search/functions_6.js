@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['removelink',['removeLink',['../classNode.html#a255a6bebb84adfb6668207a53095d983',1,'Node']]],
-  ['removelinkedge',['removeLinkEdge',['../classNode.html#a0b5614c3ffee7bcdf4f4582a27aee16d',1,'Node']]]
+  ['node',['Node',['../classNode.html#a93fa08e2d8c63f93e3cc9ab8202e3334',1,'Node::Node()'],['../classNode.html#a5e6d51ef5b0456c3fd48b8196baebea5',1,'Node::Node(Tnode value)']]],
+  ['nodeidattachedtoedge',['nodeIDAttachedToEdge',['../classLink.html#ac932e7b1a57c0c9599be513a2106970b',1,'Link']]]
 ];

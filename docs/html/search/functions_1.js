@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['detachnodebyedge',['detachNodeByEdge',['../classLink.html#a16589e17a3f22a5038b3c708d70bf5ea',1,'Link']]]
+  ['createlink',['createLink',['../classGraph.html#a495ce01388ef7c259ab3c35f2414bd76',1,'Graph']]],
+  ['createnode',['createNode',['../classGraph.html#a3a887e466c64e283afccde959493bd4a',1,'Graph']]]
 ];
