@@ -6,6 +6,14 @@
 #include "link.hpp"
 
 using namespace std;
+/*! \mainpage Graphlib
+ *  \section Objective
+ *  The purpose of this library is to provide a easy to use framework for various data structures and also to get some practise in writing code for different data structures and using different synchronization primitives
+ *  \section Status
+ *  Currently there is a long way to go for the code, the basic framework is in place and athough the progress has been slow due to real life commitments, changes are being made intermittently.
+ */
+
+
 
 //! Graph class
 /*!

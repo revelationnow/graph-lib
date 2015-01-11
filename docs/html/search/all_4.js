@@ -9,5 +9,7 @@ var searchData=
   ['graph',['Graph',['../classGraph.html',1,'Graph&lt; Tnode, Tlink &gt;'],['../classGraph.html#a083bf42042f9082408dd0d38951bf0e8',1,'Graph::Graph()'],['../classGraph.html#aaa7b66697aa3278022f6dbd804e44028',1,'Graph::Graph(list&lt; Node&lt; Tnode, Tlink &gt; * &gt;, list&lt; Link&lt; Tlink, Tnode &gt; * &gt;)']]],
   ['graph_2ehpp',['graph.hpp',['../graph_8hpp.html',1,'']]],
   ['graph_3c_20tnode_2c_20tlink_20_3e',['Graph&lt; Tnode, Tlink &gt;',['../classLink.html#a328a8512e23864fd93de7205c56d2c3f',1,'Link']]],
-  ['graph_3c_20tnode_2c_20tnodelink_20_3e',['Graph&lt; Tnode, Tnodelink &gt;',['../classNode.html#a73e2a6b342470c352a5bd3843e75d475',1,'Node']]]
+  ['graph_3c_20tnode_2c_20tnodelink_20_3e',['Graph&lt; Tnode, Tnodelink &gt;',['../classNode.html#a73e2a6b342470c352a5bd3843e75d475',1,'Node']]],
+  ['graph_5fid_5f',['graph_id_',['../classGraph.html#a6146b243a8de0cfe58d2855fbf61dd63',1,'Graph']]],
+  ['graphlib',['Graphlib',['../index.html',1,'']]]
 ];

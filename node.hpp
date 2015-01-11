@@ -3,6 +3,7 @@
 #define __NODE_HPP_
 
 #include <list>
+#include <mutex>
 
 #include "errHandler.hpp"
 #include "common.hpp"
@@ -35,6 +36,16 @@ class Node : public Node_base
     static int total_nodes;
     //! A static member that tracks node indices in the graph
     static int total_node_ids;
+    //! A mutex to protect access to the list of links from this node
+    mutex links_mutex_;
+    //! A mutex to protect the value in the node
+    mutex value_mutex_;
+    //! A mutex to protect node_id_
+    mutex node_id_mutex_;
+    //! A mutex to protect total_nodes
+    static mutex total_nodes_mutex;
+    //! A mutex to protect total_node_ids
+    static mutex total_node_ids_mutex;
   public:
     //! Node constructor which initializes the value to 0
     Node();
@@ -84,6 +95,14 @@ class Link : public Link_base
     static int total_links;
     //! A static member used to keep track of assigned indices
     static int total_link_ids;
+    //! A mutex to protect weight_
+    mutex weight_mutex_;
+    //! A mutex to protect link_id_
+    mutex link_id_mutex_;
+    //! A mutex to protect total_link_ids
+    static mutex total_link_ids_mutex;
+    //! A mutex to protect total_links
+    static mutex total_links_mutex;
   public:
     //! Default Constructor
     Link();
@@ -113,9 +132,15 @@ class Link : public Link_base
 template<class Tnode,class Tlink>
 int Node<Tnode,Tlink>::total_nodes = 0;
 
+template<class Tnode,class Tlink>
+mutex Node<Tnode, Tlink>::total_nodes_mutex;
+
 //! Initialize the number of total node IDs to 0
 template<class Tnode,class Tlink>
 int Node<Tnode,Tlink>::total_node_ids = 0;
+
+template<class Tnode,class Tlink>
+mutex Node<Tnode, Tlink>::total_node_ids_mutex;
 
 /** \fn Node::Node()
  * @brief Default constructor : Just set the node_id_ and update the tota nodes and total node ids.
@@ -123,9 +148,17 @@ int Node<Tnode,Tlink>::total_node_ids = 0;
 template <class Tnode,class Tlink>
 Node<Tnode,Tlink>::Node()
 {
+  total_node_ids_mutex.lock();
+  node_id_mutex_.lock();
   node_id_ = total_node_ids;
-  total_nodes++;
+  node_id_mutex_.unlock();
   total_node_ids++;
+  total_node_ids_mutex.unlock();
+
+  total_nodes_mutex.lock();
+  total_nodes++;
+  total_nodes_mutex.unlock();
+
 }
 
 /** \fn Node::Node(Tnode value) 
@@ -134,10 +167,19 @@ Node<Tnode,Tlink>::Node()
 template <class Tnode,class Tlink>
 Node<Tnode,Tlink>::Node(Tnode value)
 {
+  value_mutex_.lock();
   value_ = value;
+  value_mutex_.unlock();
+  total_node_ids_mutex.lock();
+  node_id_mutex_.lock();
   node_id_ = total_node_ids;
-  total_nodes++;
+  node_id_mutex_.unlock();
   total_node_ids++;
+  total_node_ids_mutex.unlock();
+
+  total_nodes_mutex.lock();
+  total_nodes++;
+  total_nodes_mutex.unlock();
 }
 
 
@@ -148,11 +190,15 @@ template<class Tnode, class Tlink>
 Node<Tnode, Tlink>::~Node()
 {
   Link<Tlink,Tnode> *t_link;
+  links_mutex_.lock();
   for(int i = 0;i<links_.size();i++)
   {
     links_.pop_front();
-  }    
+  }
+  links_mutex_.unlock();
+  total_nodes_mutex.lock();
   total_nodes--;
+  total_nodes_mutex.unlock();
 }
 
 
@@ -162,7 +208,9 @@ Node<Tnode, Tlink>::~Node()
 template<class Tnode,class Tlink>
 int Node<Tnode,Tlink>::getDegree()
 {
+  links_mutex_.lock();
   return links_.size();
+  links_mutex_().unlock();
 }
 
 /** \fn Node::getValue() 
@@ -171,7 +219,9 @@ int Node<Tnode,Tlink>::getDegree()
 template <class Tnode,class Tlink>
 Tnode Node<Tnode,Tlink>::getValue()
 {
+  value_mutex_.lock();
   return value_;
+  value_mutex_.unlock();
 }
  
 /** \fn Node::getId()
@@ -180,7 +230,9 @@ Tnode Node<Tnode,Tlink>::getValue()
 template<class Tnode,class Tlink>
 int Node<Tnode,Tlink>::getId()
 {
+  node_id_mutex_.lock();
   return node_id_;
+  node_id_mutex_.unlock();
 }
 
 /** \fn Node::setValue
@@ -189,7 +241,9 @@ int Node<Tnode,Tlink>::getId()
 template<class Tnode,class Tlink>
 void Node<Tnode,Tlink>::setValue(Tnode value)
 {
+  value_mutex_.lock();
   value_ = value;
+  value_mutex_.unlock();
 }
 
 /** \fn Node::linkAttachedToNode(Link* link)
@@ -198,14 +252,17 @@ void Node<Tnode,Tlink>::setValue(Tnode value)
 template<class Tnode,class Tlink>
 boolean Node<Tnode,Tlink>::linkAttachedToNode(Link<Tlink,Tnode>* link)
 {
+  boolean return_value = FALSE;
+  links_mutex_.lock();
   for(list<Link_base*>::iterator link_iterator = links_.begin();link_iterator != links_.end();++link_iterator)
   {
     if((*(Link<Tlink,Tnode>*)link_iterator)->getId() == link->getId())
     {
-      return TRUE;
+      return_value = TRUE;
     }
   }
-  return FALSE;
+  links_mutex_.unlock();
+  return return_value;
 }
 
 /** \fn Node::removeLink(Link* link)
@@ -214,15 +271,18 @@ boolean Node<Tnode,Tlink>::linkAttachedToNode(Link<Tlink,Tnode>* link)
 template<class Tnode,class Tlink>
 int Node<Tnode,Tlink>::removeLink(Link<Tlink,Tnode>* link)
 {
+  int return_value = -1;
+  links_mutex_.lock();
   for(list<Link_base*>::iterator link_iterator = links_.begin();link_iterator != links_.end(); ++link_iterator)
   {
     if((*(Link<Tlink,Tnode>)link_iterator)->getId() == link->getId())
     {
       links_.erase(link_iterator);
-      return 0;
+      return_value = 0;
     }
   }
-  return -1;
+  links_mutex_.unlock();
+  return return_value;
 }
 
 
@@ -232,8 +292,12 @@ int Node<Tnode,Tlink>::removeLink(Link<Tlink,Tnode>* link)
 
 template <class Tlink,class Tnode>
 int Link<Tlink,Tnode>::total_links = 0;
-template <class Tlink,class Tnode>
+template <class Tlink, class Tnode>
+mutex Link<Tlink,Tnode>::total_links_mutex;
+template <class Tlink,class Tnode> 
 int Link<Tlink,Tnode>::total_link_ids = 0;
+template <class Tlink, class Tnode>
+mutex Link<Tlink,Tnode>::total_link_ids_mutex;
 
 /** \fn Link::Link()
  * @brief Deafult constructor, updates total links and total link ids.
@@ -241,8 +305,12 @@ int Link<Tlink,Tnode>::total_link_ids = 0;
 template <class Tlink,class Tnode>
 Link<Tlink,Tnode>::Link()
 {
+  total_links_mutex.lock();
+  link_id_mutex_.lock();
   link_id_ = total_links;
+  link_id_mutex_.unlock();
   total_links++;
+  total_links_mutex.unlock();
   node_[0] = NULL;
   node_[1] = NULL;
 }

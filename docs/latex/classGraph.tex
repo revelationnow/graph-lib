@@ -8,7 +8,7 @@
 
 
 
-{\ttfamily \#include $<$graph.\+hpp$>$}
+{\ttfamily \#include $<$graph.\-hpp$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -18,32 +18,63 @@
 \hypertarget{classGraph_aaa7b66697aa3278022f6dbd804e44028}{\hyperlink{classGraph_aaa7b66697aa3278022f6dbd804e44028}{Graph} (list$<$ \hyperlink{classNode}{Node}$<$ Tnode, Tlink $>$ $\ast$ $>$, list$<$ \hyperlink{classLink}{Link}$<$ Tlink, Tnode $>$ $\ast$ $>$)}\label{classGraph_aaa7b66697aa3278022f6dbd804e44028}
 
 \begin{DoxyCompactList}\small\item\em \hyperlink{classGraph}{Graph} constructor which will start the graph with a list of unconnected nodes and links. \end{DoxyCompactList}\item 
-int \hyperlink{classGraph_a50e03d4d8fe8e7ff2a231871f8cd6356}{display\+Graph} ()
+\hyperlink{classGraph_a33e89e1711a29888c0059c7fd2d67cba}{$\sim$\-Graph} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classGraph}{Graph} destructor. \end{DoxyCompactList}\item 
+int \hyperlink{classGraph_a50e03d4d8fe8e7ff2a231871f8cd6356}{display\-Graph} ()
 \begin{DoxyCompactList}\small\item\em Function to print the graph structure in a graphical format. \end{DoxyCompactList}\item 
-\hypertarget{classGraph_a495ce01388ef7c259ab3c35f2414bd76}{int \hyperlink{classGraph_a495ce01388ef7c259ab3c35f2414bd76}{create\+Link} ()}\label{classGraph_a495ce01388ef7c259ab3c35f2414bd76}
+\hypertarget{classGraph_a495ce01388ef7c259ab3c35f2414bd76}{int \hyperlink{classGraph_a495ce01388ef7c259ab3c35f2414bd76}{create\-Link} ()}\label{classGraph_a495ce01388ef7c259ab3c35f2414bd76}
 
 \begin{DoxyCompactList}\small\item\em Function to create a new link and add it to the graph. \end{DoxyCompactList}\item 
-\hypertarget{classGraph_a3a887e466c64e283afccde959493bd4a}{int \hyperlink{classGraph_a3a887e466c64e283afccde959493bd4a}{create\+Node} ()}\label{classGraph_a3a887e466c64e283afccde959493bd4a}
+\hypertarget{classGraph_a23ee6873217991bbc46d70dde9239e1f}{int \hyperlink{classGraph_a23ee6873217991bbc46d70dde9239e1f}{create\-Link} (Tlink val)}\label{classGraph_a23ee6873217991bbc46d70dde9239e1f}
+
+\begin{DoxyCompactList}\small\item\em Function to create a new link based on the passed weight and add it to the graph. \end{DoxyCompactList}\item 
+\hypertarget{classGraph_a3a887e466c64e283afccde959493bd4a}{int \hyperlink{classGraph_a3a887e466c64e283afccde959493bd4a}{create\-Node} ()}\label{classGraph_a3a887e466c64e283afccde959493bd4a}
 
 \begin{DoxyCompactList}\small\item\em Function to create a new node and add it to the graph. \end{DoxyCompactList}\item 
-\hypertarget{classGraph_ab55f18c45c3ffa8c8d61a5517b856e17}{int \hyperlink{classGraph_ab55f18c45c3ffa8c8d61a5517b856e17}{destroy\+Link} (int lid)}\label{classGraph_ab55f18c45c3ffa8c8d61a5517b856e17}
+\hypertarget{classGraph_aecb7bf8c8745903053807b05e5d6fefb}{int \hyperlink{classGraph_aecb7bf8c8745903053807b05e5d6fefb}{create\-Node} (Tnode val)}\label{classGraph_aecb7bf8c8745903053807b05e5d6fefb}
+
+\begin{DoxyCompactList}\small\item\em Function to create a new node based on the passed value and add it to the graph. \end{DoxyCompactList}\item 
+\hypertarget{classGraph_ab55f18c45c3ffa8c8d61a5517b856e17}{int \hyperlink{classGraph_ab55f18c45c3ffa8c8d61a5517b856e17}{destroy\-Link} (int lid)}\label{classGraph_ab55f18c45c3ffa8c8d61a5517b856e17}
 
 \begin{DoxyCompactList}\small\item\em Function to destroy a link and free the memory associated with it. Only applicable to links which are part of this graph. \end{DoxyCompactList}\item 
-\hypertarget{classGraph_a622e2c0ef87a8dd227d0ac04140e6680}{int \hyperlink{classGraph_a622e2c0ef87a8dd227d0ac04140e6680}{destroy\+Node} (int nid)}\label{classGraph_a622e2c0ef87a8dd227d0ac04140e6680}
+\hypertarget{classGraph_a622e2c0ef87a8dd227d0ac04140e6680}{int \hyperlink{classGraph_a622e2c0ef87a8dd227d0ac04140e6680}{destroy\-Node} (int nid)}\label{classGraph_a622e2c0ef87a8dd227d0ac04140e6680}
 
 \begin{DoxyCompactList}\small\item\em Function to destroy a node and free the memory associated with it. Only applicable to nodes which are part of this graph. \end{DoxyCompactList}\item 
-\hyperlink{classNode}{Node}$<$ Tnode, Tlink $>$ $\ast$ \hyperlink{classGraph_ad19bc391954e8df145149acfbdbba0cd}{get\+Node\+By\+Id} (int nid)
-\begin{DoxyCompactList}\small\item\em Function to get the pointer to the \hyperlink{classNode}{Node} whose I\+D is passed. \end{DoxyCompactList}\item 
-\hyperlink{classLink}{Link}$<$ Tlink, Tnode $>$ $\ast$ \hyperlink{classGraph_a2c205de5e88b199f24d1993e829df4b6}{get\+Link\+By\+Id} (int lid)
-\begin{DoxyCompactList}\small\item\em Function to get the pointer to the link whose I\+D is passed. \end{DoxyCompactList}\item 
-int \hyperlink{classGraph_afe92a65949d7bdc372feb09f99e4f5cf}{add\+Link\+To\+Graph} (\hyperlink{classLink}{Link}$<$ Tlink, Tnode $>$ $\ast$link)
+\hyperlink{classNode}{Node}$<$ Tnode, Tlink $>$ $\ast$ \hyperlink{classGraph_ad19bc391954e8df145149acfbdbba0cd}{get\-Node\-By\-Id} (int nid)
+\begin{DoxyCompactList}\small\item\em Function to get the pointer to the \hyperlink{classNode}{Node} whose I\-D is passed. \end{DoxyCompactList}\item 
+\hyperlink{classLink}{Link}$<$ Tlink, Tnode $>$ $\ast$ \hyperlink{classGraph_a2c205de5e88b199f24d1993e829df4b6}{get\-Link\-By\-Id} (int lid)
+\begin{DoxyCompactList}\small\item\em Function to get the pointer to the link whose I\-D is passed. \end{DoxyCompactList}\item 
+int \hyperlink{classGraph_ad7a9773e4b36196df9221116c8a7abd7}{attach\-Link\-To\-Node\-At\-Edge} (int lid, int nid, int edge)
 \begin{DoxyCompactList}\small\item\em Adds the passed link to the graph. \end{DoxyCompactList}\item 
-int \hyperlink{classGraph_ab2a7e149c924c444167097295f404566}{add\+Node\+To\+Graph} (\hyperlink{classNode}{Node}$<$ Tnode, Tlink $>$ $\ast$node)
-\begin{DoxyCompactList}\small\item\em Adds the passed \hyperlink{classNode}{Node} to the graph. \end{DoxyCompactList}\item 
-int \hyperlink{classGraph_ad7a9773e4b36196df9221116c8a7abd7}{attach\+Link\+To\+Node\+At\+Edge} (int lid, int nid, int edge)
-\begin{DoxyCompactList}\small\item\em Attaches the node and link whose I\+Ds are passed at the given edge of the link. \end{DoxyCompactList}\item 
-int \hyperlink{classGraph_a045bcbd5cfbbf87bc55deab5f0be477a}{detach\+Link\+From\+Node\+At\+Edge} (int lid, int nid, int edge)
+int \hyperlink{classGraph_a045bcbd5cfbbf87bc55deab5f0be477a}{detach\-Link\-From\-Node\-At\-Edge} (int lid, int nid, int edge)
 \begin{DoxyCompactList}\small\item\em Detaches the node and link at the given edge. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classGraph_afe92a65949d7bdc372feb09f99e4f5cf}{add\-Link\-To\-Graph} (\hyperlink{classLink}{Link}$<$ Tlink, Tnode $>$ $\ast$link)
+\begin{DoxyCompactList}\small\item\em Adds the passed link to the graph. \end{DoxyCompactList}\item 
+int \hyperlink{classGraph_ab2a7e149c924c444167097295f404566}{add\-Node\-To\-Graph} (\hyperlink{classNode}{Node}$<$ Tnode, Tlink $>$ $\ast$node)
+\begin{DoxyCompactList}\small\item\em Adds the passed \hyperlink{classNode}{Node} to the graph. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classGraph_ace44e35900691f95e5a5682e4e2327ab}{list$<$ \hyperlink{classNode}{Node}$<$ Tnode, Tlink $>$ $\ast$ $>$ \hyperlink{classGraph_ace44e35900691f95e5a5682e4e2327ab}{nodes\-\_\-}}\label{classGraph_ace44e35900691f95e5a5682e4e2327ab}
+
+\begin{DoxyCompactList}\small\item\em List of all the nodes in this graph. \end{DoxyCompactList}\item 
+\hypertarget{classGraph_a29805ae6b277e123503893d1b76fe22e}{list$<$ \hyperlink{classLink}{Link}$<$ Tlink, Tnode $>$ $\ast$ $>$ \hyperlink{classGraph_a29805ae6b277e123503893d1b76fe22e}{links\-\_\-}}\label{classGraph_a29805ae6b277e123503893d1b76fe22e}
+
+\begin{DoxyCompactList}\small\item\em List of all the links in this graph. \end{DoxyCompactList}\item 
+\hypertarget{classGraph_a6146b243a8de0cfe58d2855fbf61dd63}{int \hyperlink{classGraph_a6146b243a8de0cfe58d2855fbf61dd63}{graph\-\_\-id\-\_\-}}\label{classGraph_a6146b243a8de0cfe58d2855fbf61dd63}
+
+\begin{DoxyCompactList}\small\item\em The I\-D of this graph. This is just one in a unvierse of graphs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{classGraph_a2222ebedfb7b3cd4f1bd6717a2c1b881}{total\-\_\-graphs} = 0
+\begin{DoxyCompactList}\small\item\em A static member that keeps track of the number of graphs in the universe. \end{DoxyCompactList}\item 
+\hypertarget{classGraph_a055d56d93fbc031ff821c715b408d434}{static int \hyperlink{classGraph_a055d56d93fbc031ff821c715b408d434}{total\-\_\-graph\-\_\-ids} = 0}\label{classGraph_a055d56d93fbc031ff821c715b408d434}
+
+\begin{DoxyCompactList}\small\item\em A static member to keep track of graph ids. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -56,7 +87,7 @@ This class represents the overall graph. All the Nodes and Links will be members
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classGraph_a083bf42042f9082408dd0d38951bf0e8}{\index{Graph@{Graph}!Graph@{Graph}}
 \index{Graph@{Graph}!Graph@{Graph}}
-\subsubsection[{Graph}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tnode , class Tlink $>$ {\bf Graph}$<$ Tnode, Tlink $>$\+::{\bf Graph} (
+\subsubsection[{Graph}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tnode , class Tlink $>$ {\bf Graph}$<$ Tnode, Tlink $>$\-::{\bf Graph} (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -65,34 +96,45 @@ This class represents the overall graph. All the Nodes and Links will be members
 
 \hyperlink{classGraph}{Graph} constructor to initialize an empty graph. 
 
-The Default constructor. 
+The Default constructor. \hypertarget{classGraph_a33e89e1711a29888c0059c7fd2d67cba}{\index{Graph@{Graph}!$\sim$\-Graph@{$\sim$\-Graph}}
+\index{$\sim$\-Graph@{$\sim$\-Graph}!Graph@{Graph}}
+\subsubsection[{$\sim$\-Graph}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tnode , class Tlink $>$ {\bf Graph}$<$ Tnode, Tlink $>$\-::$\sim${\bf Graph} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classGraph_a33e89e1711a29888c0059c7fd2d67cba}
+
+
+\hyperlink{classGraph}{Graph} destructor. 
+
+Destructor for the \hyperlink{classGraph}{Graph} class. frees all the associated memory for Links and \hyperlink{classNode}{Node}. 
 
 \subsection{Member Function Documentation}
-\hypertarget{classGraph_afe92a65949d7bdc372feb09f99e4f5cf}{\index{Graph@{Graph}!add\+Link\+To\+Graph@{add\+Link\+To\+Graph}}
-\index{add\+Link\+To\+Graph@{add\+Link\+To\+Graph}!Graph@{Graph}}
-\subsubsection[{add\+Link\+To\+Graph}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tnode , class Tlink $>$ int {\bf Graph}$<$ Tnode, Tlink $>$\+::add\+Link\+To\+Graph (
+\hypertarget{classGraph_afe92a65949d7bdc372feb09f99e4f5cf}{\index{Graph@{Graph}!add\-Link\-To\-Graph@{add\-Link\-To\-Graph}}
+\index{add\-Link\-To\-Graph@{add\-Link\-To\-Graph}!Graph@{Graph}}
+\subsubsection[{add\-Link\-To\-Graph}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tnode , class Tlink $>$ int {\bf Graph}$<$ Tnode, Tlink $>$\-::add\-Link\-To\-Graph (
 \begin{DoxyParamCaption}
 \item[{{\bf Link}$<$ Tlink, Tnode $>$ $\ast$}]{link}
 \end{DoxyParamCaption}
-)}}\label{classGraph_afe92a65949d7bdc372feb09f99e4f5cf}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classGraph_afe92a65949d7bdc372feb09f99e4f5cf}
 
 
 Adds the passed link to the graph. 
 
-Function to add the passed link to the graph. \hypertarget{classGraph_ab2a7e149c924c444167097295f404566}{\index{Graph@{Graph}!add\+Node\+To\+Graph@{add\+Node\+To\+Graph}}
-\index{add\+Node\+To\+Graph@{add\+Node\+To\+Graph}!Graph@{Graph}}
-\subsubsection[{add\+Node\+To\+Graph}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tnode , class Tlink $>$ int {\bf Graph}$<$ Tnode, Tlink $>$\+::add\+Node\+To\+Graph (
+Function to add the passed link to the graph. \hypertarget{classGraph_ab2a7e149c924c444167097295f404566}{\index{Graph@{Graph}!add\-Node\-To\-Graph@{add\-Node\-To\-Graph}}
+\index{add\-Node\-To\-Graph@{add\-Node\-To\-Graph}!Graph@{Graph}}
+\subsubsection[{add\-Node\-To\-Graph}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tnode , class Tlink $>$ int {\bf Graph}$<$ Tnode, Tlink $>$\-::add\-Node\-To\-Graph (
 \begin{DoxyParamCaption}
 \item[{{\bf Node}$<$ Tnode, Tlink $>$ $\ast$}]{node}
 \end{DoxyParamCaption}
-)}}\label{classGraph_ab2a7e149c924c444167097295f404566}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classGraph_ab2a7e149c924c444167097295f404566}
 
 
 Adds the passed \hyperlink{classNode}{Node} to the graph. 
 
-Function to add the passed node to the graph. \hypertarget{classGraph_ad7a9773e4b36196df9221116c8a7abd7}{\index{Graph@{Graph}!attach\+Link\+To\+Node\+At\+Edge@{attach\+Link\+To\+Node\+At\+Edge}}
-\index{attach\+Link\+To\+Node\+At\+Edge@{attach\+Link\+To\+Node\+At\+Edge}!Graph@{Graph}}
-\subsubsection[{attach\+Link\+To\+Node\+At\+Edge}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tnode , class Tlink $>$ int {\bf Graph}$<$ Tnode, Tlink $>$\+::attach\+Link\+To\+Node\+At\+Edge (
+Function to add the passed node to the graph. \hypertarget{classGraph_ad7a9773e4b36196df9221116c8a7abd7}{\index{Graph@{Graph}!attach\-Link\-To\-Node\-At\-Edge@{attach\-Link\-To\-Node\-At\-Edge}}
+\index{attach\-Link\-To\-Node\-At\-Edge@{attach\-Link\-To\-Node\-At\-Edge}!Graph@{Graph}}
+\subsubsection[{attach\-Link\-To\-Node\-At\-Edge}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tnode , class Tlink $>$ int {\bf Graph}$<$ Tnode, Tlink $>$\-::attach\-Link\-To\-Node\-At\-Edge (
 \begin{DoxyParamCaption}
 \item[{int}]{lid, }
 \item[{int}]{nid, }
@@ -101,11 +143,13 @@ Function to add the passed node to the graph. \hypertarget{classGraph_ad7a9773e4
 )}}\label{classGraph_ad7a9773e4b36196df9221116c8a7abd7}
 
 
-Attaches the node and link whose I\+Ds are passed at the given edge of the link. 
+Adds the passed link to the graph. 
 
-Function to attach a link to a node at the given edge. \hypertarget{classGraph_a045bcbd5cfbbf87bc55deab5f0be477a}{\index{Graph@{Graph}!detach\+Link\+From\+Node\+At\+Edge@{detach\+Link\+From\+Node\+At\+Edge}}
-\index{detach\+Link\+From\+Node\+At\+Edge@{detach\+Link\+From\+Node\+At\+Edge}!Graph@{Graph}}
-\subsubsection[{detach\+Link\+From\+Node\+At\+Edge}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tnode , class Tlink $>$ int {\bf Graph}$<$ Tnode, Tlink $>$\+::detach\+Link\+From\+Node\+At\+Edge (
+Function to attach a link to a node at the given edge.
+
+Adds the passed \hyperlink{classNode}{Node} to the graph Attaches the node and link whose I\-Ds are passed at the given edge of the link \hypertarget{classGraph_a045bcbd5cfbbf87bc55deab5f0be477a}{\index{Graph@{Graph}!detach\-Link\-From\-Node\-At\-Edge@{detach\-Link\-From\-Node\-At\-Edge}}
+\index{detach\-Link\-From\-Node\-At\-Edge@{detach\-Link\-From\-Node\-At\-Edge}!Graph@{Graph}}
+\subsubsection[{detach\-Link\-From\-Node\-At\-Edge}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tnode , class Tlink $>$ int {\bf Graph}$<$ Tnode, Tlink $>$\-::detach\-Link\-From\-Node\-At\-Edge (
 \begin{DoxyParamCaption}
 \item[{int}]{lid, }
 \item[{int}]{nid, }
@@ -116,9 +160,9 @@ Function to attach a link to a node at the given edge. \hypertarget{classGraph_a
 
 Detaches the node and link at the given edge. 
 
-Function to detach the node and link attached the given edge of the link. \hypertarget{classGraph_a50e03d4d8fe8e7ff2a231871f8cd6356}{\index{Graph@{Graph}!display\+Graph@{display\+Graph}}
-\index{display\+Graph@{display\+Graph}!Graph@{Graph}}
-\subsubsection[{display\+Graph}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tnode , class Tlink $>$ int {\bf Graph}$<$ Tnode, Tlink $>$\+::display\+Graph (
+Function to detach the node and link attached the given edge of the link. \hypertarget{classGraph_a50e03d4d8fe8e7ff2a231871f8cd6356}{\index{Graph@{Graph}!display\-Graph@{display\-Graph}}
+\index{display\-Graph@{display\-Graph}!Graph@{Graph}}
+\subsubsection[{display\-Graph}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tnode , class Tlink $>$ int {\bf Graph}$<$ Tnode, Tlink $>$\-::display\-Graph (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -139,30 +183,40 @@ Function to traverse the entire graph and print out the structure of the graph. 
 \textcolor{stringliteral}{}
 \textcolor{stringliteral}{@code \{.cpp\} Insert nodes connected to the current node into the list of active nodes }
 \end{DoxyCode}
-\hypertarget{classGraph_a2c205de5e88b199f24d1993e829df4b6}{\index{Graph@{Graph}!get\+Link\+By\+Id@{get\+Link\+By\+Id}}
-\index{get\+Link\+By\+Id@{get\+Link\+By\+Id}!Graph@{Graph}}
-\subsubsection[{get\+Link\+By\+Id}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tnode , class Tlink $>$ {\bf Link}$<$ Tlink, Tnode $>$ $\ast$ {\bf Graph}$<$ Tnode, Tlink $>$\+::get\+Link\+By\+Id (
+\hypertarget{classGraph_a2c205de5e88b199f24d1993e829df4b6}{\index{Graph@{Graph}!get\-Link\-By\-Id@{get\-Link\-By\-Id}}
+\index{get\-Link\-By\-Id@{get\-Link\-By\-Id}!Graph@{Graph}}
+\subsubsection[{get\-Link\-By\-Id}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tnode , class Tlink $>$ {\bf Link}$<$ Tlink, Tnode $>$ $\ast$ {\bf Graph}$<$ Tnode, Tlink $>$\-::get\-Link\-By\-Id (
 \begin{DoxyParamCaption}
 \item[{int}]{lid}
 \end{DoxyParamCaption}
 )}}\label{classGraph_a2c205de5e88b199f24d1993e829df4b6}
 
 
-Function to get the pointer to the link whose I\+D is passed. 
+Function to get the pointer to the link whose I\-D is passed. 
 
-Function to return the pointer to the link indicated by the given link id. \hypertarget{classGraph_ad19bc391954e8df145149acfbdbba0cd}{\index{Graph@{Graph}!get\+Node\+By\+Id@{get\+Node\+By\+Id}}
-\index{get\+Node\+By\+Id@{get\+Node\+By\+Id}!Graph@{Graph}}
-\subsubsection[{get\+Node\+By\+Id}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tnode , class Tlink $>$ {\bf Node}$<$ Tnode, Tlink $>$ $\ast$ {\bf Graph}$<$ Tnode, Tlink $>$\+::get\+Node\+By\+Id (
+Function to return the pointer to the link indicated by the given link id. \hypertarget{classGraph_ad19bc391954e8df145149acfbdbba0cd}{\index{Graph@{Graph}!get\-Node\-By\-Id@{get\-Node\-By\-Id}}
+\index{get\-Node\-By\-Id@{get\-Node\-By\-Id}!Graph@{Graph}}
+\subsubsection[{get\-Node\-By\-Id}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tnode , class Tlink $>$ {\bf Node}$<$ Tnode, Tlink $>$ $\ast$ {\bf Graph}$<$ Tnode, Tlink $>$\-::get\-Node\-By\-Id (
 \begin{DoxyParamCaption}
 \item[{int}]{nid}
 \end{DoxyParamCaption}
 )}}\label{classGraph_ad19bc391954e8df145149acfbdbba0cd}
 
 
-Function to get the pointer to the \hyperlink{classNode}{Node} whose I\+D is passed. 
+Function to get the pointer to the \hyperlink{classNode}{Node} whose I\-D is passed. 
 
 Function to return the pointer to the node indicated by the given node id. 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\subsection{Member Data Documentation}
+\hypertarget{classGraph_a2222ebedfb7b3cd4f1bd6717a2c1b881}{\index{Graph@{Graph}!total\-\_\-graphs@{total\-\_\-graphs}}
+\index{total\-\_\-graphs@{total\-\_\-graphs}!Graph@{Graph}}
+\subsubsection[{total\-\_\-graphs}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tnode , class Tlink $>$ int {\bf Graph}$<$ Tnode, Tlink $>$\-::total\-\_\-graphs = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classGraph_a2222ebedfb7b3cd4f1bd6717a2c1b881}
+
+
+A static member that keeps track of the number of graphs in the universe. 
+
+Initialization of total graphs and total graph ids to 0. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 
-\hyperlink{graph_8hpp}{graph.\+hpp}\end{DoxyCompactItemize}
+\hyperlink{graph_8hpp}{graph.\-hpp}\end{DoxyCompactItemize}
