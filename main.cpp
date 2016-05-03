@@ -4,6 +4,9 @@
 #include "errHandler.hpp"
 
 using namespace std;
+
+boolean debugFlag = FALSE;
+
 /** \fn main()
     @brief The main function where the program starts
 */
@@ -16,13 +19,25 @@ int main(int argc, char* argv[])
   Graph<int,int> *graph = new Graph<int,int>();
   int node_ids[num_nodes];
   int link_ids[num_links];
+  if( TRUE == debugFlag )
+  {
+    OUTPUT_MSG(DEBUG, "Created Graph");
+  }
   for(int i=0;i<num_nodes;i++)
   {
     node_ids[i] = graph->createNode(0);
+    if( TRUE == debugFlag )
+    {
+      OUTPUT_MSG(DEBUG, "Created Node "<<i);
+    }
   }
   for(int i=0;i < num_links; i++)
   {
     link_ids[i] = graph->createLink(1);
+    if( TRUE == debugFlag )
+    {
+      OUTPUT_MSG(DEBUG, "Created Link "<<i);
+    }
   }
 
   int k = 0;
@@ -31,8 +46,17 @@ int main(int argc, char* argv[])
   {
     for(int j = i+1;j<num_nodes;j++)
     {
+      if( TRUE == debugFlag )
+      {
+        OUTPUT_MSG(DEBUG, "Going to attach Link "<<j<<" to Node "<<j);
+      }
       graph->attachLinkToNodeAtEdge(link_ids[k],node_ids[i], 0);
       graph->attachLinkToNodeAtEdge(link_ids[k],node_ids[j], 1);
+
+      if( TRUE == debugFlag )
+      {
+        OUTPUT_MSG(DEBUG, "Attached Link "<<j<<" to Node "<<j);
+      }
       k++;
     }
   }

@@ -219,9 +219,11 @@ int Node<Tnode,Tlink>::getDegree()
 template <class Tnode,class Tlink>
 Tnode Node<Tnode,Tlink>::getValue()
 {
+  Tnode retVal;
   value_mutex_.lock();
-  return value_;
+  retVal = value_;
   value_mutex_.unlock();
+  return retVal;
 }
  
 /** \fn Node::getId()
@@ -230,9 +232,11 @@ Tnode Node<Tnode,Tlink>::getValue()
 template<class Tnode,class Tlink>
 int Node<Tnode,Tlink>::getId()
 {
+  int retVal;
   node_id_mutex_.lock();
-  return node_id_;
+  retVal = node_id_;
   node_id_mutex_.unlock();
+  return retVal;
 }
 
 /** \fn Node::setValue
