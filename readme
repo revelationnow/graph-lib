@@ -10,3 +10,7 @@ Basics when making changes
   a. git add *
   b. git commit -m "Meaningful message"
   c. git push
+5. Run Valgrind
+  a. valgrind --log-file="./valgrindOutput.txt" -v --leak-check=full --show-leak-kinds=all ./main
+6. Run Cscope
+  a. cscope -b
