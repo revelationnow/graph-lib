@@ -4,79 +4,104 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-FALSE	common.hpp	/^enum boolean {FALSE, TRUE};$/;"	e	enum:boolean
-Graph	graph.hpp	/^Graph<Tnode,Tlink>::Graph()$/;"	f	class:Graph
-Graph	graph.hpp	/^class Graph$/;"	c
-Link	node.hpp	/^Link<Tlink,Tnode>::Link()$/;"	f	class:Link
-Link	node.hpp	/^Link<Tlink,Tnode>::Link(Tlink weight)$/;"	f	class:Link
-Link	node.hpp	/^class Link : public Link_base$/;"	c
-Link_base	common.hpp	/^class Link_base$/;"	c
-Node	node.hpp	/^Node<Tnode,Tlink>::Node()$/;"	f	class:Node
-Node	node.hpp	/^Node<Tnode,Tlink>::Node(Tnode value)$/;"	f	class:Node
-Node	node.hpp	/^class Node : public Node_base$/;"	c
-Node_base	common.hpp	/^class Node_base$/;"	c
-OUTPUT_MSG	errHandler.hpp	6;"	d
-PRINT_TAG	errHandler.hpp	5;"	d
-TRUE	common.hpp	/^enum boolean {FALSE, TRUE};$/;"	e	enum:boolean
-_ERRHANDLER_HPP_	errHandler.hpp	3;"	d
-__COMMON_HPP_	common.hpp	3;"	d
-__GRAPH_HPP_	graph.hpp	3;"	d
-__LINK_HPP_	link.hpp	3;"	d
-__NODE_HPP_	node.hpp	3;"	d
-addLinkToGraph	graph.hpp	/^int Graph<Tnode,Tlink>::addLinkToGraph(Link<Tlink,Tnode>* link)$/;"	f	class:Graph
-addNodeToGraph	graph.hpp	/^int Graph<Tnode,Tlink>::addNodeToGraph(Node<Tnode,Tlink>* node)$/;"	f	class:Graph
-attachLinkToNodeAtEdge	graph.hpp	/^int Graph<Tnode,Tlink>::attachLinkToNodeAtEdge(int lid, int nid, int edge)$/;"	f	class:Graph
-boolean	common.hpp	/^enum boolean {FALSE, TRUE};$/;"	g
-createLink	graph.hpp	/^int Graph<Tnode, Tlink>::createLink(Tlink val)$/;"	f	class:Graph
-createNode	graph.hpp	/^int Graph<Tnode, Tlink>::createNode(Tnode val)$/;"	f	class:Graph
-detachLinkFromNodeAtEdge	graph.hpp	/^int Graph<Tnode,Tlink>::detachLinkFromNodeAtEdge(int lid, int nid, int edge)$/;"	f	class:Graph
-detachNodeByEdge	node.hpp	/^void Link<Tlink,Tnode>::detachNodeByEdge(int edge)$/;"	f	class:Link
-displayGraph	graph.hpp	/^int Graph<Tnode,Tlink>::displayGraph()$/;"	f	class:Graph
-getDegree	node.hpp	/^int Node<Tnode,Tlink>::getDegree()$/;"	f	class:Node
-getId	node.hpp	/^int Link<Tlink,Tnode>::getId()$/;"	f	class:Link
-getId	node.hpp	/^int Node<Tnode,Tlink>::getId()$/;"	f	class:Node
-getLinkById	graph.hpp	/^Link<Tlink,Tnode>* Graph<Tnode,Tlink>::getLinkById(int lid)$/;"	f	class:Graph
-getNodeAtEdge	node.hpp	/^Node<Tnode,Tlink>* Link<Tlink,Tnode>::getNodeAtEdge(int edge)$/;"	f	class:Link
-getNodeById	graph.hpp	/^Node<Tnode,Tlink>* Graph<Tnode,Tlink>::getNodeById(int nid)$/;"	f	class:Graph
-getValue	node.hpp	/^Tnode Node<Tnode,Tlink>::getValue()$/;"	f	class:Node
-graph_id_	graph.hpp	/^    int graph_id_;$/;"	m	class:Graph
-linkAttachedToNode	node.hpp	/^boolean Node<Tnode,Tlink>::linkAttachedToNode(Link<Tlink,Tnode>* link)$/;"	f	class:Node
-link_id_	node.hpp	/^    int link_id_;$/;"	m	class:Link
-link_id_mutex_	node.hpp	/^    mutex link_id_mutex_;$/;"	m	class:Link
-links_	graph.hpp	/^    list<Link<Tlink,Tnode>*> links_;$/;"	m	class:Graph
-links_	node.hpp	/^    list<Link<Tnodelink,Tnode>*> links_;$/;"	m	class:Node
-links_mutex_	node.hpp	/^    mutex links_mutex_;$/;"	m	class:Node
-main	main.cpp	/^int main(int argc, char* argv[])$/;"	f
-node_	node.hpp	/^    Node<Tnode,Tlink>* node_[2];$/;"	m	class:Link
-node_id_	node.hpp	/^    int node_id_;$/;"	m	class:Node
-node_id_mutex_	node.hpp	/^    mutex node_id_mutex_;$/;"	m	class:Node
-nodes_	graph.hpp	/^    list<Node<Tnode,Tlink>*> nodes_;$/;"	m	class:Graph
-removeLink	node.hpp	/^int Node<Tnode,Tlink>::removeLink(Link<Tlink,Tnode>* link)$/;"	f	class:Node
-setValue	node.hpp	/^void Node<Tnode,Tlink>::setValue(Tnode value)$/;"	f	class:Node
-total_graph_ids	graph.hpp	/^    static int total_graph_ids;$/;"	m	class:Graph
-total_graph_ids	graph.hpp	/^int Graph<Tnode,Tlink>::total_graph_ids = 0;$/;"	m	class:Graph
-total_graphs	graph.hpp	/^    static int total_graphs;$/;"	m	class:Graph
-total_graphs	graph.hpp	/^int Graph<Tnode,Tlink>::total_graphs = 0;$/;"	m	class:Graph
-total_link_ids	node.hpp	/^    static int total_link_ids;$/;"	m	class:Link
-total_link_ids	node.hpp	/^int Link<Tlink,Tnode>::total_link_ids = 0;$/;"	m	class:Link
-total_link_ids_mutex	node.hpp	/^    static mutex total_link_ids_mutex;$/;"	m	class:Link
-total_link_ids_mutex	node.hpp	/^mutex Link<Tlink,Tnode>::total_link_ids_mutex;$/;"	m	class:Link
-total_links	node.hpp	/^    static int total_links;$/;"	m	class:Link
-total_links	node.hpp	/^int Link<Tlink,Tnode>::total_links = 0;$/;"	m	class:Link
-total_links_mutex	node.hpp	/^    static mutex total_links_mutex;$/;"	m	class:Link
-total_links_mutex	node.hpp	/^mutex Link<Tlink,Tnode>::total_links_mutex;$/;"	m	class:Link
-total_node_ids	node.hpp	/^    static int total_node_ids;$/;"	m	class:Node
-total_node_ids	node.hpp	/^int Node<Tnode,Tlink>::total_node_ids = 0;$/;"	m	class:Node
-total_node_ids_mutex	node.hpp	/^    static mutex total_node_ids_mutex;$/;"	m	class:Node
-total_node_ids_mutex	node.hpp	/^mutex Node<Tnode, Tlink>::total_node_ids_mutex;$/;"	m	class:Node
-total_nodes	node.hpp	/^    static int total_nodes;$/;"	m	class:Node
-total_nodes	node.hpp	/^int Node<Tnode,Tlink>::total_nodes = 0;$/;"	m	class:Node
-total_nodes_mutex	node.hpp	/^    static mutex total_nodes_mutex;$/;"	m	class:Node
-total_nodes_mutex	node.hpp	/^mutex Node<Tnode, Tlink>::total_nodes_mutex;$/;"	m	class:Node
-value_	node.hpp	/^    Tnode value_;$/;"	m	class:Node
-value_mutex_	node.hpp	/^    mutex value_mutex_;$/;"	m	class:Node
-weight_	node.hpp	/^    Tlink weight_;$/;"	m	class:Link
-weight_mutex_	node.hpp	/^    mutex weight_mutex_;$/;"	m	class:Link
-~Graph	graph.hpp	/^Graph<Tnode, Tlink>::~Graph()$/;"	f	class:Graph
-~Link	node.hpp	/^Link<Tlink, Tnode>::~Link()$/;"	f	class:Link
-~Node	node.hpp	/^Node<Tnode, Tlink>::~Node()$/;"	f	class:Node
+ERR_LEVEL_ERR	dev/inc/diagnostic/quiet/errHandler.hpp	/^  ERR_LEVEL_ERR,$/;"	e	enum:__anon1
+ERR_LEVEL_ERR	dev/inc/diagnostic/verbose/errHandler.hpp	/^  ERR_LEVEL_ERR,$/;"	e	enum:__anon2
+ERR_LEVEL_FATAL	dev/inc/diagnostic/quiet/errHandler.hpp	/^  ERR_LEVEL_FATAL,$/;"	e	enum:__anon1
+ERR_LEVEL_FATAL	dev/inc/diagnostic/verbose/errHandler.hpp	/^  ERR_LEVEL_FATAL,$/;"	e	enum:__anon2
+ERR_LEVEL_INFO	dev/inc/diagnostic/quiet/errHandler.hpp	/^  ERR_LEVEL_INFO,$/;"	e	enum:__anon1
+ERR_LEVEL_INFO	dev/inc/diagnostic/verbose/errHandler.hpp	/^  ERR_LEVEL_INFO,$/;"	e	enum:__anon2
+ERR_LEVEL_MAX	dev/inc/diagnostic/quiet/errHandler.hpp	/^  ERR_LEVEL_MAX$/;"	e	enum:__anon1
+ERR_LEVEL_MAX	dev/inc/diagnostic/verbose/errHandler.hpp	/^  ERR_LEVEL_MAX$/;"	e	enum:__anon2
+ERR_LEVEL_WARN	dev/inc/diagnostic/quiet/errHandler.hpp	/^  ERR_LEVEL_WARN,$/;"	e	enum:__anon1
+ERR_LEVEL_WARN	dev/inc/diagnostic/verbose/errHandler.hpp	/^  ERR_LEVEL_WARN,$/;"	e	enum:__anon2
+FALSE	dev/inc/common.hpp	/^enum boolean {FALSE, TRUE};$/;"	e	enum:boolean
+Graph	dev/inc/graph.hpp	/^Graph<Tnode,Tlink>::Graph()$/;"	f	class:Graph
+Graph	dev/inc/graph.hpp	/^class Graph$/;"	c
+Link	dev/inc/node.hpp	/^Link<Tlink,Tnode>::Link()$/;"	f	class:Link
+Link	dev/inc/node.hpp	/^Link<Tlink,Tnode>::Link(Tlink weight)$/;"	f	class:Link
+Link	dev/inc/node.hpp	/^class Link : public Link_base$/;"	c
+Link_base	dev/inc/common.hpp	/^class Link_base$/;"	c
+Node	dev/inc/node.hpp	/^Node<Tnode,Tlink>::Node()$/;"	f	class:Node
+Node	dev/inc/node.hpp	/^Node<Tnode,Tlink>::Node(Tnode value)$/;"	f	class:Node
+Node	dev/inc/node.hpp	/^class Node : public Node_base$/;"	c
+Node_base	dev/inc/common.hpp	/^class Node_base$/;"	c
+OUTPUT_MSG	dev/inc/diagnostic/quiet/errHandler.hpp	14;"	d
+OUTPUT_MSG	dev/inc/diagnostic/verbose/errHandler.hpp	14;"	d
+OUTPUT_MSG_COMMON	dev/inc/diagnostic/quiet/errHandler.hpp	23;"	d
+OUTPUT_MSG_COMMON	dev/inc/diagnostic/verbose/errHandler.hpp	23;"	d
+OUTPUT_MSG_ERR_LEVEL_ERR	dev/inc/diagnostic/quiet/errHandler.hpp	20;"	d
+OUTPUT_MSG_ERR_LEVEL_ERR	dev/inc/diagnostic/verbose/errHandler.hpp	20;"	d
+OUTPUT_MSG_ERR_LEVEL_FATAL	dev/inc/diagnostic/quiet/errHandler.hpp	21;"	d
+OUTPUT_MSG_ERR_LEVEL_FATAL	dev/inc/diagnostic/verbose/errHandler.hpp	21;"	d
+OUTPUT_MSG_ERR_LEVEL_INFO	dev/inc/diagnostic/quiet/errHandler.hpp	18;"	d
+OUTPUT_MSG_ERR_LEVEL_INFO	dev/inc/diagnostic/verbose/errHandler.hpp	18;"	d
+OUTPUT_MSG_ERR_LEVEL_WARN	dev/inc/diagnostic/quiet/errHandler.hpp	19;"	d
+OUTPUT_MSG_ERR_LEVEL_WARN	dev/inc/diagnostic/verbose/errHandler.hpp	19;"	d
+PRINT_TAG	dev/inc/diagnostic/quiet/errHandler.hpp	13;"	d
+PRINT_TAG	dev/inc/diagnostic/verbose/errHandler.hpp	13;"	d
+TRUE	dev/inc/common.hpp	/^enum boolean {FALSE, TRUE};$/;"	e	enum:boolean
+_ERRHANDLER_HPP_	dev/inc/diagnostic/quiet/errHandler.hpp	3;"	d
+_ERRHANDLER_HPP_	dev/inc/diagnostic/verbose/errHandler.hpp	3;"	d
+__COMMON_HPP_	dev/inc/common.hpp	3;"	d
+__GRAPH_HPP_	dev/inc/graph.hpp	3;"	d
+__LINK_HPP_	dev/inc/link.hpp	3;"	d
+__NODE_HPP_	dev/inc/node.hpp	3;"	d
+addLinkToGraph	dev/inc/graph.hpp	/^int Graph<Tnode,Tlink>::addLinkToGraph(Link<Tlink,Tnode>* link)$/;"	f	class:Graph
+addNodeToGraph	dev/inc/graph.hpp	/^int Graph<Tnode,Tlink>::addNodeToGraph(Node<Tnode,Tlink>* node)$/;"	f	class:Graph
+attachLinkToNodeAtEdge	dev/inc/graph.hpp	/^int Graph<Tnode,Tlink>::attachLinkToNodeAtEdge(int lid, int nid, int edge)$/;"	f	class:Graph
+boolean	dev/inc/common.hpp	/^enum boolean {FALSE, TRUE};$/;"	g
+createLink	dev/inc/graph.hpp	/^int Graph<Tnode, Tlink>::createLink(Tlink val)$/;"	f	class:Graph
+createNode	dev/inc/graph.hpp	/^int Graph<Tnode, Tlink>::createNode(Tnode val)$/;"	f	class:Graph
+detachLinkFromNodeAtEdge	dev/inc/graph.hpp	/^int Graph<Tnode,Tlink>::detachLinkFromNodeAtEdge(int lid, int nid, int edge)$/;"	f	class:Graph
+detachNodeByEdge	dev/inc/node.hpp	/^void Link<Tlink,Tnode>::detachNodeByEdge(int edge)$/;"	f	class:Link
+displayGraph	dev/inc/graph.hpp	/^int Graph<Tnode,Tlink>::displayGraph()$/;"	f	class:Graph
+errHandlerTagEnumType	dev/inc/diagnostic/quiet/errHandler.hpp	/^} errHandlerTagEnumType;$/;"	t	typeref:enum:__anon1
+errHandlerTagEnumType	dev/inc/diagnostic/verbose/errHandler.hpp	/^} errHandlerTagEnumType;$/;"	t	typeref:enum:__anon2
+getDegree	dev/inc/node.hpp	/^int Node<Tnode,Tlink>::getDegree()$/;"	f	class:Node
+getId	dev/inc/node.hpp	/^int Link<Tlink,Tnode>::getId()$/;"	f	class:Link
+getId	dev/inc/node.hpp	/^int Node<Tnode,Tlink>::getId()$/;"	f	class:Node
+getLinkById	dev/inc/graph.hpp	/^Link<Tlink,Tnode>* Graph<Tnode,Tlink>::getLinkById(int lid)$/;"	f	class:Graph
+getNodeAtEdge	dev/inc/node.hpp	/^Node<Tnode,Tlink>* Link<Tlink,Tnode>::getNodeAtEdge(int edge)$/;"	f	class:Link
+getNodeById	dev/inc/graph.hpp	/^Node<Tnode,Tlink>* Graph<Tnode,Tlink>::getNodeById(int nid)$/;"	f	class:Graph
+getValue	dev/inc/node.hpp	/^Tnode Node<Tnode,Tlink>::getValue()$/;"	f	class:Node
+graph_id_	dev/inc/graph.hpp	/^    int graph_id_;$/;"	m	class:Graph
+linkAttachedToNode	dev/inc/node.hpp	/^boolean Node<Tnode,Tlink>::linkAttachedToNode(Link<Tlink,Tnode>* link)$/;"	f	class:Node
+link_id_	dev/inc/node.hpp	/^    int link_id_;$/;"	m	class:Link
+link_id_mutex_	dev/inc/node.hpp	/^    mutex link_id_mutex_;$/;"	m	class:Link
+links_	dev/inc/graph.hpp	/^    list<Link<Tlink,Tnode>*> links_;$/;"	m	class:Graph
+links_	dev/inc/node.hpp	/^    list<Link<Tnodelink,Tnode>*> links_;$/;"	m	class:Node
+links_mutex_	dev/inc/node.hpp	/^    mutex links_mutex_;$/;"	m	class:Node
+main	dev/src/unitTest1.cpp	/^int main(int argc, char* argv[])$/;"	f
+node_	dev/inc/node.hpp	/^    Node<Tnode,Tlink>* node_[2];$/;"	m	class:Link
+node_id_	dev/inc/node.hpp	/^    int node_id_;$/;"	m	class:Node
+node_id_mutex_	dev/inc/node.hpp	/^    mutex node_id_mutex_;$/;"	m	class:Node
+nodes_	dev/inc/graph.hpp	/^    list<Node<Tnode,Tlink>*> nodes_;$/;"	m	class:Graph
+removeLink	dev/inc/node.hpp	/^int Node<Tnode,Tlink>::removeLink(Link<Tlink,Tnode>* link)$/;"	f	class:Node
+setValue	dev/inc/node.hpp	/^void Node<Tnode,Tlink>::setValue(Tnode value)$/;"	f	class:Node
+total_graph_ids	dev/inc/graph.hpp	/^    static int total_graph_ids;$/;"	m	class:Graph
+total_graph_ids	dev/inc/graph.hpp	/^int Graph<Tnode,Tlink>::total_graph_ids = 0;$/;"	m	class:Graph
+total_graphs	dev/inc/graph.hpp	/^    static int total_graphs;$/;"	m	class:Graph
+total_graphs	dev/inc/graph.hpp	/^int Graph<Tnode,Tlink>::total_graphs = 0;$/;"	m	class:Graph
+total_link_ids	dev/inc/node.hpp	/^    static int total_link_ids;$/;"	m	class:Link
+total_link_ids	dev/inc/node.hpp	/^int Link<Tlink,Tnode>::total_link_ids = 0;$/;"	m	class:Link
+total_link_ids_mutex	dev/inc/node.hpp	/^    static mutex total_link_ids_mutex;$/;"	m	class:Link
+total_link_ids_mutex	dev/inc/node.hpp	/^mutex Link<Tlink,Tnode>::total_link_ids_mutex;$/;"	m	class:Link
+total_links	dev/inc/node.hpp	/^    static int total_links;$/;"	m	class:Link
+total_links	dev/inc/node.hpp	/^int Link<Tlink,Tnode>::total_links = 0;$/;"	m	class:Link
+total_links_mutex	dev/inc/node.hpp	/^    static mutex total_links_mutex;$/;"	m	class:Link
+total_links_mutex	dev/inc/node.hpp	/^mutex Link<Tlink,Tnode>::total_links_mutex;$/;"	m	class:Link
+total_node_ids	dev/inc/node.hpp	/^    static int total_node_ids;$/;"	m	class:Node
+total_node_ids	dev/inc/node.hpp	/^int Node<Tnode,Tlink>::total_node_ids = 0;$/;"	m	class:Node
+total_node_ids_mutex	dev/inc/node.hpp	/^    static mutex total_node_ids_mutex;$/;"	m	class:Node
+total_node_ids_mutex	dev/inc/node.hpp	/^mutex Node<Tnode, Tlink>::total_node_ids_mutex;$/;"	m	class:Node
+total_nodes	dev/inc/node.hpp	/^    static int total_nodes;$/;"	m	class:Node
+total_nodes	dev/inc/node.hpp	/^int Node<Tnode,Tlink>::total_nodes = 0;$/;"	m	class:Node
+total_nodes_mutex	dev/inc/node.hpp	/^    static mutex total_nodes_mutex;$/;"	m	class:Node
+total_nodes_mutex	dev/inc/node.hpp	/^mutex Node<Tnode, Tlink>::total_nodes_mutex;$/;"	m	class:Node
+value_	dev/inc/node.hpp	/^    Tnode value_;$/;"	m	class:Node
+value_mutex_	dev/inc/node.hpp	/^    mutex value_mutex_;$/;"	m	class:Node
+weight_	dev/inc/node.hpp	/^    Tlink weight_;$/;"	m	class:Link
+weight_mutex_	dev/inc/node.hpp	/^    mutex weight_mutex_;$/;"	m	class:Link
+~Graph	dev/inc/graph.hpp	/^Graph<Tnode, Tlink>::~Graph()$/;"	f	class:Graph
+~Link	dev/inc/node.hpp	/^Link<Tlink, Tnode>::~Link()$/;"	f	class:Link
+~Node	dev/inc/node.hpp	/^Node<Tnode, Tlink>::~Node()$/;"	f	class:Node

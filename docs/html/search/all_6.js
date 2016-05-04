@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['main',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
-  ['main_2ecpp',['main.cpp',['../main_8cpp.html',1,'']]]
+  ['removelink',['removeLink',['../classNode.html#aa7a762ea839eea52e9d2cae7f31780e8',1,'Node']]],
+  ['removelinkedge',['removeLinkEdge',['../classNode.html#ad469f4b48294f360d372b5765eee4f77',1,'Node']]]
 ];

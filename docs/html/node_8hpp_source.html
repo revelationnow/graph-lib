@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>Graph-LIB: node.hpp Source File</title>
+<title>Graph-LIB: dev/inc/node.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,10 +62,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -80,6 +78,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5fc0168d11760b9445bd29fa15d9290f.html">dev</a></li><li class="navelem"><a class="el" href="dir_512c67ab4d70bc8b63cc14cc90373fdc.html">inc</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">node.hpp</div>  </div>
@@ -91,7 +94,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;list&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;mutex&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="errHandler_8hpp.html">errHandler.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;errHandler.hpp&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="common_8hpp.html">common.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Tlink,<span class="keyword">class</span> Tnode&gt;</div>
@@ -230,141 +233,145 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Tnode,<span class="keyword">class</span> Tlink&gt;</div>
 <div class="line"><a name="l00220"></a><span class="lineno"><a class="line" href="classNode.html#aa9067e2137ecc75ddd802d5a574612f1">  220</a></span>&#160;Tnode <a class="code" href="classNode.html#aa9067e2137ecc75ddd802d5a574612f1">Node&lt;Tnode,Tlink&gt;::getValue</a>()</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;{</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  value_mutex_.lock();</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  <span class="keywordflow">return</span> value_;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  value_mutex_.unlock();</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;}</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Tnode,<span class="keyword">class</span> Tlink&gt;</div>
-<div class="line"><a name="l00231"></a><span class="lineno"><a class="line" href="classNode.html#a91639d810acda39b666715b07b5c2100">  231</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classNode.html#a91639d810acda39b666715b07b5c2100">Node&lt;Tnode,Tlink&gt;::getId</a>()</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;{</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  node_id_mutex_.lock();</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  <span class="keywordflow">return</span> node_id_;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  node_id_mutex_.unlock();</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;}</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Tnode,<span class="keyword">class</span> Tlink&gt;</div>
-<div class="line"><a name="l00242"></a><span class="lineno"><a class="line" href="classNode.html#a39ea9f0c2d3af467734b5c78a001bbcb">  242</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classNode.html#a39ea9f0c2d3af467734b5c78a001bbcb">Node&lt;Tnode,Tlink&gt;::setValue</a>(Tnode value)</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;{</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  value_mutex_.lock();</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  value_ = value;</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  value_mutex_.unlock();</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;}</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Tnode,<span class="keyword">class</span> Tlink&gt;</div>
-<div class="line"><a name="l00253"></a><span class="lineno"><a class="line" href="classNode.html#a9237bd16a22ee02c244d8cc95d6533bd">  253</a></span>&#160;<span class="keywordtype">boolean</span> <a class="code" href="classNode.html#a9237bd16a22ee02c244d8cc95d6533bd">Node&lt;Tnode,Tlink&gt;::linkAttachedToNode</a>(<a class="code" href="classLink.html">Link&lt;Tlink,Tnode&gt;</a>* link)</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;{</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  <span class="keywordtype">boolean</span> return_value = FALSE;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;  links_mutex_.lock();</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  <span class="keywordflow">for</span>(list&lt;Link_base*&gt;::iterator link_iterator = <a class="code" href="classGraph.html#a29805ae6b277e123503893d1b76fe22e">links_</a>.begin();link_iterator != <a class="code" href="classGraph.html#a29805ae6b277e123503893d1b76fe22e">links_</a>.end();++link_iterator)</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  {</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordflow">if</span>((*(<a class="code" href="classLink.html">Link&lt;Tlink,Tnode&gt;</a>*)link_iterator)-&gt;getId() == link-&gt;<a class="code" href="classLink.html#ae082bdae9da5f4c58d91c52af2ea4514">getId</a>())</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    {</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;      return_value = TRUE;</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    }</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  }</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  links_mutex_.unlock();</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  <span class="keywordflow">return</span> return_value;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;}</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Tnode,<span class="keyword">class</span> Tlink&gt;</div>
-<div class="line"><a name="l00272"></a><span class="lineno"><a class="line" href="classNode.html#aa7a762ea839eea52e9d2cae7f31780e8">  272</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classNode.html#aa7a762ea839eea52e9d2cae7f31780e8">Node&lt;Tnode,Tlink&gt;::removeLink</a>(<a class="code" href="classLink.html">Link&lt;Tlink,Tnode&gt;</a>* link)</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;{</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  <span class="keywordtype">int</span> return_value = -1;</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  links_mutex_.lock();</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  <span class="keywordflow">for</span>(list&lt;Link_base*&gt;::iterator link_iterator = <a class="code" href="classGraph.html#a29805ae6b277e123503893d1b76fe22e">links_</a>.begin();link_iterator != <a class="code" href="classGraph.html#a29805ae6b277e123503893d1b76fe22e">links_</a>.end(); ++link_iterator)</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  {</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keywordflow">if</span>((*(<a class="code" href="classLink.html">Link&lt;Tlink,Tnode&gt;</a>)link_iterator)-&gt;getId() == link-&gt;<a class="code" href="classLink.html#ae082bdae9da5f4c58d91c52af2ea4514">getId</a>())</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    {</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;      <a class="code" href="classGraph.html#a29805ae6b277e123503893d1b76fe22e">links_</a>.erase(link_iterator);</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;      return_value = 0;</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    }</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;  }</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  links_mutex_.unlock();</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  <span class="keywordflow">return</span> return_value;</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;}</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Tlink,<span class="keyword">class</span> Tnode&gt;</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="keywordtype">int</span> <a class="code" href="classLink.html">Link&lt;Tlink,Tnode&gt;::total_links</a> = 0;</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Tlink, <span class="keyword">class</span> Tnode&gt;</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;mutex <a class="code" href="classLink.html">Link&lt;Tlink,Tnode&gt;::total_links_mutex</a>;</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Tlink,<span class="keyword">class</span> Tnode&gt; </div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="keywordtype">int</span> <a class="code" href="classLink.html">Link&lt;Tlink,Tnode&gt;::total_link_ids</a> = 0;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  Tnode retVal;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  value_mutex_.lock();</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  retVal = value_;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  value_mutex_.unlock();</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  <span class="keywordflow">return</span> retVal;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;}</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Tnode,<span class="keyword">class</span> Tlink&gt;</div>
+<div class="line"><a name="l00233"></a><span class="lineno"><a class="line" href="classNode.html#a91639d810acda39b666715b07b5c2100">  233</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classNode.html#a91639d810acda39b666715b07b5c2100">Node&lt;Tnode,Tlink&gt;::getId</a>()</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;{</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  <span class="keywordtype">int</span> retVal;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  node_id_mutex_.lock();</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  retVal = node_id_;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  node_id_mutex_.unlock();</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  <span class="keywordflow">return</span> retVal;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;}</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Tnode,<span class="keyword">class</span> Tlink&gt;</div>
+<div class="line"><a name="l00246"></a><span class="lineno"><a class="line" href="classNode.html#a39ea9f0c2d3af467734b5c78a001bbcb">  246</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classNode.html#a39ea9f0c2d3af467734b5c78a001bbcb">Node&lt;Tnode,Tlink&gt;::setValue</a>(Tnode value)</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;{</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  value_mutex_.lock();</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;  value_ = value;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;  value_mutex_.unlock();</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;}</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Tnode,<span class="keyword">class</span> Tlink&gt;</div>
+<div class="line"><a name="l00257"></a><span class="lineno"><a class="line" href="classNode.html#a9237bd16a22ee02c244d8cc95d6533bd">  257</a></span>&#160;<span class="keywordtype">boolean</span> <a class="code" href="classNode.html#a9237bd16a22ee02c244d8cc95d6533bd">Node&lt;Tnode,Tlink&gt;::linkAttachedToNode</a>(<a class="code" href="classLink.html">Link&lt;Tlink,Tnode&gt;</a>* link)</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;{</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  <span class="keywordtype">boolean</span> return_value = FALSE;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  links_mutex_.lock();</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  <span class="keywordflow">for</span>(list&lt;Link_base*&gt;::iterator link_iterator = <a class="code" href="classGraph.html#a29805ae6b277e123503893d1b76fe22e">links_</a>.begin();link_iterator != <a class="code" href="classGraph.html#a29805ae6b277e123503893d1b76fe22e">links_</a>.end();++link_iterator)</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;  {</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordflow">if</span>((*(<a class="code" href="classLink.html">Link&lt;Tlink,Tnode&gt;</a>*)link_iterator)-&gt;getId() == link-&gt;<a class="code" href="classLink.html#ae082bdae9da5f4c58d91c52af2ea4514">getId</a>())</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    {</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;      return_value = TRUE;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    }</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  }</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  links_mutex_.unlock();</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  <span class="keywordflow">return</span> return_value;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;}</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Tnode,<span class="keyword">class</span> Tlink&gt;</div>
+<div class="line"><a name="l00276"></a><span class="lineno"><a class="line" href="classNode.html#aa7a762ea839eea52e9d2cae7f31780e8">  276</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classNode.html#aa7a762ea839eea52e9d2cae7f31780e8">Node&lt;Tnode,Tlink&gt;::removeLink</a>(<a class="code" href="classLink.html">Link&lt;Tlink,Tnode&gt;</a>* link)</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;{</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  <span class="keywordtype">int</span> return_value = -1;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  links_mutex_.lock();</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  <span class="keywordflow">for</span>(list&lt;Link_base*&gt;::iterator link_iterator = <a class="code" href="classGraph.html#a29805ae6b277e123503893d1b76fe22e">links_</a>.begin();link_iterator != <a class="code" href="classGraph.html#a29805ae6b277e123503893d1b76fe22e">links_</a>.end(); ++link_iterator)</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  {</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keywordflow">if</span>((*(<a class="code" href="classLink.html">Link&lt;Tlink,Tnode&gt;</a>)link_iterator)-&gt;getId() == link-&gt;<a class="code" href="classLink.html#ae082bdae9da5f4c58d91c52af2ea4514">getId</a>())</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    {</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;      <a class="code" href="classGraph.html#a29805ae6b277e123503893d1b76fe22e">links_</a>.erase(link_iterator);</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;      return_value = 0;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    }</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  }</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  links_mutex_.unlock();</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  <span class="keywordflow">return</span> return_value;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;}</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Tlink,<span class="keyword">class</span> Tnode&gt;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="keywordtype">int</span> <a class="code" href="classLink.html">Link&lt;Tlink,Tnode&gt;::total_links</a> = 0;</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Tlink, <span class="keyword">class</span> Tnode&gt;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;mutex <a class="code" href="classLink.html">Link&lt;Tlink,Tnode&gt;::total_link_ids_mutex</a>;</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Tlink,<span class="keyword">class</span> Tnode&gt;</div>
-<div class="line"><a name="l00306"></a><span class="lineno"><a class="line" href="classLink.html#aca77f38ecd59de8d21990ac5bbf91a8e">  306</a></span>&#160;<a class="code" href="classLink.html#aca77f38ecd59de8d21990ac5bbf91a8e">Link&lt;Tlink,Tnode&gt;::Link</a>()</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;{</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;  total_links_mutex.lock();</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;  link_id_mutex_.lock();</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;  link_id_ = total_links;</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;  link_id_mutex_.unlock();</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;  total_links++;</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;  total_links_mutex.unlock();</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;  node_[0] = NULL;</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;  node_[1] = NULL;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;}</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Tlink, <span class="keyword">class</span> Tnode&gt;</div>
-<div class="line"><a name="l00323"></a><span class="lineno"><a class="line" href="classLink.html#ad5cb3f4d9cf63f3dd0a150300cce10ad">  323</a></span>&#160;<a class="code" href="classLink.html#ad5cb3f4d9cf63f3dd0a150300cce10ad">Link&lt;Tlink, Tnode&gt;::~Link</a>()</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;{</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  total_links--;</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;}</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Tlink,<span class="keyword">class</span> Tnode&gt;</div>
-<div class="line"><a name="l00333"></a><span class="lineno"><a class="line" href="classLink.html#ac99228207446f193a5e4736c6aeb6954">  333</a></span>&#160;<a class="code" href="classLink.html#aca77f38ecd59de8d21990ac5bbf91a8e">Link&lt;Tlink,Tnode&gt;::Link</a>(Tlink weight)</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;{</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;  weight_ = weight;</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;  link_id_ = total_links;</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;  total_links++;</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;  node_[0] = NULL;</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;  node_[1] = NULL;</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;}</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Tlink,<span class="keyword">class</span> Tnode&gt;</div>
-<div class="line"><a name="l00346"></a><span class="lineno"><a class="line" href="classLink.html#ae082bdae9da5f4c58d91c52af2ea4514">  346</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classLink.html#ae082bdae9da5f4c58d91c52af2ea4514">Link&lt;Tlink,Tnode&gt;::getId</a>()</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;{</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;  <span class="keywordflow">return</span> link_id_;</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;}</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Tlink,<span class="keyword">class</span> Tnode&gt;</div>
-<div class="line"><a name="l00355"></a><span class="lineno"><a class="line" href="classLink.html#afd371e7c41ade7612eeb41cd5ec96921">  355</a></span>&#160;<a class="code" href="classNode.html">Node&lt;Tnode,Tlink&gt;</a>* <a class="code" href="classLink.html#afd371e7c41ade7612eeb41cd5ec96921">Link&lt;Tlink,Tnode&gt;::getNodeAtEdge</a>(<span class="keywordtype">int</span> edge)</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;{</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;  <span class="keywordflow">if</span>(edge != 0 &amp;&amp; edge != 1)</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;  {</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    OUTPUT_MSG(ERR, <span class="stringliteral">&quot;Link ID : &quot;</span>&lt;&lt;link_id_&lt;&lt;<span class="stringliteral">&quot; trying to get node at unsupported Edge : &quot;</span>&lt;&lt;edge);</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;  }</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;  {</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="keywordflow">if</span>(NULL != node_[edge])</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    {</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;      <span class="keywordflow">return</span> node_[edge];</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    }</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;mutex <a class="code" href="classLink.html">Link&lt;Tlink,Tnode&gt;::total_links_mutex</a>;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Tlink,<span class="keyword">class</span> Tnode&gt; </div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="keywordtype">int</span> <a class="code" href="classLink.html">Link&lt;Tlink,Tnode&gt;::total_link_ids</a> = 0;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Tlink, <span class="keyword">class</span> Tnode&gt;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;mutex <a class="code" href="classLink.html">Link&lt;Tlink,Tnode&gt;::total_link_ids_mutex</a>;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Tlink,<span class="keyword">class</span> Tnode&gt;</div>
+<div class="line"><a name="l00310"></a><span class="lineno"><a class="line" href="classLink.html#aca77f38ecd59de8d21990ac5bbf91a8e">  310</a></span>&#160;<a class="code" href="classLink.html#aca77f38ecd59de8d21990ac5bbf91a8e">Link&lt;Tlink,Tnode&gt;::Link</a>()</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;{</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;  total_links_mutex.lock();</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;  link_id_mutex_.lock();</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;  link_id_ = total_links;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;  link_id_mutex_.unlock();</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;  total_links++;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  total_links_mutex.unlock();</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;  node_[0] = NULL;</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;  node_[1] = NULL;</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;}</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Tlink, <span class="keyword">class</span> Tnode&gt;</div>
+<div class="line"><a name="l00327"></a><span class="lineno"><a class="line" href="classLink.html#ad5cb3f4d9cf63f3dd0a150300cce10ad">  327</a></span>&#160;<a class="code" href="classLink.html#ad5cb3f4d9cf63f3dd0a150300cce10ad">Link&lt;Tlink, Tnode&gt;::~Link</a>()</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;{</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  total_links--;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;}</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Tlink,<span class="keyword">class</span> Tnode&gt;</div>
+<div class="line"><a name="l00337"></a><span class="lineno"><a class="line" href="classLink.html#ac99228207446f193a5e4736c6aeb6954">  337</a></span>&#160;<a class="code" href="classLink.html#aca77f38ecd59de8d21990ac5bbf91a8e">Link&lt;Tlink,Tnode&gt;::Link</a>(Tlink weight)</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;{</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;  weight_ = weight;</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;  link_id_ = total_links;</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;  total_links++;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;  node_[0] = NULL;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;  node_[1] = NULL;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;}</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Tlink,<span class="keyword">class</span> Tnode&gt;</div>
+<div class="line"><a name="l00350"></a><span class="lineno"><a class="line" href="classLink.html#ae082bdae9da5f4c58d91c52af2ea4514">  350</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classLink.html#ae082bdae9da5f4c58d91c52af2ea4514">Link&lt;Tlink,Tnode&gt;::getId</a>()</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;{</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;  <span class="keywordflow">return</span> link_id_;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;}</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Tlink,<span class="keyword">class</span> Tnode&gt;</div>
+<div class="line"><a name="l00359"></a><span class="lineno"><a class="line" href="classLink.html#afd371e7c41ade7612eeb41cd5ec96921">  359</a></span>&#160;<a class="code" href="classNode.html">Node&lt;Tnode,Tlink&gt;</a>* <a class="code" href="classLink.html#afd371e7c41ade7612eeb41cd5ec96921">Link&lt;Tlink,Tnode&gt;::getNodeAtEdge</a>(<span class="keywordtype">int</span> edge)</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;{</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;  <span class="keywordflow">if</span>(edge != 0 &amp;&amp; edge != 1)</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;  {</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    OUTPUT_MSG(ERR_LEVEL_ERR, <span class="stringliteral">&quot;Link ID : &quot;</span>&lt;&lt;link_id_&lt;&lt;<span class="stringliteral">&quot; trying to get node at unsupported Edge : &quot;</span>&lt;&lt;edge);</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;  }</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;  {</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keywordflow">if</span>(NULL != node_[edge])</div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    {</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;      <span class="keywordflow">return</span> node_[edge];</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    }</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;  }</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;}</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Tlink,<span class="keyword">class</span> Tnode&gt;</div>
-<div class="line"><a name="l00379"></a><span class="lineno"><a class="line" href="classLink.html#a847f85e9cf72ffa8f20acc3fad2f9eca">  379</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classLink.html#a847f85e9cf72ffa8f20acc3fad2f9eca">Link&lt;Tlink,Tnode&gt;::detachNodeByEdge</a>(<span class="keywordtype">int</span> edge)</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;{</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;  <span class="keywordflow">if</span>((0==edge) || (1==edge))</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;  {</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    node_[edge] = NULL;</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;  }</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    {</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;      <span class="keywordflow">return</span> node_[edge];</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    }</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;  }</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;}</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Tlink,<span class="keyword">class</span> Tnode&gt;</div>
+<div class="line"><a name="l00383"></a><span class="lineno"><a class="line" href="classLink.html#a847f85e9cf72ffa8f20acc3fad2f9eca">  383</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classLink.html#a847f85e9cf72ffa8f20acc3fad2f9eca">Link&lt;Tlink,Tnode&gt;::detachNodeByEdge</a>(<span class="keywordtype">int</span> edge)</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;{</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;  <span class="keywordflow">if</span>((0==edge) || (1==edge))</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;  {</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    OUTPUT_MSG(ERR, <span class="stringliteral">&quot;Link ID : &quot;</span>&lt;&lt;link_id_&lt;&lt;<span class="stringliteral">&quot; trying to detach node at unsupported Edge : &quot;</span>&lt;&lt;edge);</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    node_[edge] = NULL;</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;  }</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;}</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;<span class="preprocessor">#endif </span></div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;  {</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    OUTPUT_MSG(ERR_LEVEL_ERR, <span class="stringliteral">&quot;Link ID : &quot;</span>&lt;&lt;link_id_&lt;&lt;<span class="stringliteral">&quot; trying to detach node at unsupported Edge : &quot;</span>&lt;&lt;edge);</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;  }</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;}</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;<span class="preprocessor">#endif </span></div>
 <div class="ttc" id="classLink_html_a28f2c40cb63fc1e3538ecbc570061a27"><div class="ttname"><a href="classLink.html#a28f2c40cb63fc1e3538ecbc570061a27">Link::total_link_ids</a></div><div class="ttdeci">static int total_link_ids</div><div class="ttdoc">A static member used to keep track of assigned indices. </div><div class="ttdef"><b>Definition:</b> node.hpp:97</div></div>
 <div class="ttc" id="classNode_html_af75893cb178fdcdd805df2d17c16a88b"><div class="ttname"><a href="classNode.html#af75893cb178fdcdd805df2d17c16a88b">Node::links_mutex_</a></div><div class="ttdeci">mutex links_mutex_</div><div class="ttdoc">A mutex to protect access to the list of links from this node. </div><div class="ttdef"><b>Definition:</b> node.hpp:40</div></div>
 <div class="ttc" id="classNode_html_a846c5acc1ea3bfa722309b5b2ef8072e"><div class="ttname"><a href="classNode.html#a846c5acc1ea3bfa722309b5b2ef8072e">Node::value_mutex_</a></div><div class="ttdeci">mutex value_mutex_</div><div class="ttdoc">A mutex to protect the value in the node. </div><div class="ttdef"><b>Definition:</b> node.hpp:42</div></div>
@@ -374,7 +381,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classGraph_html"><div class="ttname"><a href="classGraph.html">Graph</a></div><div class="ttdoc">Graph class. </div><div class="ttdef"><b>Definition:</b> graph.hpp:27</div></div>
 <div class="ttc" id="classGraph_html_a29805ae6b277e123503893d1b76fe22e"><div class="ttname"><a href="classGraph.html#a29805ae6b277e123503893d1b76fe22e">Graph::links_</a></div><div class="ttdeci">list&lt; Link&lt; Tlink, Tnode &gt; * &gt; links_</div><div class="ttdoc">List of all the links in this graph. </div><div class="ttdef"><b>Definition:</b> graph.hpp:33</div></div>
 <div class="ttc" id="classLink_html_a9df48228aef5f47aabd78bf2ed9204e1"><div class="ttname"><a href="classLink.html#a9df48228aef5f47aabd78bf2ed9204e1">Link::weight_mutex_</a></div><div class="ttdeci">mutex weight_mutex_</div><div class="ttdoc">A mutex to protect weight_. </div><div class="ttdef"><b>Definition:</b> node.hpp:99</div></div>
-<div class="ttc" id="classLink_html_aca77f38ecd59de8d21990ac5bbf91a8e"><div class="ttname"><a href="classLink.html#aca77f38ecd59de8d21990ac5bbf91a8e">Link::Link</a></div><div class="ttdeci">Link()</div><div class="ttdoc">Default Constructor. </div><div class="ttdef"><b>Definition:</b> node.hpp:306</div></div>
+<div class="ttc" id="classLink_html_aca77f38ecd59de8d21990ac5bbf91a8e"><div class="ttname"><a href="classLink.html#aca77f38ecd59de8d21990ac5bbf91a8e">Link::Link</a></div><div class="ttdeci">Link()</div><div class="ttdoc">Default Constructor. </div><div class="ttdef"><b>Definition:</b> node.hpp:310</div></div>
 <div class="ttc" id="classLink_html_aad684c92f53d65468d758a3ae6b9eaa1"><div class="ttname"><a href="classLink.html#aad684c92f53d65468d758a3ae6b9eaa1">Link::total_links_mutex</a></div><div class="ttdeci">static mutex total_links_mutex</div><div class="ttdoc">A mutex to protect total_links. </div><div class="ttdef"><b>Definition:</b> node.hpp:105</div></div>
 <div class="ttc" id="classLink__base_html"><div class="ttname"><a href="classLink__base.html">Link_base</a></div><div class="ttdef"><b>Definition:</b> common.hpp:12</div></div>
 <div class="ttc" id="classNode_html_a39ea9f0c2d3af467734b5c78a001bbcb"><div class="ttname"><a href="classNode.html#a39ea9f0c2d3af467734b5c78a001bbcb">Node::setValue</a></div><div class="ttdeci">void setValue(Tnode value)</div><div class="ttdoc">Member fuction that sets the value within the node. </div></div>
@@ -384,9 +391,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classLink_html_a23dd72433e72dd42719265fd4c7fdaf7"><div class="ttname"><a href="classLink.html#a23dd72433e72dd42719265fd4c7fdaf7">Link::total_link_ids_mutex</a></div><div class="ttdeci">static mutex total_link_ids_mutex</div><div class="ttdoc">A mutex to protect total_link_ids. </div><div class="ttdef"><b>Definition:</b> node.hpp:103</div></div>
 <div class="ttc" id="classNode_html_ac18d36beb867879f0a319557e783e146"><div class="ttname"><a href="classNode.html#ac18d36beb867879f0a319557e783e146">Node::total_node_ids_mutex</a></div><div class="ttdeci">static mutex total_node_ids_mutex</div><div class="ttdoc">A mutex to protect total_node_ids. </div><div class="ttdef"><b>Definition:</b> node.hpp:48</div></div>
 <div class="ttc" id="classNode_html_aa9067e2137ecc75ddd802d5a574612f1"><div class="ttname"><a href="classNode.html#aa9067e2137ecc75ddd802d5a574612f1">Node::getValue</a></div><div class="ttdeci">Tnode getValue()</div><div class="ttdoc">Member function that returns the data in the node. </div></div>
-<div class="ttc" id="classLink_html_ad5cb3f4d9cf63f3dd0a150300cce10ad"><div class="ttname"><a href="classLink.html#ad5cb3f4d9cf63f3dd0a150300cce10ad">Link::~Link</a></div><div class="ttdeci">~Link()</div><div class="ttdoc">Destructor which handles total_links. </div><div class="ttdef"><b>Definition:</b> node.hpp:323</div></div>
-<div class="ttc" id="classLink_html_ae082bdae9da5f4c58d91c52af2ea4514"><div class="ttname"><a href="classLink.html#ae082bdae9da5f4c58d91c52af2ea4514">Link::getId</a></div><div class="ttdeci">int getId()</div><div class="ttdoc">Member function which returns the unique index of the link. </div><div class="ttdef"><b>Definition:</b> node.hpp:346</div></div>
-<div class="ttc" id="errHandler_8hpp_html"><div class="ttname"><a href="errHandler_8hpp.html">errHandler.hpp</a></div></div>
+<div class="ttc" id="classLink_html_ad5cb3f4d9cf63f3dd0a150300cce10ad"><div class="ttname"><a href="classLink.html#ad5cb3f4d9cf63f3dd0a150300cce10ad">Link::~Link</a></div><div class="ttdeci">~Link()</div><div class="ttdoc">Destructor which handles total_links. </div><div class="ttdef"><b>Definition:</b> node.hpp:327</div></div>
+<div class="ttc" id="classLink_html_ae082bdae9da5f4c58d91c52af2ea4514"><div class="ttname"><a href="classLink.html#ae082bdae9da5f4c58d91c52af2ea4514">Link::getId</a></div><div class="ttdeci">int getId()</div><div class="ttdoc">Member function which returns the unique index of the link. </div><div class="ttdef"><b>Definition:</b> node.hpp:350</div></div>
 <div class="ttc" id="classNode_html_a78be1747ae96cf39fe2a9ae3be5212a4"><div class="ttname"><a href="classNode.html#a78be1747ae96cf39fe2a9ae3be5212a4">Node::value_</a></div><div class="ttdeci">Tnode value_</div><div class="ttdoc">The data that a paprticular node holds. </div><div class="ttdef"><b>Definition:</b> node.hpp:32</div></div>
 <div class="ttc" id="classNode_html_aff1733d2326817871268b920f5a981ca"><div class="ttname"><a href="classNode.html#aff1733d2326817871268b920f5a981ca">Node::links_</a></div><div class="ttdeci">list&lt; Link&lt; Tnodelink, Tnode &gt; * &gt; links_</div><div class="ttdoc">The list of links that a particular node shares with the other nodes in the graph. </div><div class="ttdef"><b>Definition:</b> node.hpp:30</div></div>
 <div class="ttc" id="classNode_html_a3bc7885a7623bde95ddd068d13c91af3"><div class="ttname"><a href="classNode.html#a3bc7885a7623bde95ddd068d13c91af3">Node::~Node</a></div><div class="ttdeci">~Node()</div><div class="ttdoc">Destructor which handles total_nodes. </div></div>
@@ -400,14 +406,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classLink_html_a628aea1d6ecfd27c1250e0369524f4e8"><div class="ttname"><a href="classLink.html#a628aea1d6ecfd27c1250e0369524f4e8">Link::link_id_</a></div><div class="ttdeci">int link_id_</div><div class="ttdoc">The unique ID assigned to a particular link. </div><div class="ttdef"><b>Definition:</b> node.hpp:93</div></div>
 <div class="ttc" id="classNode_html_a93fa08e2d8c63f93e3cc9ab8202e3334"><div class="ttname"><a href="classNode.html#a93fa08e2d8c63f93e3cc9ab8202e3334">Node::Node</a></div><div class="ttdeci">Node()</div><div class="ttdoc">Node constructor which initializes the value to 0. </div></div>
 <div class="ttc" id="classNode_html_a58fa0d9e8d2099bb0afd533d8ae55d12"><div class="ttname"><a href="classNode.html#a58fa0d9e8d2099bb0afd533d8ae55d12">Node::getDegree</a></div><div class="ttdeci">int getDegree()</div><div class="ttdoc">Member function that returns the cardinality of the node. </div></div>
-<div class="ttc" id="classLink_html_a847f85e9cf72ffa8f20acc3fad2f9eca"><div class="ttname"><a href="classLink.html#a847f85e9cf72ffa8f20acc3fad2f9eca">Link::detachNodeByEdge</a></div><div class="ttdeci">void detachNodeByEdge(int edge)</div><div class="ttdoc">Member function to detach the node attached to an edge of the link. </div><div class="ttdef"><b>Definition:</b> node.hpp:379</div></div>
-<div class="ttc" id="classLink_html_afd371e7c41ade7612eeb41cd5ec96921"><div class="ttname"><a href="classLink.html#afd371e7c41ade7612eeb41cd5ec96921">Link::getNodeAtEdge</a></div><div class="ttdeci">Node&lt; Tnode, Tlink &gt; * getNodeAtEdge(int edge)</div><div class="ttdoc">Member function that returns the Node object at the given edge. </div><div class="ttdef"><b>Definition:</b> node.hpp:355</div></div>
+<div class="ttc" id="classLink_html_a847f85e9cf72ffa8f20acc3fad2f9eca"><div class="ttname"><a href="classLink.html#a847f85e9cf72ffa8f20acc3fad2f9eca">Link::detachNodeByEdge</a></div><div class="ttdeci">void detachNodeByEdge(int edge)</div><div class="ttdoc">Member function to detach the node attached to an edge of the link. </div><div class="ttdef"><b>Definition:</b> node.hpp:383</div></div>
+<div class="ttc" id="classLink_html_afd371e7c41ade7612eeb41cd5ec96921"><div class="ttname"><a href="classLink.html#afd371e7c41ade7612eeb41cd5ec96921">Link::getNodeAtEdge</a></div><div class="ttdeci">Node&lt; Tnode, Tlink &gt; * getNodeAtEdge(int edge)</div><div class="ttdoc">Member function that returns the Node object at the given edge. </div><div class="ttdef"><b>Definition:</b> node.hpp:359</div></div>
 <div class="ttc" id="classNode_html_aa7a762ea839eea52e9d2cae7f31780e8"><div class="ttname"><a href="classNode.html#aa7a762ea839eea52e9d2cae7f31780e8">Node::removeLink</a></div><div class="ttdeci">int removeLink(Link&lt; Tnodelink, Tnode &gt; *link)</div><div class="ttdoc">Member function to remove a link from the node at any edge. </div></div>
 <div class="ttc" id="classLink_html_ad240a01b7643e780f7472bf5058f2151"><div class="ttname"><a href="classLink.html#ad240a01b7643e780f7472bf5058f2151">Link::total_links</a></div><div class="ttdeci">static int total_links</div><div class="ttdoc">A static member used to keep track of the total number of available links. </div><div class="ttdef"><b>Definition:</b> node.hpp:95</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 11 2015 00:56:23 for Graph-LIB by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 4 2016 02:25:14 for Graph-LIB by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

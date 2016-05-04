@@ -1,6 +1,7 @@
-common.hpp
-errHandler.hpp
-graph.hpp
-link.hpp
-main.cpp
-node.hpp
+dev/inc/common.hpp
+dev/inc/diagnostic/quiet/errHandler.hpp
+dev/inc/diagnostic/verbose/errHandler.hpp
+dev/inc/graph.hpp
+dev/inc/link.hpp
+dev/inc/node.hpp
+dev/src/unitTest1.cpp

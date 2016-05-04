@@ -1,0 +1,16 @@
+VariantDir('build','src')
+
+env = Environment()
+env.Program(target='build/test',source='src/unitTest1.cpp')
+Import('verbose')
+paths = []
+paths.append('inc')
+
+if int(verbose) == 1:
+  paths.append('inc/diagnostic/verbose')
+else:
+  paths.append('inc/diagnostic/quiet')
+
+
+env.Append(CPPPATH = paths)
+env.Append(CPPFLAGS=['-std=c++11'])
