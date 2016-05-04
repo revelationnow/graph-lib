@@ -1,16 +1,17 @@
 Basics when making changes
 --------------------------
 1. Update etags
-  a. Command : ctags *.*pp
+  a. Command : ctags --recurse=yes dev/
 2. Update doxygen
   a. Command : doxygen doxygenConfig
 3. Sync to tip:
-  a. git pull
+  a. Command : git pull
 4. Commit changes:
-  a. git add *
-  b. git commit -m "Meaningful message"
-  c. git push
+  a. Command : git add *
+  b. Command : git commit -m "Meaningful message"
+  c. Command : git push
 5. Run Valgrind
-  a. valgrind --log-file="./valgrindOutput.txt" -v --leak-check=full --show-leak-kinds=all ./main
+  a. Command : valgrind --log-file="./valgrindOutput.txt" -v --leak-check=full --show-leak-kinds=all ./dev/build/test
 6. Run Cscope
-  a. cscope -b
+  a. update cscope.files with the files that need to be cscoped
+  b. Command : cscope -b
