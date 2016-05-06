@@ -6,3 +6,12 @@
 5. Create a Btree class
 6. Create a Trie class
 7. Create a unit testing framework
+  -> Test cases to add
+      --> Create Pattern of graph, with sequence of addition and removal of nodes and links
+      --> Remove random nodes from graph
+      --> Remove random links from graph
+      --> Run multiple threads accessing the graph, adding and removing a pattern of links
+      --> Remove random nodes and links from the graph from multiple threads.
+      --> Create multiple graphs
+8. Add support to merge two graphs into one
+      
