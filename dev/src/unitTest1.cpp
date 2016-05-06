@@ -1,4 +1,4 @@
-///\file main.cpp
+///\file unitTest1.cpp
 #include <iostream>
 #include "graph.hpp"
 #include "errHandler.hpp"

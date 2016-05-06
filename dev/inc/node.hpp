@@ -21,6 +21,7 @@ class Graph;
   A node is attached to another node by the link that it shares
   with the other node.
   Each node has an integer as its data
+TODO: Why does it inherit Node_base, which is empty?
 */
 template <class Tnode,class Tnodelink>
 class Node : public Node_base
@@ -80,6 +81,7 @@ class Node : public Node_base
   integral weight.
   Two static integers are used to keep track of the number
   of links created and the link indices in use
+TODO: Why does it inherit class Link_base which is empty?
 */
 template<class Tlink,class Tnode>
 class Link : public Link_base
@@ -99,6 +101,8 @@ class Link : public Link_base
     mutex weight_mutex_;
     //! A mutex to protect link_id_
     mutex link_id_mutex_;
+    //! A mutex to protect node_[]
+    mutex node_mutex_;
     //! A mutex to protect total_link_ids
     static mutex total_link_ids_mutex;
     //! A mutex to protect total_links
@@ -208,9 +212,11 @@ Node<Tnode, Tlink>::~Node()
 template<class Tnode,class Tlink>
 int Node<Tnode,Tlink>::getDegree()
 {
+  int retVal = 0;
   links_mutex_.lock();
-  return links_.size();
-  links_mutex_().unlock();
+  retVal = links_.size();
+  links_mutex_.unlock();
+  return retVal;
 }
 
 /** \fn Node::getValue() 
@@ -258,6 +264,7 @@ boolean Node<Tnode,Tlink>::linkAttachedToNode(Link<Tlink,Tnode>* link)
 {
   boolean return_value = FALSE;
   links_mutex_.lock();
+  //TODO :Why is the iterator using list<Link_base*>?
   for(list<Link_base*>::iterator link_iterator = links_.begin();link_iterator != links_.end();++link_iterator)
   {
     if((*(Link<Tlink,Tnode>*)link_iterator)->getId() == link->getId())
@@ -277,6 +284,7 @@ int Node<Tnode,Tlink>::removeLink(Link<Tlink,Tnode>* link)
 {
   int return_value = -1;
   links_mutex_.lock();
+  //TODO :Why is the iterator using list<Link_base*>?
   for(list<Link_base*>::iterator link_iterator = links_.begin();link_iterator != links_.end(); ++link_iterator)
   {
     if((*(Link<Tlink,Tnode>)link_iterator)->getId() == link->getId())
@@ -315,8 +323,11 @@ Link<Tlink,Tnode>::Link()
   link_id_mutex_.unlock();
   total_links++;
   total_links_mutex.unlock();
+  //TODO: Shouldn't this be protected by mutex?
+  node_mutex_.lock();
   node_[0] = NULL;
   node_[1] = NULL;
+  node_mutex_.unlock();
 }
 
 
@@ -326,7 +337,9 @@ Link<Tlink,Tnode>::Link()
 template<class Tlink, class Tnode>
 Link<Tlink, Tnode>::~Link()
 {
+  total_links_mutex.lock();
   total_links--;
+  total_links_mutex.unlock();
 }
 
 
@@ -336,11 +349,21 @@ Link<Tlink, Tnode>::~Link()
 template <class Tlink,class Tnode>
 Link<Tlink,Tnode>::Link(Tlink weight)
 {
+  weight_mutex_.lock();
   weight_ = weight;
+  weight_mutex_.unlock();
+  
+  total_links_mutex.lock();
+  link_id_mutex_.lock();
   link_id_ = total_links;
+  link_id_mutex_.unlock();
   total_links++;
+  total_links_mutex.unlock();
+  
+  node_mutex_.lock();
   node_[0] = NULL;
   node_[1] = NULL;
+  node_mutex_.unlock();
 }
 
 /** \fn Link::getId()
@@ -349,7 +372,11 @@ Link<Tlink,Tnode>::Link(Tlink weight)
 template <class Tlink,class Tnode>
 int Link<Tlink,Tnode>::getId()
 {
-  return link_id_;
+  int retVal = 0;
+  link_id_mutex_.lock();
+  retVal = link_id_;
+  link_id_mutex_.unlock();
+  return retVal;
 }
 
 /** \fn Link::getNodeAtEdge(int edge)
@@ -358,22 +385,19 @@ int Link<Tlink,Tnode>::getId()
 template <class Tlink,class Tnode>
 Node<Tnode,Tlink>* Link<Tlink,Tnode>::getNodeAtEdge(int edge)
 {
+  Node<Tnode, Tlink>* retVal = NULL;
+  node_mutex_.lock();
   if(edge != 0 && edge != 1)
   {
     OUTPUT_MSG(ERR_LEVEL_ERR, "Link ID : "<<link_id_<<" trying to get node at unsupported Edge : "<<edge);
-    return NULL;
+    retVal = NULL;
   }
   else
   {
-    if(NULL != node_[edge])
-    {
-      return node_[edge];
-    }
-    else
-    {
-      return node_[edge];
-    }
+    retVal = node_[edge];
   }
+  node_mutex_.unlock();
+  return retVal;
 }
 
 /** \fn Link::detachNodeByEdge(int Edge)
@@ -382,9 +406,12 @@ Node<Tnode,Tlink>* Link<Tlink,Tnode>::getNodeAtEdge(int edge)
 template <class Tlink,class Tnode>
 void Link<Tlink,Tnode>::detachNodeByEdge(int edge)
 {
+
   if((0==edge) || (1==edge))
   {
+    node_mutex_.lock();
     node_[edge] = NULL;
+    node_mutex_.unlock();
   }
   else
   {
