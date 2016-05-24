@@ -1,10 +1,12 @@
 VariantDir('build','src')
 
 env = Environment()
-env.Program(target='build/test',source='src/unitTest1.cpp')
+env.Program(target='build/test1',source='src/unitTest1.cpp')
+env.Program(target='build/test2',source='src/unitTest2.cpp')
 Import('verbose')
 paths = []
 paths.append('inc/core')
+paths.append('inc/ds/trees')
 
 if int(verbose) == 1:
   paths.append('inc/diagnostic/verbose')

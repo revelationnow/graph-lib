@@ -1,6 +1,7 @@
 /// \file graph.hpp
 #ifndef __GRAPH_HPP_
 #define __GRAPH_HPP_
+#include <list>
 #include "common.hpp"
 #include "node.hpp"
 #include "link.hpp"
@@ -26,7 +27,7 @@ using namespace std;
 template<class Tnode, class Tlink>
 class Graph
 {
-  private:
+  protected:
     //! List of all the nodes in this graph
     list<Node<Tnode,Tlink>*> nodes_;
     //! List of all the links in this graph
@@ -58,18 +59,14 @@ class Graph
     int createNode();
     //! Function to create a new node based on the passed value and add it to the graph
     int createNode(Tnode val);
-    //! Function to destroy a link and free the memory associated with it. Only applicable to links which are part of this graph.
+    //! TODO : Function to destroy a link and free the memory associated with it. Only applicable to links which are part of this graph.
     int destroyLink(int lid);
-    //! Function to destroy a node and free the memory associated with it. Only applicable to nodes which are part of this graph
+    //! TODO : Function to destroy a node and free the memory associated with it. Only applicable to nodes which are part of this graph
     int destroyNode(int nid);
     //! Function to get the pointer to the Node whose ID is passed
     Node<Tnode,Tlink>* getNodeById(int nid);
     //! Function to get the pointer to the link whose ID is passed
     Link<Tlink,Tnode>* getLinkById(int lid);
-    //! Adds the passed link to the graph
-    //int addLinkToGraph(Link<Tlink,Tnode> * link);
-    //! Adds the passed Node to the graph
-    //int addNodeToGraph(Node<Tnode,Tlink> * node);
     //! Attaches the node and link whose IDs are passed at the given edge of the link
     int attachLinkToNodeAtEdge(int lid,int nid, int edge);
     //! Detaches the node and link at the given edge
@@ -141,7 +138,7 @@ int Graph<Tnode,Tlink>::displayGraph()
   t_nodes.push_back((nodes_.back()));
 
   //! \code{.cpp} Looping over the list of active nodes
-  while(total_visited < Node<Tnode,Tlink>::total_nodes)
+  while(total_visited < Node<Tnode,Tlink>::getTotalNodes())
   {
     Node<Tnode,Tlink>* t_node = t_nodes.front();
     if(t_node == NULL)
@@ -154,11 +151,14 @@ int Graph<Tnode,Tlink>::displayGraph()
     visited[t_node->getId()] = TRUE;
     total_visited++;
     //! \code{.cpp} Loop over all the neighbours of this node
-    for(typename list<Link<Tlink,Tnode>*>::iterator link_iterator = t_node->links_.begin();link_iterator != t_node->links_.end(); ++link_iterator)
+    //for(typename list<Link<Tlink,Tnode>*>::iterator link_iterator = t_node->links_.begin();link_iterator != t_node->links_.end(); ++link_iterator)
+      for(int i = 0; i < t_node->getLinksSize(); i++)
     {
-      OUTPUT_MSG(ERR_LEVEL_INFO, "\t|| "<<((*link_iterator)->getNodeAtEdge(0))->getId()<<" ||----------<"<<(*link_iterator)->getId()<<">----------|| "<<((*link_iterator)->getNodeAtEdge(1))->getId()<<" ||");
-      l_node[0] = (*link_iterator)->getNodeAtEdge(0);
-      l_node[1] = (*link_iterator)->getNodeAtEdge(1);
+      Link<Tlink, Tnode> *t_link = t_node->getLinkAtIndex(i);
+      OUTPUT_MSG(ERR_LEVEL_INFO, "\t|| "<<(t_link->getNodeAtEdge(0))->getId()<<" ||----------<"<<t_link->getId()<<">----------|| "<<(t_link->getNodeAtEdge(1))->getId()<<" ||");
+
+      l_node[0] = t_link->getNodeAtEdge(0);
+      l_node[1] = t_link->getNodeAtEdge(1);
 
       //! \code{.cpp} Insert nodes connected to the current node into the list of active nodes
       if(l_node[0] != NULL)
@@ -230,8 +230,8 @@ int Graph<Tnode,Tlink>::attachLinkToNodeAtEdge(int lid, int nid, int edge)
   }
   else
   {
-    link->node_[edge] = node;
-    node->links_.push_back(link);
+    link->attachNodeAtEdge(node, edge);
+    node->addLink(link);
     OUTPUT_MSG(ERR_LEVEL_INFO, "Attached Link : "<<link->getId()<<" to Node : "<<node->getId()<<" at Edge : "<<edge);
     return 0;
   }
@@ -262,7 +262,7 @@ int Graph<Tnode,Tlink>::detachLinkFromNodeAtEdge(int lid, int nid, int edge)
     OUTPUT_MSG(ERR_LEVEL_ERR, "Edge : "<<edge<<" is out of bounds");
     return -1;
   }
-  if(link->node_[edge] != node)
+  if(link->getNodeAtEdge(edge) != node)
   {
     OUTPUT_MSG(ERR_LEVEL_ERR,"Can't find Node ID "<<nid<<" at Edge : "<<edge<<" of Link ID : "<<lid);
     return -2;
