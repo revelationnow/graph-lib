@@ -1,0 +1,52 @@
+\hypertarget{unitTest1_8cpp}{}\section{dev/src/unit\+Test1.cpp File Reference}
+\label{unitTest1_8cpp}\index{dev/src/unit\+Test1.\+cpp@{dev/src/unit\+Test1.\+cpp}}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include \char`\"{}graph.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}err\+Handler.\+hpp\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{unitTest1_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+boolean {\bfseries debug\+Flag} = F\+A\+L\+SE\hypertarget{unitTest1_8cpp_a8d7585aa480166a993da8f67596170d7}{}\label{unitTest1_8cpp_a8d7585aa480166a993da8f67596170d7}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{unit\+Test1.\+cpp@{unit\+Test1.\+cpp}!main@{main}}
+\index{main@{main}!unit\+Test1.\+cpp@{unit\+Test1.\+cpp}}
+\subsubsection[{\texorpdfstring{main(int argc, char $\ast$argv[])}{main(int argc, char *argv[])}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{unitTest1_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{}\label{unitTest1_8cpp_a0ddf1224851353fc92bfbff6f499fa97}
+
+\begin{DoxyCode}
+ Code block to generate the initial graph */
+\textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0;i<num\_nodes;i++)
+\{
+  \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = i+1;j<num\_nodes;j++)
+  \{
+    \textcolor{keywordflow}{if}( TRUE == debugFlag )
+    \{
+      OUTPUT\_MSG(ERR\_LEVEL\_INFO, \textcolor{stringliteral}{"Going to attach Link "}<<j<<\textcolor{stringliteral}{" to Node "}<<j);
+    \}
+    graph->attachLinkToNodeAtEdge(link\_ids[k],node\_ids[i], 0);
+    graph->attachLinkToNodeAtEdge(link\_ids[k],node\_ids[j], 1);
+
+    \textcolor{keywordflow}{if}( TRUE == debugFlag )
+    \{
+      OUTPUT\_MSG(ERR\_LEVEL\_INFO, \textcolor{stringliteral}{"Attached Link "}<<j<<\textcolor{stringliteral}{" to Node "}<<j);
+    \}
+    k++;
+  \}
+\}
+\end{DoxyCode}
+
+
+Display the generated graph 

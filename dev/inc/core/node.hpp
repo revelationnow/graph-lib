@@ -11,6 +11,7 @@ using namespace std;
 template <class Tlink,class Tnode>
 class Link;
 
+//TODO : Remove this from here, why is this required?
 template <class Tnode,class Tlink>
 class Graph;
 
@@ -21,7 +22,7 @@ class Graph;
   A node is attached to another node by the link that it shares
   with the other node.
   Each node has an integer as its data
-TODO: Why does it inherit Node_base, which is empty?
+TODO: Why does it inherit Node_base, which is empty? Remove this
 */
 template <class Tnode,class Tnodelink>
 class Node : public Node_base
@@ -369,6 +370,10 @@ Node<Tnode, Tlink>*  Node<Tnode, Tlink>::getNodeAtOtherEdgeOfLink(Link<Tlink, Tn
     {
       node = link->getNodeAtEdge(Link<Tlink, Tnode>::FIRST_EDGE);
     }
+    if(node != NULL)
+    {
+//      OUTPUT_MSG(ERR_LEVEL_INFO, "Found Node : "<<node->getId()<<" attached to Link : "<<link->getId());
+    }
   }
   return node;
 }
@@ -401,8 +406,8 @@ Link<Tlink,Tnode>::Link()
   total_links_mutex.unlock();
   //TODO: Shouldn't this be protected by mutex?
   node_mutex_.lock();
-  node_[0] = NULL;
-  node_[1] = NULL;
+  node_[Link<Tlink,Tnode>::FIRST_EDGE] = NULL;
+  node_[Link<Tlink,Tnode>::SECOND_EDGE] = NULL;
   node_mutex_.unlock();
 }
 
@@ -437,8 +442,8 @@ Link<Tlink,Tnode>::Link(Tlink weight)
   total_links_mutex.unlock();
   
   node_mutex_.lock();
-  node_[0] = NULL;
-  node_[1] = NULL;
+  node_[Link<Tlink,Tnode>::FIRST_EDGE] = NULL;
+  node_[Link<Tlink,Tnode>::SECOND_EDGE] = NULL;
   node_mutex_.unlock();
 }
 

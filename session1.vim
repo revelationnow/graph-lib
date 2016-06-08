@@ -90,6 +90,7 @@ set viminfo=%,'100,<50,s10,h
 set whichwrap=b,s,<,>,h,l
 set wildignore=*.o,*~,*.pyc
 set wildmenu
+set window=71
 set nowritebackup
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
@@ -100,15 +101,19 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 set shortmess=aoO
 badd +1 session0.vim
-badd +1 dev/inc/ds/trees/tree.hpp
+badd +20 dev/inc/ds/trees/tree.hpp
 badd +167 dev/inc/core/graph.hpp
 badd +32 dev/inc/core/node.hpp
-badd +0 dev/src/unitTest2.cpp
+badd +18 dev/src/unitTest2.cpp
 argglobal
 silent! argdel *
 argadd dev/inc/ds/trees/tree.hpp
 edit dev/src/unitTest2.cpp
 set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
 wincmd _ | wincmd |
 split
 1wincmd k
@@ -117,8 +122,146 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe '1resize ' . ((&lines * 23 + 25) / 51)
-exe '2resize ' . ((&lines * 23 + 25) / 51)
+exe 'vert 1resize ' . ((&columns * 30 + 67) / 135)
+exe '2resize ' . ((&lines * 30 + 36) / 72)
+exe 'vert 2resize ' . ((&columns * 104 + 67) / 135)
+exe '3resize ' . ((&lines * 37 + 36) / 72)
+exe 'vert 3resize ' . ((&columns * 104 + 67) / 135)
+argglobal
+enew
+file __Tag_List__
+let s:cpo_save=&cpo
+set cpo&vim
+inoremap <buffer> <silent> <kMultiply> :silent! %foldopen!
+inoremap <buffer> <silent> <kMinus> :silent! foldclose
+inoremap <buffer> <silent> <kPlus> :silent! foldopen
+nnoremap <buffer> <silent> * :silent! %foldopen!
+nnoremap <buffer> <silent> + :silent! foldopen
+nnoremap <buffer> <silent> - :silent! foldclose
+nnoremap <buffer> <silent> = :silent! %foldclose
+nnoremap <buffer> <silent> q :close
+nnoremap <buffer> <silent> <kMultiply> :silent! %foldopen!
+nnoremap <buffer> <silent> <kMinus> :silent! foldclose
+nnoremap <buffer> <silent> <kPlus> :silent! foldopen
+inoremap <buffer> <silent> * :silent! %foldopen!
+inoremap <buffer> <silent> + :silent! foldopen
+inoremap <buffer> <silent> - :silent! foldclose
+inoremap <buffer> <silent> = :silent! %foldclose
+inoremap <buffer> <silent> q :close
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal backupcopy=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=delete
+setlocal nobuflisted
+setlocal buftype=nofile
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+setlocal commentstring=/*%s*/
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'taglist'
+setlocal filetype=taglist
+endif
+setlocal fixendofline
+setlocal foldcolumn=3
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=9999
+setlocal foldmarker={{{,}}}
+set foldmethod=syntax
+setlocal foldmethod=manual
+setlocal foldminlines=0
+set foldnestmax=6
+setlocal foldnestmax=6
+setlocal foldtext=v:folddashes.getline(v:foldstart)
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=
+setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+set linebreak
+setlocal linebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal nomodifiable
+setlocal nrformats=bin,octal,hex
+set number
+setlocal nonumber
+setlocal numberwidth=4
+setlocal omnifunc=
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal smartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=
+setlocal noswapfile
+setlocal synmaxcol=3000
+if &syntax != 'taglist'
+setlocal syntax=taglist
+endif
+setlocal tabstop=2
+setlocal tagcase=
+setlocal tags=
+setlocal textwidth=500
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal nowinfixheight
+set winfixwidth
+setlocal winfixwidth
+setlocal nowrap
+setlocal wrapmargin=0
+wincmd w
 argglobal
 setlocal keymap=
 setlocal noarabic
@@ -230,12 +373,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 9 - ((8 * winheight(0) + 11) / 23)
+let s:l = 18 - ((17 * winheight(0) + 15) / 30)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-9
-normal! 0
+18
+normal! 03|
 wincmd w
 argglobal
 edit dev/inc/ds/trees/tree.hpp
@@ -349,47 +492,81 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-54
+16
+normal! zo
+71
+normal! zo
+78
+normal! zo
+90
+normal! zo
+104
+normal! zo
+137
+normal! zo
+143
+normal! zo
+160
+normal! zo
+178
 normal! zo
 60
 normal! zo
-94
+91
 normal! zo
-111
+107
+normal! zo
+125
+normal! zo
+163
+normal! zo
+180
+normal! zo
+198
+normal! zo
+78
+normal! zo
+90
+normal! zo
+110
+normal! zo
+150
+normal! zo
+167
+normal! zo
+185
+normal! zo
+90
+normal! zo
+104
+normal! zo
+142
+normal! zo
+159
+normal! zo
+177
 normal! zo
 129
 normal! zo
-81
+167
 normal! zo
-94
+184
 normal! zo
-111
+202
 normal! zo
-129
-normal! zo
-88
-normal! zo
-94
-normal! zo
-111
-normal! zo
-129
-normal! zo
-94
-normal! zo
-111
-normal! zo
-129
-normal! zo
-let s:l = 94 - ((16 * winheight(0) + 11) / 23)
+let s:l = 45 - ((7 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-94
-normal! 0
+45
+normal! 043|
 wincmd w
-exe '1resize ' . ((&lines * 23 + 25) / 51)
-exe '2resize ' . ((&lines * 23 + 25) / 51)
+3wincmd w
+exe 'vert 1resize ' . ((&columns * 30 + 67) / 135)
+exe '2resize ' . ((&lines * 30 + 36) / 72)
+exe 'vert 2resize ' . ((&columns * 104 + 67) / 135)
+exe '3resize ' . ((&lines * 37 + 36) / 72)
+exe 'vert 3resize ' . ((&columns * 104 + 67) / 135)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

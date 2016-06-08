@@ -4,108 +4,135 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-ERR_LEVEL_ERR	./dev/inc/diagnostic/quiet/errHandler.hpp	/^  ERR_LEVEL_ERR,$/;"	e	enum:__anon2
-ERR_LEVEL_ERR	./dev/inc/diagnostic/verbose/errHandler.hpp	/^  ERR_LEVEL_ERR,$/;"	e	enum:__anon1
-ERR_LEVEL_FATAL	./dev/inc/diagnostic/quiet/errHandler.hpp	/^  ERR_LEVEL_FATAL,$/;"	e	enum:__anon2
-ERR_LEVEL_FATAL	./dev/inc/diagnostic/verbose/errHandler.hpp	/^  ERR_LEVEL_FATAL,$/;"	e	enum:__anon1
-ERR_LEVEL_INFO	./dev/inc/diagnostic/quiet/errHandler.hpp	/^  ERR_LEVEL_INFO,$/;"	e	enum:__anon2
-ERR_LEVEL_INFO	./dev/inc/diagnostic/verbose/errHandler.hpp	/^  ERR_LEVEL_INFO,$/;"	e	enum:__anon1
-ERR_LEVEL_MAX	./dev/inc/diagnostic/quiet/errHandler.hpp	/^  ERR_LEVEL_MAX$/;"	e	enum:__anon2
-ERR_LEVEL_MAX	./dev/inc/diagnostic/verbose/errHandler.hpp	/^  ERR_LEVEL_MAX$/;"	e	enum:__anon1
-ERR_LEVEL_WARN	./dev/inc/diagnostic/quiet/errHandler.hpp	/^  ERR_LEVEL_WARN,$/;"	e	enum:__anon2
-ERR_LEVEL_WARN	./dev/inc/diagnostic/verbose/errHandler.hpp	/^  ERR_LEVEL_WARN,$/;"	e	enum:__anon1
-FALSE	./dev/inc/core/common.hpp	/^enum boolean {FALSE, TRUE};$/;"	e	enum:boolean
-Graph	./dev/inc/core/graph.hpp	/^Graph<Tnode,Tlink>::Graph()$/;"	f	class:Graph
-Graph	./dev/inc/core/graph.hpp	/^class Graph$/;"	c
-Graph	./dev/inc/ds/trees/tree.hpp	/^class Tree::public Graph<Tnode, Tlink>$/;"	c	class:Tree
-Link	./dev/inc/core/node.hpp	/^Link<Tlink,Tnode>::Link()$/;"	f	class:Link
-Link	./dev/inc/core/node.hpp	/^Link<Tlink,Tnode>::Link(Tlink weight)$/;"	f	class:Link
-Link	./dev/inc/core/node.hpp	/^class Link : public Link_base$/;"	c
-Link_base	./dev/inc/core/common.hpp	/^class Link_base$/;"	c
-Node	./dev/inc/core/node.hpp	/^Node<Tnode,Tlink>::Node()$/;"	f	class:Node
-Node	./dev/inc/core/node.hpp	/^Node<Tnode,Tlink>::Node(Tnode value)$/;"	f	class:Node
-Node	./dev/inc/core/node.hpp	/^class Node : public Node_base$/;"	c
-Node_base	./dev/inc/core/common.hpp	/^class Node_base$/;"	c
-OUTPUT_MSG	./dev/inc/diagnostic/quiet/errHandler.hpp	14;"	d
-OUTPUT_MSG	./dev/inc/diagnostic/verbose/errHandler.hpp	14;"	d
-OUTPUT_MSG_COMMON	./dev/inc/diagnostic/quiet/errHandler.hpp	23;"	d
-OUTPUT_MSG_COMMON	./dev/inc/diagnostic/verbose/errHandler.hpp	23;"	d
-OUTPUT_MSG_ERR_LEVEL_ERR	./dev/inc/diagnostic/quiet/errHandler.hpp	20;"	d
-OUTPUT_MSG_ERR_LEVEL_ERR	./dev/inc/diagnostic/verbose/errHandler.hpp	20;"	d
-OUTPUT_MSG_ERR_LEVEL_FATAL	./dev/inc/diagnostic/quiet/errHandler.hpp	21;"	d
-OUTPUT_MSG_ERR_LEVEL_FATAL	./dev/inc/diagnostic/verbose/errHandler.hpp	21;"	d
-OUTPUT_MSG_ERR_LEVEL_INFO	./dev/inc/diagnostic/quiet/errHandler.hpp	18;"	d
-OUTPUT_MSG_ERR_LEVEL_INFO	./dev/inc/diagnostic/verbose/errHandler.hpp	18;"	d
-OUTPUT_MSG_ERR_LEVEL_WARN	./dev/inc/diagnostic/quiet/errHandler.hpp	19;"	d
-OUTPUT_MSG_ERR_LEVEL_WARN	./dev/inc/diagnostic/verbose/errHandler.hpp	19;"	d
-PRINT_TAG	./dev/inc/diagnostic/quiet/errHandler.hpp	13;"	d
-PRINT_TAG	./dev/inc/diagnostic/verbose/errHandler.hpp	13;"	d
-TRUE	./dev/inc/core/common.hpp	/^enum boolean {FALSE, TRUE};$/;"	e	enum:boolean
-_ERRHANDLER_HPP_	./dev/inc/diagnostic/quiet/errHandler.hpp	3;"	d
-_ERRHANDLER_HPP_	./dev/inc/diagnostic/verbose/errHandler.hpp	3;"	d
-__COMMON_HPP_	./dev/inc/core/common.hpp	3;"	d
-__GRAPH_HPP_	./dev/inc/core/graph.hpp	3;"	d
-__LINK_HPP_	./dev/inc/core/link.hpp	3;"	d
-__NODE_HPP_	./dev/inc/core/node.hpp	3;"	d
-__TREE_HPP_	./dev/inc/ds/trees/tree.hpp	3;"	d
-addLinkToGraph	./dev/inc/core/graph.hpp	/^int Graph<Tnode,Tlink>::addLinkToGraph(Link<Tlink,Tnode>* link)$/;"	f	class:Graph
-addNodeToGraph	./dev/inc/core/graph.hpp	/^int Graph<Tnode,Tlink>::addNodeToGraph(Node<Tnode,Tlink>* node)$/;"	f	class:Graph
-attachLinkToNodeAtEdge	./dev/inc/core/graph.hpp	/^int Graph<Tnode,Tlink>::attachLinkToNodeAtEdge(int lid, int nid, int edge)$/;"	f	class:Graph
-boolean	./dev/inc/core/common.hpp	/^enum boolean {FALSE, TRUE};$/;"	g
-createLink	./dev/inc/core/graph.hpp	/^int Graph<Tnode, Tlink>::createLink(Tlink val)$/;"	f	class:Graph
-createNode	./dev/inc/core/graph.hpp	/^int Graph<Tnode, Tlink>::createNode(Tnode val)$/;"	f	class:Graph
-detachLinkFromNodeAtEdge	./dev/inc/core/graph.hpp	/^int Graph<Tnode,Tlink>::detachLinkFromNodeAtEdge(int lid, int nid, int edge)$/;"	f	class:Graph
-detachNodeByEdge	./dev/inc/core/node.hpp	/^void Link<Tlink,Tnode>::detachNodeByEdge(int edge)$/;"	f	class:Link
-displayGraph	./dev/inc/core/graph.hpp	/^int Graph<Tnode,Tlink>::displayGraph()$/;"	f	class:Graph
-errHandlerTagEnumType	./dev/inc/diagnostic/quiet/errHandler.hpp	/^} errHandlerTagEnumType;$/;"	t	typeref:enum:__anon2
-errHandlerTagEnumType	./dev/inc/diagnostic/verbose/errHandler.hpp	/^} errHandlerTagEnumType;$/;"	t	typeref:enum:__anon1
-getDegree	./dev/inc/core/node.hpp	/^int Node<Tnode,Tlink>::getDegree()$/;"	f	class:Node
-getId	./dev/inc/core/node.hpp	/^int Link<Tlink,Tnode>::getId()$/;"	f	class:Link
-getId	./dev/inc/core/node.hpp	/^int Node<Tnode,Tlink>::getId()$/;"	f	class:Node
-getLinkById	./dev/inc/core/graph.hpp	/^Link<Tlink,Tnode>* Graph<Tnode,Tlink>::getLinkById(int lid)$/;"	f	class:Graph
-getNodeAtEdge	./dev/inc/core/node.hpp	/^Node<Tnode,Tlink>* Link<Tlink,Tnode>::getNodeAtEdge(int edge)$/;"	f	class:Link
-getNodeById	./dev/inc/core/graph.hpp	/^Node<Tnode,Tlink>* Graph<Tnode,Tlink>::getNodeById(int nid)$/;"	f	class:Graph
-getValue	./dev/inc/core/node.hpp	/^Tnode Node<Tnode,Tlink>::getValue()$/;"	f	class:Node
-graph_id_	./dev/inc/core/graph.hpp	/^    int graph_id_;$/;"	m	class:Graph
-linkAttachedToNode	./dev/inc/core/node.hpp	/^boolean Node<Tnode,Tlink>::linkAttachedToNode(Link<Tlink,Tnode>* link)$/;"	f	class:Node
-link_id_	./dev/inc/core/node.hpp	/^    int link_id_;$/;"	m	class:Link
-link_id_mutex_	./dev/inc/core/node.hpp	/^    mutex link_id_mutex_;$/;"	m	class:Link
-links_	./dev/inc/core/graph.hpp	/^    list<Link<Tlink,Tnode>*> links_;$/;"	m	class:Graph
-links_	./dev/inc/core/node.hpp	/^    list<Link<Tnodelink,Tnode>*> links_;$/;"	m	class:Node
-links_mutex_	./dev/inc/core/node.hpp	/^    mutex links_mutex_;$/;"	m	class:Node
-main	./dev/src/unitTest1.cpp	/^int main(int argc, char* argv[])$/;"	f
-node_	./dev/inc/core/node.hpp	/^    Node<Tnode,Tlink>* node_[2];$/;"	m	class:Link
-node_id_	./dev/inc/core/node.hpp	/^    int node_id_;$/;"	m	class:Node
-node_id_mutex_	./dev/inc/core/node.hpp	/^    mutex node_id_mutex_;$/;"	m	class:Node
-node_mutex_	./dev/inc/core/node.hpp	/^    mutex node_mutex_;$/;"	m	class:Link
-nodes_	./dev/inc/core/graph.hpp	/^    list<Node<Tnode,Tlink>*> nodes_;$/;"	m	class:Graph
-num_children_	./dev/inc/ds/trees/tree.hpp	/^    const int num_children_ = 2;$/;"	m	class:Tree::Graph
-removeLink	./dev/inc/core/node.hpp	/^int Node<Tnode,Tlink>::removeLink(Link<Tlink,Tnode>* link)$/;"	f	class:Node
-setValue	./dev/inc/core/node.hpp	/^void Node<Tnode,Tlink>::setValue(Tnode value)$/;"	f	class:Node
-total_graph_ids	./dev/inc/core/graph.hpp	/^    static int total_graph_ids;$/;"	m	class:Graph
-total_graph_ids	./dev/inc/core/graph.hpp	/^int Graph<Tnode,Tlink>::total_graph_ids = 0;$/;"	m	class:Graph
-total_graphs	./dev/inc/core/graph.hpp	/^    static int total_graphs;$/;"	m	class:Graph
-total_graphs	./dev/inc/core/graph.hpp	/^int Graph<Tnode,Tlink>::total_graphs = 0;$/;"	m	class:Graph
-total_link_ids	./dev/inc/core/node.hpp	/^    static int total_link_ids;$/;"	m	class:Link
-total_link_ids	./dev/inc/core/node.hpp	/^int Link<Tlink,Tnode>::total_link_ids = 0;$/;"	m	class:Link
-total_link_ids_mutex	./dev/inc/core/node.hpp	/^    static mutex total_link_ids_mutex;$/;"	m	class:Link
-total_link_ids_mutex	./dev/inc/core/node.hpp	/^mutex Link<Tlink,Tnode>::total_link_ids_mutex;$/;"	m	class:Link
-total_links	./dev/inc/core/node.hpp	/^    static int total_links;$/;"	m	class:Link
-total_links	./dev/inc/core/node.hpp	/^int Link<Tlink,Tnode>::total_links = 0;$/;"	m	class:Link
-total_links_mutex	./dev/inc/core/node.hpp	/^    static mutex total_links_mutex;$/;"	m	class:Link
-total_links_mutex	./dev/inc/core/node.hpp	/^mutex Link<Tlink,Tnode>::total_links_mutex;$/;"	m	class:Link
-total_node_ids	./dev/inc/core/node.hpp	/^    static int total_node_ids;$/;"	m	class:Node
-total_node_ids	./dev/inc/core/node.hpp	/^int Node<Tnode,Tlink>::total_node_ids = 0;$/;"	m	class:Node
-total_node_ids_mutex	./dev/inc/core/node.hpp	/^    static mutex total_node_ids_mutex;$/;"	m	class:Node
-total_node_ids_mutex	./dev/inc/core/node.hpp	/^mutex Node<Tnode, Tlink>::total_node_ids_mutex;$/;"	m	class:Node
-total_nodes	./dev/inc/core/node.hpp	/^    static int total_nodes;$/;"	m	class:Node
-total_nodes	./dev/inc/core/node.hpp	/^int Node<Tnode,Tlink>::total_nodes = 0;$/;"	m	class:Node
-total_nodes_mutex	./dev/inc/core/node.hpp	/^    static mutex total_nodes_mutex;$/;"	m	class:Node
-total_nodes_mutex	./dev/inc/core/node.hpp	/^mutex Node<Tnode, Tlink>::total_nodes_mutex;$/;"	m	class:Node
-value_	./dev/inc/core/node.hpp	/^    Tnode value_;$/;"	m	class:Node
-value_mutex_	./dev/inc/core/node.hpp	/^    mutex value_mutex_;$/;"	m	class:Node
-weight_	./dev/inc/core/node.hpp	/^    Tlink weight_;$/;"	m	class:Link
-weight_mutex_	./dev/inc/core/node.hpp	/^    mutex weight_mutex_;$/;"	m	class:Link
-~Graph	./dev/inc/core/graph.hpp	/^Graph<Tnode, Tlink>::~Graph()$/;"	f	class:Graph
-~Link	./dev/inc/core/node.hpp	/^Link<Tlink, Tnode>::~Link()$/;"	f	class:Link
-~Node	./dev/inc/core/node.hpp	/^Node<Tnode, Tlink>::~Node()$/;"	f	class:Node
+Consts	dev/inc/core/node.hpp	/^    enum Consts {$/;"	g	class:Link
+Consts	dev/inc/ds/trees/tree.hpp	/^    enum Consts {$/;"	g	class:Tree
+ERR_LEVEL_ERR	dev/inc/diagnostic/quiet/errHandler.hpp	/^  ERR_LEVEL_ERR,$/;"	e	enum:__anon2
+ERR_LEVEL_ERR	dev/inc/diagnostic/verbose/errHandler.hpp	/^  ERR_LEVEL_ERR,$/;"	e	enum:__anon1
+ERR_LEVEL_FATAL	dev/inc/diagnostic/quiet/errHandler.hpp	/^  ERR_LEVEL_FATAL,$/;"	e	enum:__anon2
+ERR_LEVEL_FATAL	dev/inc/diagnostic/verbose/errHandler.hpp	/^  ERR_LEVEL_FATAL,$/;"	e	enum:__anon1
+ERR_LEVEL_INFO	dev/inc/diagnostic/quiet/errHandler.hpp	/^  ERR_LEVEL_INFO,$/;"	e	enum:__anon2
+ERR_LEVEL_INFO	dev/inc/diagnostic/verbose/errHandler.hpp	/^  ERR_LEVEL_INFO,$/;"	e	enum:__anon1
+ERR_LEVEL_MAX	dev/inc/diagnostic/quiet/errHandler.hpp	/^  ERR_LEVEL_MAX$/;"	e	enum:__anon2
+ERR_LEVEL_MAX	dev/inc/diagnostic/verbose/errHandler.hpp	/^  ERR_LEVEL_MAX$/;"	e	enum:__anon1
+ERR_LEVEL_WARN	dev/inc/diagnostic/quiet/errHandler.hpp	/^  ERR_LEVEL_WARN,$/;"	e	enum:__anon2
+ERR_LEVEL_WARN	dev/inc/diagnostic/verbose/errHandler.hpp	/^  ERR_LEVEL_WARN,$/;"	e	enum:__anon1
+FALSE	dev/inc/core/common.hpp	/^enum boolean {FALSE, TRUE};$/;"	e	enum:boolean
+FIRST_EDGE	dev/inc/core/node.hpp	/^     FIRST_EDGE  = 0, SECOND_EDGE = 1, TOTAL_EDGES = 2$/;"	e	enum:Link::Consts
+Graph	dev/inc/core/graph.hpp	/^Graph<Tnode,Tlink>::Graph()$/;"	f	class:Graph
+Graph	dev/inc/core/graph.hpp	/^class Graph$/;"	c
+LEFT_LINK	dev/inc/ds/trees/tree.hpp	/^    LEFT_LINK  = 0,  RIGHT_LINK = 1,  PARENT_LINK = 2, NUM_LINKS  = 3$/;"	e	enum:Tree::Consts
+Link	dev/inc/core/node.hpp	/^Link<Tlink,Tnode>::Link()$/;"	f	class:Link
+Link	dev/inc/core/node.hpp	/^Link<Tlink,Tnode>::Link(Tlink weight)$/;"	f	class:Link
+Link	dev/inc/core/node.hpp	/^class Link : public Link_base$/;"	c
+Link_base	dev/inc/core/common.hpp	/^class Link_base$/;"	c
+NUM_LINKS	dev/inc/ds/trees/tree.hpp	/^    LEFT_LINK  = 0,  RIGHT_LINK = 1,  PARENT_LINK = 2, NUM_LINKS  = 3$/;"	e	enum:Tree::Consts
+Node	dev/inc/core/node.hpp	/^Node<Tnode,Tlink>::Node()$/;"	f	class:Node
+Node	dev/inc/core/node.hpp	/^Node<Tnode,Tlink>::Node(Tnode value)$/;"	f	class:Node
+Node	dev/inc/core/node.hpp	/^class Node : public Node_base$/;"	c
+Node_base	dev/inc/core/common.hpp	/^class Node_base$/;"	c
+OUTPUT_MSG	dev/inc/diagnostic/quiet/errHandler.hpp	14;"	d
+OUTPUT_MSG	dev/inc/diagnostic/verbose/errHandler.hpp	14;"	d
+OUTPUT_MSG_COMMON	dev/inc/diagnostic/quiet/errHandler.hpp	23;"	d
+OUTPUT_MSG_COMMON	dev/inc/diagnostic/verbose/errHandler.hpp	23;"	d
+OUTPUT_MSG_ERR_LEVEL_ERR	dev/inc/diagnostic/quiet/errHandler.hpp	20;"	d
+OUTPUT_MSG_ERR_LEVEL_ERR	dev/inc/diagnostic/verbose/errHandler.hpp	20;"	d
+OUTPUT_MSG_ERR_LEVEL_FATAL	dev/inc/diagnostic/quiet/errHandler.hpp	21;"	d
+OUTPUT_MSG_ERR_LEVEL_FATAL	dev/inc/diagnostic/verbose/errHandler.hpp	21;"	d
+OUTPUT_MSG_ERR_LEVEL_INFO	dev/inc/diagnostic/quiet/errHandler.hpp	18;"	d
+OUTPUT_MSG_ERR_LEVEL_INFO	dev/inc/diagnostic/verbose/errHandler.hpp	18;"	d
+OUTPUT_MSG_ERR_LEVEL_WARN	dev/inc/diagnostic/quiet/errHandler.hpp	19;"	d
+OUTPUT_MSG_ERR_LEVEL_WARN	dev/inc/diagnostic/verbose/errHandler.hpp	19;"	d
+PARENT_LINK	dev/inc/ds/trees/tree.hpp	/^    LEFT_LINK  = 0,  RIGHT_LINK = 1,  PARENT_LINK = 2, NUM_LINKS  = 3$/;"	e	enum:Tree::Consts
+PRINT_TAG	dev/inc/diagnostic/quiet/errHandler.hpp	13;"	d
+PRINT_TAG	dev/inc/diagnostic/verbose/errHandler.hpp	13;"	d
+RIGHT_LINK	dev/inc/ds/trees/tree.hpp	/^    LEFT_LINK  = 0,  RIGHT_LINK = 1,  PARENT_LINK = 2, NUM_LINKS  = 3$/;"	e	enum:Tree::Consts
+SECOND_EDGE	dev/inc/core/node.hpp	/^     FIRST_EDGE  = 0, SECOND_EDGE = 1, TOTAL_EDGES = 2$/;"	e	enum:Link::Consts
+TOTAL_EDGES	dev/inc/core/node.hpp	/^     FIRST_EDGE  = 0, SECOND_EDGE = 1, TOTAL_EDGES = 2$/;"	e	enum:Link::Consts
+TRUE	dev/inc/core/common.hpp	/^enum boolean {FALSE, TRUE};$/;"	e	enum:boolean
+Tree	dev/inc/ds/trees/tree.hpp	/^    Tree(Tnode val) : Node<Tnode, int>(val)$/;"	f	class:Tree
+Tree	dev/inc/ds/trees/tree.hpp	/^Tree<Tnode> :: Tree()$/;"	f	class:Tree
+Tree	dev/inc/ds/trees/tree.hpp	/^class Tree:public Node<Tnode, int>$/;"	c
+_ERRHANDLER_HPP_	dev/inc/diagnostic/quiet/errHandler.hpp	3;"	d
+_ERRHANDLER_HPP_	dev/inc/diagnostic/verbose/errHandler.hpp	3;"	d
+__COMMON_HPP_	dev/inc/core/common.hpp	3;"	d
+__GRAPH_HPP_	dev/inc/core/graph.hpp	3;"	d
+__LINK_HPP_	dev/inc/core/link.hpp	3;"	d
+__NODE_HPP_	dev/inc/core/node.hpp	3;"	d
+__TREE_HPP_	dev/inc/ds/trees/tree.hpp	3;"	d
+addLink	dev/inc/core/node.hpp	/^void Node<Tnode, Tlink>::addLink(Link<Tlink, Tnode>* link)$/;"	f	class:Node
+addLinkToGraph	dev/inc/core/graph.hpp	/^int Graph<Tnode,Tlink>::addLinkToGraph(Link<Tlink,Tnode>* link)$/;"	f	class:Graph
+addNodeToGraph	dev/inc/core/graph.hpp	/^int Graph<Tnode,Tlink>::addNodeToGraph(Node<Tnode,Tlink>* node)$/;"	f	class:Graph
+attachLinkToNodeAtEdge	dev/inc/core/graph.hpp	/^int Graph<Tnode,Tlink>::attachLinkToNodeAtEdge(int lid, int nid, int edge)$/;"	f	class:Graph
+attachNodeAtEdge	dev/inc/core/node.hpp	/^void Link<Tlink, Tnode>::attachNodeAtEdge(Node<Tnode, Tlink>* node, int edge)$/;"	f	class:Link
+boolean	dev/inc/core/common.hpp	/^enum boolean {FALSE, TRUE};$/;"	g
+createAndAddNodeOnLeft	dev/inc/ds/trees/tree.hpp	/^int Tree<Tnode> :: createAndAddNodeOnLeft(Tnode val)$/;"	f	class:Tree
+createAndAddNodeOnRight	dev/inc/ds/trees/tree.hpp	/^int Tree<Tnode> :: createAndAddNodeOnRight(Tnode val)$/;"	f	class:Tree
+createLink	dev/inc/core/graph.hpp	/^int Graph<Tnode, Tlink>::createLink(Tlink val)$/;"	f	class:Graph
+createNode	dev/inc/core/graph.hpp	/^int Graph<Tnode, Tlink>::createNode(Tnode val)$/;"	f	class:Graph
+deleteLeftChild	dev/inc/ds/trees/tree.hpp	/^void Tree<Tnode> :: deleteLeftChild()$/;"	f	class:Tree
+deleteRightChild	dev/inc/ds/trees/tree.hpp	/^void Tree<Tnode> :: deleteRightChild()$/;"	f	class:Tree
+detachLinkFromNodeAtEdge	dev/inc/core/graph.hpp	/^int Graph<Tnode,Tlink>::detachLinkFromNodeAtEdge(int lid, int nid, int edge)$/;"	f	class:Graph
+detachNodeByEdge	dev/inc/core/node.hpp	/^void Link<Tlink,Tnode>::detachNodeByEdge(int edge)$/;"	f	class:Link
+displayGraph	dev/inc/core/graph.hpp	/^int Graph<Tnode,Tlink>::displayGraph()$/;"	f	class:Graph
+errHandlerTagEnumType	dev/inc/diagnostic/quiet/errHandler.hpp	/^} errHandlerTagEnumType;$/;"	t	typeref:enum:__anon2
+errHandlerTagEnumType	dev/inc/diagnostic/verbose/errHandler.hpp	/^} errHandlerTagEnumType;$/;"	t	typeref:enum:__anon1
+getDegree	dev/inc/core/node.hpp	/^int Node<Tnode,Tlink>::getDegree()$/;"	f	class:Node
+getId	dev/inc/core/node.hpp	/^int Link<Tlink,Tnode>::getId()$/;"	f	class:Link
+getId	dev/inc/core/node.hpp	/^int Node<Tnode,Tlink>::getId()$/;"	f	class:Node
+getLeftChild	dev/inc/ds/trees/tree.hpp	/^Tree<Tnode>* Tree<Tnode> :: getLeftChild()$/;"	f	class:Tree
+getLinkAtIndex	dev/inc/core/node.hpp	/^    Link<Tnodelink, Tnode>* getLinkAtIndex(int index)$/;"	f	class:Node
+getLinkById	dev/inc/core/graph.hpp	/^Link<Tlink,Tnode>* Graph<Tnode,Tlink>::getLinkById(int lid)$/;"	f	class:Graph
+getLinksSize	dev/inc/core/node.hpp	/^    int getLinksSize()$/;"	f	class:Node
+getNodeAtEdge	dev/inc/core/node.hpp	/^Node<Tnode,Tlink>* Link<Tlink,Tnode>::getNodeAtEdge(int edge)$/;"	f	class:Link
+getNodeAtOtherEdgeOfLink	dev/inc/core/node.hpp	/^Node<Tnode, Tlink>*  Node<Tnode, Tlink>::getNodeAtOtherEdgeOfLink(Link<Tlink, Tnode>* link )$/;"	f	class:Node
+getNodeById	dev/inc/core/graph.hpp	/^Node<Tnode,Tlink>* Graph<Tnode,Tlink>::getNodeById(int nid)$/;"	f	class:Graph
+getRightChild	dev/inc/ds/trees/tree.hpp	/^Tree<Tnode>* Tree<Tnode> :: getRightChild()$/;"	f	class:Tree
+getTotalNodes	dev/inc/core/node.hpp	/^int Node<Tnode,Tlink>::getTotalNodes()$/;"	f	class:Node
+getValue	dev/inc/core/node.hpp	/^Tnode Node<Tnode,Tlink>::getValue()$/;"	f	class:Node
+graph_id_	dev/inc/core/graph.hpp	/^    int graph_id_;$/;"	m	class:Graph
+linkAttachedToNode	dev/inc/core/node.hpp	/^boolean Node<Tnode,Tlink>::linkAttachedToNode(Link<Tlink,Tnode>* link)$/;"	f	class:Node
+link_id_	dev/inc/core/node.hpp	/^    int link_id_;$/;"	m	class:Link
+link_id_mutex_	dev/inc/core/node.hpp	/^    mutex link_id_mutex_;$/;"	m	class:Link
+links_	dev/inc/core/graph.hpp	/^    list<Link<Tlink,Tnode>*> links_;$/;"	m	class:Graph
+links_	dev/inc/core/node.hpp	/^    vector<Link<Tnodelink,Tnode>*> links_;$/;"	m	class:Node
+links_mutex_	dev/inc/core/node.hpp	/^    mutex links_mutex_;$/;"	m	class:Node
+main	dev/src/unitTest1.cpp	/^int main(int argc, char* argv[])$/;"	f
+main	dev/src/unitTest2.cpp	/^int main(int argc, char **argv)$/;"	f
+node_	dev/inc/core/node.hpp	/^    Node<Tnode,Tlink>* node_[2];$/;"	m	class:Link
+node_id_	dev/inc/core/node.hpp	/^    int node_id_;$/;"	m	class:Node
+node_id_mutex_	dev/inc/core/node.hpp	/^    mutex node_id_mutex_;$/;"	m	class:Node
+node_mutex_	dev/inc/core/node.hpp	/^    mutex node_mutex_;$/;"	m	class:Link
+nodes_	dev/inc/core/graph.hpp	/^    list<Node<Tnode,Tlink>*> nodes_;$/;"	m	class:Graph
+removeLink	dev/inc/core/node.hpp	/^int Node<Tnode,Tlink>::removeLink(Link<Tlink,Tnode>* link)$/;"	f	class:Node
+setValue	dev/inc/core/node.hpp	/^void Node<Tnode,Tlink>::setValue(Tnode value)$/;"	f	class:Node
+total_graph_ids	dev/inc/core/graph.hpp	/^    static int total_graph_ids;$/;"	m	class:Graph
+total_graph_ids	dev/inc/core/graph.hpp	/^int Graph<Tnode,Tlink>::total_graph_ids = 0;$/;"	m	class:Graph
+total_graphs	dev/inc/core/graph.hpp	/^    static int total_graphs;$/;"	m	class:Graph
+total_graphs	dev/inc/core/graph.hpp	/^int Graph<Tnode,Tlink>::total_graphs = 0;$/;"	m	class:Graph
+total_link_ids	dev/inc/core/node.hpp	/^    static int total_link_ids;$/;"	m	class:Link
+total_link_ids	dev/inc/core/node.hpp	/^int Link<Tlink,Tnode>::total_link_ids = 0;$/;"	m	class:Link
+total_link_ids_mutex	dev/inc/core/node.hpp	/^    static mutex total_link_ids_mutex;$/;"	m	class:Link
+total_link_ids_mutex	dev/inc/core/node.hpp	/^mutex Link<Tlink,Tnode>::total_link_ids_mutex;$/;"	m	class:Link
+total_links	dev/inc/core/node.hpp	/^    static int total_links;$/;"	m	class:Link
+total_links	dev/inc/core/node.hpp	/^int Link<Tlink,Tnode>::total_links = 0;$/;"	m	class:Link
+total_links_mutex	dev/inc/core/node.hpp	/^    static mutex total_links_mutex;$/;"	m	class:Link
+total_links_mutex	dev/inc/core/node.hpp	/^mutex Link<Tlink,Tnode>::total_links_mutex;$/;"	m	class:Link
+total_node_ids	dev/inc/core/node.hpp	/^    static int total_node_ids;$/;"	m	class:Node
+total_node_ids	dev/inc/core/node.hpp	/^int Node<Tnode,Tlink>::total_node_ids = 0;$/;"	m	class:Node
+total_node_ids_mutex	dev/inc/core/node.hpp	/^    static mutex total_node_ids_mutex;$/;"	m	class:Node
+total_node_ids_mutex	dev/inc/core/node.hpp	/^mutex Node<Tnode, Tlink>::total_node_ids_mutex;$/;"	m	class:Node
+total_nodes	dev/inc/core/node.hpp	/^    static int total_nodes;$/;"	m	class:Node
+total_nodes	dev/inc/core/node.hpp	/^int Node<Tnode,Tlink>::total_nodes = 0;$/;"	m	class:Node
+total_nodes_mutex	dev/inc/core/node.hpp	/^    static mutex total_nodes_mutex;$/;"	m	class:Node
+total_nodes_mutex	dev/inc/core/node.hpp	/^mutex Node<Tnode, Tlink>::total_nodes_mutex;$/;"	m	class:Node
+traverseInOrder	dev/inc/ds/trees/tree.hpp	/^void Tree<Tnode> :: traverseInOrder()$/;"	f	class:Tree
+traversePostOrder	dev/inc/ds/trees/tree.hpp	/^void Tree<Tnode> :: traversePostOrder()$/;"	f	class:Tree
+traversePreOrder	dev/inc/ds/trees/tree.hpp	/^void Tree<Tnode> :: traversePreOrder()$/;"	f	class:Tree
+value_	dev/inc/core/node.hpp	/^    Tnode value_;$/;"	m	class:Node
+value_mutex_	dev/inc/core/node.hpp	/^    mutex value_mutex_;$/;"	m	class:Node
+weight_	dev/inc/core/node.hpp	/^    Tlink weight_;$/;"	m	class:Link
+weight_mutex_	dev/inc/core/node.hpp	/^    mutex weight_mutex_;$/;"	m	class:Link
+~Graph	dev/inc/core/graph.hpp	/^Graph<Tnode, Tlink>::~Graph()$/;"	f	class:Graph
+~Link	dev/inc/core/node.hpp	/^Link<Tlink, Tnode>::~Link()$/;"	f	class:Link
+~Node	dev/inc/core/node.hpp	/^Node<Tnode, Tlink>::~Node()$/;"	f	class:Node
+~Tree	dev/inc/ds/trees/tree.hpp	/^Tree<Tnode> :: ~Tree()$/;"	f	class:Tree

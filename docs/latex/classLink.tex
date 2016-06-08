@@ -1,6 +1,5 @@
-\hypertarget{classLink}{\section{Link$<$ Tlink, Tnode $>$ Class Template Reference}
+\hypertarget{classLink}{}\section{Link$<$ Tlink, Tnode $>$ Class Template Reference}
 \label{classLink}\index{Link$<$ Tlink, Tnode $>$@{Link$<$ Tlink, Tnode $>$}}
-}
 
 
 \hyperlink{classLink}{Link} Class.  
@@ -8,154 +7,175 @@
 
 
 
-{\ttfamily \#include $<$node.\-hpp$>$}
+{\ttfamily \#include $<$node.\+hpp$>$}
 
-Inheritance diagram for Link$<$ Tlink, Tnode $>$\-:\begin{figure}[H]
+Inheritance diagram for Link$<$ Tlink, Tnode $>$\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{classLink}
 \end{center}
 \end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries Consts} \{ {\bfseries F\+I\+R\+S\+T\+\_\+\+E\+D\+GE} = 0, 
+{\bfseries S\+E\+C\+O\+N\+D\+\_\+\+E\+D\+GE} = 1, 
+{\bfseries T\+O\+T\+A\+L\+\_\+\+E\+D\+G\+ES} = 2
+ \}\hypertarget{classLink_ae34fd87a71fc6aa4c6541dc5327e54c0}{}\label{classLink_ae34fd87a71fc6aa4c6541dc5327e54c0}
+
+\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classLink_aca77f38ecd59de8d21990ac5bbf91a8e}{Link} ()
 \begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
-\hypertarget{classLink_ac99228207446f193a5e4736c6aeb6954}{\hyperlink{classLink_ac99228207446f193a5e4736c6aeb6954}{Link} (Tlink weight)}\label{classLink_ac99228207446f193a5e4736c6aeb6954}
+\hyperlink{classLink_ac99228207446f193a5e4736c6aeb6954}{Link} (Tlink weight)\hypertarget{classLink_ac99228207446f193a5e4736c6aeb6954}{}\label{classLink_ac99228207446f193a5e4736c6aeb6954}
 
 \begin{DoxyCompactList}\small\item\em Constructor which initializes the weight to 1. \end{DoxyCompactList}\item 
-\hyperlink{classLink_ad5cb3f4d9cf63f3dd0a150300cce10ad}{$\sim$\-Link} ()
-\begin{DoxyCompactList}\small\item\em Destructor which handles total\-\_\-links. \end{DoxyCompactList}\item 
-int \hyperlink{classLink_ae082bdae9da5f4c58d91c52af2ea4514}{get\-Id} ()
+\hyperlink{classLink_ad5cb3f4d9cf63f3dd0a150300cce10ad}{$\sim$\+Link} ()
+\begin{DoxyCompactList}\small\item\em Destructor which handles total\+\_\+links. \end{DoxyCompactList}\item 
+int \hyperlink{classLink_ae082bdae9da5f4c58d91c52af2ea4514}{get\+Id} ()
 \begin{DoxyCompactList}\small\item\em Member function which returns the unique index of the link. \end{DoxyCompactList}\item 
-\hypertarget{classLink_aab3ab85eaf576b6eec5634ef542f736f}{int \hyperlink{classLink_aab3ab85eaf576b6eec5634ef542f736f}{add\-Node\-To\-Edge} (\hyperlink{classNode}{Node}$<$ Tnode, Tlink $>$ $\ast$node, int edge)}\label{classLink_aab3ab85eaf576b6eec5634ef542f736f}
+int \hyperlink{classLink_aab3ab85eaf576b6eec5634ef542f736f}{add\+Node\+To\+Edge} (\hyperlink{classNode}{Node}$<$ Tnode, Tlink $>$ $\ast$node, int edge)\hypertarget{classLink_aab3ab85eaf576b6eec5634ef542f736f}{}\label{classLink_aab3ab85eaf576b6eec5634ef542f736f}
 
 \begin{DoxyCompactList}\small\item\em Member function used to add a \hyperlink{classNode}{Node} to one of the edges of the link. \end{DoxyCompactList}\item 
-\hypertarget{classLink_ac932e7b1a57c0c9599be513a2106970b}{int \hyperlink{classLink_ac932e7b1a57c0c9599be513a2106970b}{node\-I\-D\-Attached\-To\-Edge} (int edge)}\label{classLink_ac932e7b1a57c0c9599be513a2106970b}
+int \hyperlink{classLink_ac932e7b1a57c0c9599be513a2106970b}{node\+I\+D\+Attached\+To\+Edge} (int edge)\hypertarget{classLink_ac932e7b1a57c0c9599be513a2106970b}{}\label{classLink_ac932e7b1a57c0c9599be513a2106970b}
 
-\begin{DoxyCompactList}\small\item\em Member function that returns the node I\-D of the node attached to the specified edge. \end{DoxyCompactList}\item 
-void \hyperlink{classLink_a847f85e9cf72ffa8f20acc3fad2f9eca}{detach\-Node\-By\-Edge} (int edge)
+\begin{DoxyCompactList}\small\item\em Member function that returns the node ID of the node attached to the specified edge. \end{DoxyCompactList}\item 
+void \hyperlink{classLink_a847f85e9cf72ffa8f20acc3fad2f9eca}{detach\+Node\+By\+Edge} (int edge)
 \begin{DoxyCompactList}\small\item\em Member function to detach the node attached to an edge of the link. \end{DoxyCompactList}\item 
-\hyperlink{classNode}{Node}$<$ Tnode, Tlink $>$ $\ast$ \hyperlink{classLink_afd371e7c41ade7612eeb41cd5ec96921}{get\-Node\-At\-Edge} (int edge)
+void \hyperlink{classLink_af85376762a02a2ca25ca2cd99e9dc0f5}{attach\+Node\+At\+Edge} (\hyperlink{classNode}{Node}$<$ Tnode, Tlink $>$ $\ast$node, int edge)
+\begin{DoxyCompactList}\small\item\em Member function to attach the node at the given edge. The caller must ensure that the node is updadted with the link information. \end{DoxyCompactList}\item 
+\hyperlink{classNode}{Node}$<$ Tnode, Tlink $>$ $\ast$ \hyperlink{classLink_afd371e7c41ade7612eeb41cd5ec96921}{get\+Node\+At\+Edge} (int edge)
 \begin{DoxyCompactList}\small\item\em Member function that returns the \hyperlink{classNode}{Node} object at the given edge. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classLink_a4b070bc8755475c63a0cbeda4435a5a9}{Tlink \hyperlink{classLink_a4b070bc8755475c63a0cbeda4435a5a9}{weight\-\_\-}}\label{classLink_a4b070bc8755475c63a0cbeda4435a5a9}
+Tlink \hyperlink{classLink_a4b070bc8755475c63a0cbeda4435a5a9}{weight\+\_\+}\hypertarget{classLink_a4b070bc8755475c63a0cbeda4435a5a9}{}\label{classLink_a4b070bc8755475c63a0cbeda4435a5a9}
 
 \begin{DoxyCompactList}\small\item\em Weight of the link, can be an integer. A higher weight implies a stronger link. \end{DoxyCompactList}\item 
-\hypertarget{classLink_aeb73083e229485a383509f87e0e0dca3}{\hyperlink{classNode}{Node}$<$ Tnode, Tlink $>$ $\ast$ \hyperlink{classLink_aeb73083e229485a383509f87e0e0dca3}{node\-\_\-} \mbox{[}2\mbox{]}}\label{classLink_aeb73083e229485a383509f87e0e0dca3}
+\hyperlink{classNode}{Node}$<$ Tnode, Tlink $>$ $\ast$ \hyperlink{classLink_aeb73083e229485a383509f87e0e0dca3}{node\+\_\+} \mbox{[}2\mbox{]}\hypertarget{classLink_aeb73083e229485a383509f87e0e0dca3}{}\label{classLink_aeb73083e229485a383509f87e0e0dca3}
 
 \begin{DoxyCompactList}\small\item\em The two nodes connected to either edge of the link. \end{DoxyCompactList}\item 
-\hypertarget{classLink_a628aea1d6ecfd27c1250e0369524f4e8}{int \hyperlink{classLink_a628aea1d6ecfd27c1250e0369524f4e8}{link\-\_\-id\-\_\-}}\label{classLink_a628aea1d6ecfd27c1250e0369524f4e8}
+int \hyperlink{classLink_a628aea1d6ecfd27c1250e0369524f4e8}{link\+\_\+id\+\_\+}\hypertarget{classLink_a628aea1d6ecfd27c1250e0369524f4e8}{}\label{classLink_a628aea1d6ecfd27c1250e0369524f4e8}
 
-\begin{DoxyCompactList}\small\item\em The unique I\-D assigned to a particular link. \end{DoxyCompactList}\item 
-\hypertarget{classLink_a9df48228aef5f47aabd78bf2ed9204e1}{mutex \hyperlink{classLink_a9df48228aef5f47aabd78bf2ed9204e1}{weight\-\_\-mutex\-\_\-}}\label{classLink_a9df48228aef5f47aabd78bf2ed9204e1}
+\begin{DoxyCompactList}\small\item\em The unique ID assigned to a particular link. \end{DoxyCompactList}\item 
+mutex \hyperlink{classLink_a9df48228aef5f47aabd78bf2ed9204e1}{weight\+\_\+mutex\+\_\+}\hypertarget{classLink_a9df48228aef5f47aabd78bf2ed9204e1}{}\label{classLink_a9df48228aef5f47aabd78bf2ed9204e1}
 
-\begin{DoxyCompactList}\small\item\em A mutex to protect weight\-\_\-. \end{DoxyCompactList}\item 
-\hypertarget{classLink_a6347b18f7b457771e36ce2b2a269d87b}{mutex \hyperlink{classLink_a6347b18f7b457771e36ce2b2a269d87b}{link\-\_\-id\-\_\-mutex\-\_\-}}\label{classLink_a6347b18f7b457771e36ce2b2a269d87b}
+\begin{DoxyCompactList}\small\item\em A mutex to protect weight\+\_\+. \end{DoxyCompactList}\item 
+mutex \hyperlink{classLink_a6347b18f7b457771e36ce2b2a269d87b}{link\+\_\+id\+\_\+mutex\+\_\+}\hypertarget{classLink_a6347b18f7b457771e36ce2b2a269d87b}{}\label{classLink_a6347b18f7b457771e36ce2b2a269d87b}
 
-\begin{DoxyCompactList}\small\item\em A mutex to protect link\-\_\-id\-\_\-. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A mutex to protect link\+\_\+id\+\_\+. \end{DoxyCompactList}\item 
+mutex \hyperlink{classLink_a7c189d9284b91a7379f25b387d9fb50e}{node\+\_\+mutex\+\_\+}\hypertarget{classLink_a7c189d9284b91a7379f25b387d9fb50e}{}\label{classLink_a7c189d9284b91a7379f25b387d9fb50e}
+
+\begin{DoxyCompactList}\small\item\em A mutex to protect node\+\_\+\mbox{[}\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static int \hyperlink{classLink_ad240a01b7643e780f7472bf5058f2151}{total\-\_\-links} = 0
+static int \hyperlink{classLink_ad240a01b7643e780f7472bf5058f2151}{total\+\_\+links} = 0
 \begin{DoxyCompactList}\small\item\em A static member used to keep track of the total number of available links. \end{DoxyCompactList}\item 
-\hypertarget{classLink_a28f2c40cb63fc1e3538ecbc570061a27}{static int \hyperlink{classLink_a28f2c40cb63fc1e3538ecbc570061a27}{total\-\_\-link\-\_\-ids} = 0}\label{classLink_a28f2c40cb63fc1e3538ecbc570061a27}
+static int \hyperlink{classLink_a28f2c40cb63fc1e3538ecbc570061a27}{total\+\_\+link\+\_\+ids} = 0\hypertarget{classLink_a28f2c40cb63fc1e3538ecbc570061a27}{}\label{classLink_a28f2c40cb63fc1e3538ecbc570061a27}
 
 \begin{DoxyCompactList}\small\item\em A static member used to keep track of assigned indices. \end{DoxyCompactList}\item 
-\hypertarget{classLink_a23dd72433e72dd42719265fd4c7fdaf7}{static mutex \hyperlink{classLink_a23dd72433e72dd42719265fd4c7fdaf7}{total\-\_\-link\-\_\-ids\-\_\-mutex}}\label{classLink_a23dd72433e72dd42719265fd4c7fdaf7}
+static mutex \hyperlink{classLink_a23dd72433e72dd42719265fd4c7fdaf7}{total\+\_\+link\+\_\+ids\+\_\+mutex}\hypertarget{classLink_a23dd72433e72dd42719265fd4c7fdaf7}{}\label{classLink_a23dd72433e72dd42719265fd4c7fdaf7}
 
-\begin{DoxyCompactList}\small\item\em A mutex to protect total\-\_\-link\-\_\-ids. \end{DoxyCompactList}\item 
-\hypertarget{classLink_aad684c92f53d65468d758a3ae6b9eaa1}{static mutex \hyperlink{classLink_aad684c92f53d65468d758a3ae6b9eaa1}{total\-\_\-links\-\_\-mutex}}\label{classLink_aad684c92f53d65468d758a3ae6b9eaa1}
+\begin{DoxyCompactList}\small\item\em A mutex to protect total\+\_\+link\+\_\+ids. \end{DoxyCompactList}\item 
+static mutex \hyperlink{classLink_aad684c92f53d65468d758a3ae6b9eaa1}{total\+\_\+links\+\_\+mutex}\hypertarget{classLink_aad684c92f53d65468d758a3ae6b9eaa1}{}\label{classLink_aad684c92f53d65468d758a3ae6b9eaa1}
 
-\begin{DoxyCompactList}\small\item\em A mutex to protect total\-\_\-links. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Friends}
-\begin{DoxyCompactItemize}
-\item 
-\hypertarget{classLink_a328a8512e23864fd93de7205c56d2c3f}{class \hyperlink{classLink_a328a8512e23864fd93de7205c56d2c3f}{Graph$<$ Tnode, Tlink $>$}}\label{classLink_a328a8512e23864fd93de7205c56d2c3f}
-
-\begin{DoxyCompactList}\small\item\em Fried class \hyperlink{classGraph}{Graph} to manipulate the link. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A mutex to protect total\+\_\+links. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-\subsubsection*{template$<$class Tlink, class Tnode$>$class Link$<$ Tlink, Tnode $>$}
+\subsubsection*{template$<$class Tlink, class Tnode$>$\\*
+class Link$<$ Tlink, Tnode $>$}
 
 \hyperlink{classLink}{Link} Class. 
 
-The \hyperlink{classLink}{Link} class represents the link between two nodes. Each link has two edges, and the link itself has an integral weight. Two static integers are used to keep track of the number of links created and the link indices in use 
+The \hyperlink{classLink}{Link} class represents the link between two nodes. Each link has two edges, and the link itself has an integral weight. Two static integers are used to keep track of the number of links created and the link indices in use T\+O\+DO\+: Why does it inherit class \hyperlink{classLink__base}{Link\+\_\+base} which is empty? 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classLink_aca77f38ecd59de8d21990ac5bbf91a8e}{\index{Link@{Link}!Link@{Link}}
 \index{Link@{Link}!Link@{Link}}
-\subsubsection[{Link}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tlink, class Tnode$>$ {\bf Link}$<$ Tlink, Tnode $>$\-::{\bf Link} (
+\index{Link@{Link}!Link@{Link}}
+\subsubsection[{\texorpdfstring{Link()}{Link()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tlink , class Tnode $>$ {\bf Link}$<$ Tlink, Tnode $>$\+::{\bf Link} (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classLink_aca77f38ecd59de8d21990ac5bbf91a8e}
+)}\hypertarget{classLink_aca77f38ecd59de8d21990ac5bbf91a8e}{}\label{classLink_aca77f38ecd59de8d21990ac5bbf91a8e}
 
 
 Default Constructor. 
 
-Deafult constructor, updates total links and total link ids. \hypertarget{classLink_ad5cb3f4d9cf63f3dd0a150300cce10ad}{\index{Link@{Link}!$\sim$\-Link@{$\sim$\-Link}}
-\index{$\sim$\-Link@{$\sim$\-Link}!Link@{Link}}
-\subsubsection[{$\sim$\-Link}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tlink, class Tnode$>$ {\bf Link}$<$ Tlink, Tnode $>$\-::$\sim${\bf Link} (
+Deafult constructor, updates total links and total link ids. \index{Link@{Link}!````~Link@{$\sim$\+Link}}
+\index{````~Link@{$\sim$\+Link}!Link@{Link}}
+\subsubsection[{\texorpdfstring{$\sim$\+Link()}{~Link()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tlink , class Tnode $>$ {\bf Link}$<$ Tlink, Tnode $>$\+::$\sim${\bf Link} (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classLink_ad5cb3f4d9cf63f3dd0a150300cce10ad}
+)}\hypertarget{classLink_ad5cb3f4d9cf63f3dd0a150300cce10ad}{}\label{classLink_ad5cb3f4d9cf63f3dd0a150300cce10ad}
 
 
-Destructor which handles total\-\_\-links. 
+Destructor which handles total\+\_\+links. 
 
 Destructor. 
 
 \subsection{Member Function Documentation}
-\hypertarget{classLink_a847f85e9cf72ffa8f20acc3fad2f9eca}{\index{Link@{Link}!detach\-Node\-By\-Edge@{detach\-Node\-By\-Edge}}
-\index{detach\-Node\-By\-Edge@{detach\-Node\-By\-Edge}!Link@{Link}}
-\subsubsection[{detach\-Node\-By\-Edge}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tlink, class Tnode$>$ void {\bf Link}$<$ Tlink, Tnode $>$\-::detach\-Node\-By\-Edge (
+\index{Link@{Link}!attach\+Node\+At\+Edge@{attach\+Node\+At\+Edge}}
+\index{attach\+Node\+At\+Edge@{attach\+Node\+At\+Edge}!Link@{Link}}
+\subsubsection[{\texorpdfstring{attach\+Node\+At\+Edge(\+Node$<$ Tnode, Tlink $>$ $\ast$node, int edge)}{attachNodeAtEdge(Node< Tnode, Tlink > *node, int edge)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tlink, class Tnode$>$ void {\bf Link}$<$ Tlink, Tnode $>$\+::attach\+Node\+At\+Edge (
+\begin{DoxyParamCaption}
+\item[{{\bf Node}$<$ Tnode, Tlink $>$ $\ast$}]{node, }
+\item[{int}]{edge}
+\end{DoxyParamCaption}
+)}\hypertarget{classLink_af85376762a02a2ca25ca2cd99e9dc0f5}{}\label{classLink_af85376762a02a2ca25ca2cd99e9dc0f5}
+
+
+Member function to attach the node at the given edge. The caller must ensure that the node is updadted with the link information. 
+
+This function attaches a node to the link at the given Edge. It is the caller\textquotesingle{}s duty to update the node with this link. \index{Link@{Link}!detach\+Node\+By\+Edge@{detach\+Node\+By\+Edge}}
+\index{detach\+Node\+By\+Edge@{detach\+Node\+By\+Edge}!Link@{Link}}
+\subsubsection[{\texorpdfstring{detach\+Node\+By\+Edge(int edge)}{detachNodeByEdge(int edge)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tlink , class Tnode $>$ void {\bf Link}$<$ Tlink, Tnode $>$\+::detach\+Node\+By\+Edge (
 \begin{DoxyParamCaption}
 \item[{int}]{edge}
 \end{DoxyParamCaption}
-)}}\label{classLink_a847f85e9cf72ffa8f20acc3fad2f9eca}
+)}\hypertarget{classLink_a847f85e9cf72ffa8f20acc3fad2f9eca}{}\label{classLink_a847f85e9cf72ffa8f20acc3fad2f9eca}
 
 
 Member function to detach the node attached to an edge of the link. 
 
-Detaches the node attached to the given edge, prints an error if no node is attached at the given edge. \hypertarget{classLink_ae082bdae9da5f4c58d91c52af2ea4514}{\index{Link@{Link}!get\-Id@{get\-Id}}
-\index{get\-Id@{get\-Id}!Link@{Link}}
-\subsubsection[{get\-Id}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tlink, class Tnode$>$ int {\bf Link}$<$ Tlink, Tnode $>$\-::get\-Id (
+Detaches the node attached to the given edge, prints an error if no node is attached at the given edge. \index{Link@{Link}!get\+Id@{get\+Id}}
+\index{get\+Id@{get\+Id}!Link@{Link}}
+\subsubsection[{\texorpdfstring{get\+Id()}{getId()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tlink , class Tnode $>$ int {\bf Link}$<$ Tlink, Tnode $>$\+::get\+Id (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classLink_ae082bdae9da5f4c58d91c52af2ea4514}
+)}\hypertarget{classLink_ae082bdae9da5f4c58d91c52af2ea4514}{}\label{classLink_ae082bdae9da5f4c58d91c52af2ea4514}
 
 
 Member function which returns the unique index of the link. 
 
-Retruns the I\-D of the link. \hypertarget{classLink_afd371e7c41ade7612eeb41cd5ec96921}{\index{Link@{Link}!get\-Node\-At\-Edge@{get\-Node\-At\-Edge}}
-\index{get\-Node\-At\-Edge@{get\-Node\-At\-Edge}!Link@{Link}}
-\subsubsection[{get\-Node\-At\-Edge}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tlink, class Tnode$>$ {\bf Node}$<$ Tnode, Tlink $>$ $\ast$ {\bf Link}$<$ Tlink, Tnode $>$\-::get\-Node\-At\-Edge (
+Retruns the ID of the link. \index{Link@{Link}!get\+Node\+At\+Edge@{get\+Node\+At\+Edge}}
+\index{get\+Node\+At\+Edge@{get\+Node\+At\+Edge}!Link@{Link}}
+\subsubsection[{\texorpdfstring{get\+Node\+At\+Edge(int edge)}{getNodeAtEdge(int edge)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tlink , class Tnode $>$ {\bf Node}$<$ Tnode, Tlink $>$ $\ast$ {\bf Link}$<$ Tlink, Tnode $>$\+::get\+Node\+At\+Edge (
 \begin{DoxyParamCaption}
 \item[{int}]{edge}
 \end{DoxyParamCaption}
-)}}\label{classLink_afd371e7c41ade7612eeb41cd5ec96921}
+)}\hypertarget{classLink_afd371e7c41ade7612eeb41cd5ec96921}{}\label{classLink_afd371e7c41ade7612eeb41cd5ec96921}
 
 
 Member function that returns the \hyperlink{classNode}{Node} object at the given edge. 
 
-returns the node attached to the link at the given edge. If no node is attached, it returns N\-U\-L\-L. 
+returns the node attached to the link at the given edge. If no node is attached, it returns N\+U\+LL. 
 
 \subsection{Member Data Documentation}
-\hypertarget{classLink_ad240a01b7643e780f7472bf5058f2151}{\index{Link@{Link}!total\-\_\-links@{total\-\_\-links}}
-\index{total\-\_\-links@{total\-\_\-links}!Link@{Link}}
-\subsubsection[{total\-\_\-links}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tlink, class Tnode$>$ int {\bf Link}$<$ Tlink, Tnode $>$\-::total\-\_\-links = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classLink_ad240a01b7643e780f7472bf5058f2151}
+\index{Link@{Link}!total\+\_\+links@{total\+\_\+links}}
+\index{total\+\_\+links@{total\+\_\+links}!Link@{Link}}
+\subsubsection[{\texorpdfstring{total\+\_\+links}{total_links}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Tlink, class Tnode$>$ int {\bf Link}$<$ Tlink, Tnode $>$\+::total\+\_\+links = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\hypertarget{classLink_ad240a01b7643e780f7472bf5058f2151}{}\label{classLink_ad240a01b7643e780f7472bf5058f2151}
 
 
 A static member used to keep track of the total number of available links. 
 
 The Definitions for the \hyperlink{classLink}{Link} class are below 
 
-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-dev/inc/\hyperlink{node_8hpp}{node.\-hpp}\end{DoxyCompactItemize}
+dev/inc/core/\hyperlink{node_8hpp}{node.\+hpp}\end{DoxyCompactItemize}

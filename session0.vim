@@ -100,9 +100,10 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
+badd +1 session0.vim
 badd +37 dev/inc/ds/trees/tree.hpp
 badd +1 dev/inc/core/graph.hpp
-badd +32 dev/inc/core/node.hpp
+badd +353 dev/inc/core/node.hpp
 argglobal
 silent! argdel *
 argadd dev/inc/core/graph.hpp
@@ -120,11 +121,11 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 36 + 68) / 136)
-exe '2resize ' . ((&lines * 20 + 36) / 72)
-exe 'vert 2resize ' . ((&columns * 99 + 68) / 136)
-exe '3resize ' . ((&lines * 47 + 36) / 72)
-exe 'vert 3resize ' . ((&columns * 99 + 68) / 136)
+exe 'vert 1resize ' . ((&columns * 28 + 68) / 136)
+exe '2resize ' . ((&lines * 30 + 36) / 72)
+exe 'vert 2resize ' . ((&columns * 107 + 68) / 136)
+exe '3resize ' . ((&lines * 37 + 36) / 72)
+exe 'vert 3resize ' . ((&columns * 107 + 68) / 136)
 argglobal
 enew
 file __Tag_List__
@@ -371,12 +372,48 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 35 - ((17 * winheight(0) + 10) / 20)
+29
+normal! zo
+113
+normal! zo
+223
+normal! zo
+353
+normal! zo
+364
+normal! zo
+468
+normal! zo
+489
+normal! zo
+510
+normal! zo
+468
+normal! zo
+489
+normal! zo
+510
+normal! zo
+420
+normal! zo
+468
+normal! zo
+489
+normal! zo
+510
+normal! zo
+468
+normal! zo
+489
+normal! zo
+510
+normal! zo
+let s:l = 427 - ((23 * winheight(0) + 15) / 30)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-35
-normal! 0
+427
+normal! 03|
 wincmd w
 argglobal
 edit dev/inc/core/graph.hpp
@@ -490,25 +527,23 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-126
+127
 normal! zo
-141
+142
 normal! zo
-154
-normal! zo
-let s:l = 168 - ((6 * winheight(0) + 23) / 47)
+let s:l = 84 - ((24 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-168
+84
 normal! 03|
 wincmd w
-3wincmd w
-exe 'vert 1resize ' . ((&columns * 36 + 68) / 136)
-exe '2resize ' . ((&lines * 20 + 36) / 72)
-exe 'vert 2resize ' . ((&columns * 99 + 68) / 136)
-exe '3resize ' . ((&lines * 47 + 36) / 72)
-exe 'vert 3resize ' . ((&columns * 99 + 68) / 136)
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 28 + 68) / 136)
+exe '2resize ' . ((&lines * 30 + 36) / 72)
+exe 'vert 2resize ' . ((&columns * 107 + 68) / 136)
+exe '3resize ' . ((&lines * 37 + 36) / 72)
+exe 'vert 3resize ' . ((&columns * 107 + 68) / 136)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

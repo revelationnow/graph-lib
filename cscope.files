@@ -1,7 +1,9 @@
-dev/inc/common.hpp
+dev/inc/core/common.hpp
 dev/inc/diagnostic/quiet/errHandler.hpp
 dev/inc/diagnostic/verbose/errHandler.hpp
-dev/inc/graph.hpp
-dev/inc/link.hpp
-dev/inc/node.hpp
+dev/inc/core/graph.hpp
+dev/inc/core/link.hpp
+dev/inc/core/node.hpp
 dev/src/unitTest1.cpp
+dev/src/unitTest2.cpp
+dev/inc/ds/trees/tree.hpp

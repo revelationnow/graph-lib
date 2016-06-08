@@ -18,26 +18,39 @@ class Tree:public Node<Tnode, int>
     
   public:
     enum Consts {
-    LEFT_LINK  = 0,  RIGHT_LINK = 1,  NUM_LINKS  = 2
+    LEFT_LINK  = 0,  RIGHT_LINK = 1,  PARENT_LINK = 2, NUM_LINKS  = 3
     };
     //! Constructor
     Tree();
+    //! Destructor
+    ~Tree();
     //! Constructor
     Tree(Tnode val) : Node<Tnode, int>(val)
     {
-
+      Link<int, Tnode> *temp = new Link<int, Tnode>;
+      this->addLink(temp);
+      temp->attachNodeAtEdge(this, Link<int, Tnode>::FIRST_EDGE);
+      temp = new Link<int, Tnode>;
+      this->addLink(temp);
+      temp->attachNodeAtEdge(this, Link<int, Tnode>::FIRST_EDGE);
     }
    
     //! Traversal : Different orders of traversal
     void traverseInOrder();
     void traversePreOrder();
     void traversePostOrder();
-    //! Create a node and add it to the tree
-    int createAndAddNode(Tnode val);
+    //! Create a node and add it to the tree on the left side
+    int createAndAddNodeOnLeft(Tnode val);
+    //! Create a node and add it to the tree on the right side
+    int createAndAddNodeOnRight(Tnode val);
     //! Get the Left child of the node
     Tree<Tnode>* getLeftChild();
     //! Get the right child of the node
     Tree<Tnode>* getRightChild();
+    //! Delete the left child of the node, it will delete all the children of the children also
+    void deleteLeftChild();
+    //! Delete the right child of the node, it will delete all the children of the children also
+    void deleteRightChild();
 
 
 };
@@ -45,38 +58,94 @@ class Tree:public Node<Tnode, int>
 template<class Tnode>
 Tree<Tnode> :: Tree()
 {
+  Link<int, Tnode> *temp = new Link<int, Tnode>;
+  this->addLink(temp);
+  temp->attachNodeAtEdge(this, Link<int, Tnode>::FIRST_EDGE);
+  temp = new Link<int, Tnode>;
+  this->addLink(temp);
+  temp->attachNodeAtEdge(this, Link<int, Tnode>::FIRST_EDGE);
+}
+
+template<class Tnode>
+Tree<Tnode> :: ~Tree()
+{
+  this->deleteRightChild();
+  this->deleteLeftChild();
+}
+
+template<class Tnode>
+void Tree<Tnode> :: deleteLeftChild()
+{
+  Tree<Tnode> *temp = (Tree<Tnode>*)this->getNodeAtOtherEdgeOfLink(this->links_[Tree<Tnode>::LEFT_LINK]);
+  delete this->links_[Tree<Tnode>::LEFT_LINK];
+  this->links_.pop_back();  
+  if(temp != NULL)
+  {
+    delete temp;
+  }
+}
+
+template<class Tnode>
+void Tree<Tnode> :: deleteRightChild()
+{
+  Tree<Tnode> *temp = (Tree<Tnode>*)this->getNodeAtOtherEdgeOfLink(this->links_[Tree<Tnode>::RIGHT_LINK]);
+  delete this->links_[Tree<Tnode>::RIGHT_LINK];
+  this->links_.pop_back();  
+  if(temp != NULL)
+  {
+    delete temp;
+  }
 
 }
 
 
 template<class Tnode>
-int Tree<Tnode> :: createAndAddNode(Tnode val)
+int Tree<Tnode> :: createAndAddNodeOnLeft(Tnode val)
 {
-  Tree<Tnode> *temp = new Tree<Tnode>(val);
-  Tree<Tnode> *trav = this;
-  Tree<Tnode> *next = this;
-  OUTPUT_MSG(ERR_LEVEL_INFO, "Looking for location to add node");
   // Keep going left till free location is found : This is naive
-  while(Tree::NUM_LINKS == trav->getLinksSize())
+  
+  //Check if there is a node at the other edge of the left link
+  //Then if there is no node, add this value at that position
+  if(this->getNodeAtOtherEdgeOfLink(this->links_[Tree<Tnode>::LEFT_LINK]) == NULL)
   {
-    next = (Tree<Tnode>*)trav->getNodeAtOtherEdgeOfLink(trav->getLinkAtIndex(Tree<Tnode>::LEFT_LINK));
-    if(next == NULL)
-    {
-      break;
-    }
-    trav = next;
+    Tree<Tnode>* temp= new Tree<Tnode>(val);
+    
+    temp->addLink(this->links_[Tree<Tnode>::LEFT_LINK]);
+    this->links_[Tree<Tnode>::LEFT_LINK]->attachNodeAtEdge(temp, Link<int, Tnode>::SECOND_EDGE);
+    OUTPUT_MSG(ERR_LEVEL_INFO, "Added new Node Id : "<<temp->getId());
+
   }
-  OUTPUT_MSG(ERR_LEVEL_INFO, "Found location to add, Creating link and adding new node");
+  //Else call the same function but with the left child being the caller
+  else
+  {
+    ((Tree<Tnode>*)(this->getNodeAtOtherEdgeOfLink(this->links_[Tree<Tnode>::LEFT_LINK])))->createAndAddNodeOnLeft(val);
+  }
+  
+  return 0;
+}
 
-  //Create a link to attach the new node to the tree
-  Link<int, Tnode> *link = new Link<int, Tnode>(1);
+template<class Tnode>
+int Tree<Tnode> :: createAndAddNodeOnRight(Tnode val)
+{
+  // Keep going left till free location is found : This is naive
+  
+  //Check if there is a node at the other edge of the left link
+  //Then if there is no node, add this value at that position
+  if(this->getNodeAtOtherEdgeOfLink(this->links_[Tree<Tnode>::RIGHT_LINK]) == NULL)
+  {
+    Tree<Tnode>* temp= new Tree<Tnode>(val);
+    
+    temp->addLink(this->links_[Tree<Tnode>::RIGHT_LINK]);
+    this->links_[Tree<Tnode>::LEFT_LINK]->attachNodeAtEdge(temp, Link<int, Tnode>::SECOND_EDGE);
+    OUTPUT_MSG(ERR_LEVEL_INFO, "Added new Node Id : "<<temp->getId());
 
-  link->attachNodeAtEdge(trav, Link<int,Tnode>::FIRST_EDGE);
-  trav->addLink(link);
-  link->attachNodeAtEdge(temp, Link<int,Tnode>::SECOND_EDGE);
-  temp->addLink(link);
-
-  OUTPUT_MSG(ERR_LEVEL_INFO, "Added new node");
+  }
+  //Else call the same function but with the left child being the caller
+  else
+  {
+    ((Tree<Tnode>*)(this->getNodeAtOtherEdgeOfLink(this->links_[Tree<Tnode>::RIGHT_LINK])))->createAndAddNodeOnLeft(val);
+  }
+  
   return 0;
 }
 

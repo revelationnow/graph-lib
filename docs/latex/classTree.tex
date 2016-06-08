@@ -1,0 +1,80 @@
+\hypertarget{classTree}{}\section{Tree$<$ Tnode $>$ Class Template Reference}
+\label{classTree}\index{Tree$<$ Tnode $>$@{Tree$<$ Tnode $>$}}
+
+
+\hyperlink{classTree}{Tree} class.  
+
+
+
+
+{\ttfamily \#include $<$tree.\+hpp$>$}
+
+Inheritance diagram for Tree$<$ Tnode $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classTree}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries Consts} \{ {\bfseries L\+E\+F\+T\+\_\+\+L\+I\+NK} = 0, 
+{\bfseries R\+I\+G\+H\+T\+\_\+\+L\+I\+NK} = 1, 
+{\bfseries P\+A\+R\+E\+N\+T\+\_\+\+L\+I\+NK} = 2, 
+{\bfseries N\+U\+M\+\_\+\+L\+I\+N\+KS} = 3
+ \}\hypertarget{classTree_a8d1e12815beb46a052311a85390f3d37}{}\label{classTree_a8d1e12815beb46a052311a85390f3d37}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTree_a66090705b8fb60acdbc3c7396a84931f}{Tree} ()\hypertarget{classTree_a66090705b8fb60acdbc3c7396a84931f}{}\label{classTree_a66090705b8fb60acdbc3c7396a84931f}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classTree_a58625504ac52cc2ac7ba1f574ee1f856}{$\sim$\+Tree} ()\hypertarget{classTree_a58625504ac52cc2ac7ba1f574ee1f856}{}\label{classTree_a58625504ac52cc2ac7ba1f574ee1f856}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{classTree_aa1927536852f0e867af1c4259ea6e58b}{Tree} (Tnode val)\hypertarget{classTree_aa1927536852f0e867af1c4259ea6e58b}{}\label{classTree_aa1927536852f0e867af1c4259ea6e58b}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \hyperlink{classTree_a6722213d27f3c4da7b127673283a6ea0}{traverse\+In\+Order} ()\hypertarget{classTree_a6722213d27f3c4da7b127673283a6ea0}{}\label{classTree_a6722213d27f3c4da7b127673283a6ea0}
+
+\begin{DoxyCompactList}\small\item\em Traversal \+: Different orders of traversal. \end{DoxyCompactList}\item 
+void {\bfseries traverse\+Pre\+Order} ()\hypertarget{classTree_a78c440a2fac8d4ad77bb4d13ba3a70e2}{}\label{classTree_a78c440a2fac8d4ad77bb4d13ba3a70e2}
+
+\item 
+void {\bfseries traverse\+Post\+Order} ()\hypertarget{classTree_a89dd922017d606826e516d0f52d824a8}{}\label{classTree_a89dd922017d606826e516d0f52d824a8}
+
+\item 
+int \hyperlink{classTree_a278f7564b09dc1600dcdb0cc4d3054a0}{create\+And\+Add\+Node\+On\+Left} (Tnode val)\hypertarget{classTree_a278f7564b09dc1600dcdb0cc4d3054a0}{}\label{classTree_a278f7564b09dc1600dcdb0cc4d3054a0}
+
+\begin{DoxyCompactList}\small\item\em Create a node and add it to the tree on the left side. \end{DoxyCompactList}\item 
+int \hyperlink{classTree_a44eb3341bc7ed66f255e9fe468ab06eb}{create\+And\+Add\+Node\+On\+Right} (Tnode val)\hypertarget{classTree_a44eb3341bc7ed66f255e9fe468ab06eb}{}\label{classTree_a44eb3341bc7ed66f255e9fe468ab06eb}
+
+\begin{DoxyCompactList}\small\item\em Create a node and add it to the tree on the right side. \end{DoxyCompactList}\item 
+\hyperlink{classTree}{Tree}$<$ Tnode $>$ $\ast$ \hyperlink{classTree_ae3f7bd77cb5a97850610d8467e92b4a6}{get\+Left\+Child} ()\hypertarget{classTree_ae3f7bd77cb5a97850610d8467e92b4a6}{}\label{classTree_ae3f7bd77cb5a97850610d8467e92b4a6}
+
+\begin{DoxyCompactList}\small\item\em Get the Left child of the node. \end{DoxyCompactList}\item 
+\hyperlink{classTree}{Tree}$<$ Tnode $>$ $\ast$ \hyperlink{classTree_acc04c93b0cead87c1cf2ddcaadcc3753}{get\+Right\+Child} ()\hypertarget{classTree_acc04c93b0cead87c1cf2ddcaadcc3753}{}\label{classTree_acc04c93b0cead87c1cf2ddcaadcc3753}
+
+\begin{DoxyCompactList}\small\item\em Get the right child of the node. \end{DoxyCompactList}\item 
+void \hyperlink{classTree_aa3d6fdeadd512395b1e2511dfc45936d}{delete\+Left\+Child} ()\hypertarget{classTree_aa3d6fdeadd512395b1e2511dfc45936d}{}\label{classTree_aa3d6fdeadd512395b1e2511dfc45936d}
+
+\begin{DoxyCompactList}\small\item\em Delete the left child of the node, it will delete all the children of the children also. \end{DoxyCompactList}\item 
+void \hyperlink{classTree_a6e3a484d9f7f10a3897502f77bd1532a}{delete\+Right\+Child} ()\hypertarget{classTree_a6e3a484d9f7f10a3897502f77bd1532a}{}\label{classTree_a6e3a484d9f7f10a3897502f77bd1532a}
+
+\begin{DoxyCompactList}\small\item\em Delete the right child of the node, it will delete all the children of the children also. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Tnode$>$\\*
+class Tree$<$ Tnode $>$}
+
+\hyperlink{classTree}{Tree} class. 
+
+This class is for a binary tree data structure. It derives from the node class and maintains at most two children per node. It can be extended to also implement a parent pointer in the child nodes. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+dev/inc/ds/trees/\hyperlink{tree_8hpp}{tree.\+hpp}\end{DoxyCompactItemize}

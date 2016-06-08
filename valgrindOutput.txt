@@ -1,0 +1,101 @@
+==26287== Memcheck, a memory error detector
+==26287== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==26287== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==26287== Command: ./dev/build/test2
+==26287== Parent PID: 1445
+==26287== 
+--26287-- 
+--26287-- Valgrind options:
+--26287--    --log-file=./valgrindOutput.txt
+--26287--    -v
+--26287--    --leak-check=full
+--26287--    --show-leak-kinds=all
+--26287-- Contents of /proc/version:
+--26287--   Linux version 4.5.2-1-ARCH (builduser@tobias) (gcc version 5.3.0 (GCC) ) #1 SMP PREEMPT Thu Apr 21 18:21:27 CEST 2016
+--26287-- 
+--26287-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-rdtscp-sse3-avx
+--26287-- Page sizes: currently 4096, max supported 4096
+--26287-- Valgrind library directory: /usr/lib/valgrind
+--26287-- Reading syms from /home/anoop/Work/dev/graph-lib/graph-lib/dev/build/test2
+--26287-- Reading syms from /usr/lib/ld-2.23.so
+--26287-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--26287--    object doesn't have a symbol table
+--26287--    object doesn't have a dynamic symbol table
+--26287-- Scheduler: using generic scheduler lock implementation.
+--26287-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==26287== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-26287-by-anoop-on-???
+==26287== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-26287-by-anoop-on-???
+==26287== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-26287-by-anoop-on-???
+==26287== 
+==26287== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==26287== don't want to do, unless you know exactly what you're doing,
+==26287== or are doing some strange experiment):
+==26287==   /usr/lib/valgrind/../../bin/vgdb --pid=26287 ...command...
+==26287== 
+==26287== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==26287==   /path/to/gdb ./dev/build/test2
+==26287== and then give GDB the following command
+==26287==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=26287
+==26287== --pid is optional if only one valgrind process is running
+==26287== 
+--26287-- REDIR: 0x401aa70 (ld-linux-x86-64.so.2:strlen) redirected to 0x3809e171 (???)
+--26287-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--26287--    object doesn't have a symbol table
+--26287-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--26287--    object doesn't have a symbol table
+==26287== WARNING: new redirection conflicts with existing -- ignoring it
+--26287--     old: 0x0401aa70 (strlen              ) R-> (0000.0) 0x3809e171 ???
+--26287--     new: 0x0401aa70 (strlen              ) R-> (2007.0) 0x04c2dc60 strlen
+--26287-- REDIR: 0x40193c0 (ld-linux-x86-64.so.2:index) redirected to 0x4c2d800 (index)
+--26287-- REDIR: 0x40195e0 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c2ed10 (strcmp)
+--26287-- REDIR: 0x401b810 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c31eb0 (mempcpy)
+--26287-- Reading syms from /usr/lib/libstdc++.so.6.0.22
+--26287-- Reading syms from /usr/lib/libm-2.23.so
+--26287--    object doesn't have a symbol table
+--26287-- Reading syms from /usr/lib/libgcc_s.so.1
+--26287-- Reading syms from /usr/lib/libc-2.23.so
+--26287-- REDIR: 0x5759150 (libc.so.6:strcasecmp) redirected to 0x4a266be (_vgnU_ifunc_wrapper)
+--26287-- REDIR: 0x5754b30 (libc.so.6:strcspn) redirected to 0x4a266be (_vgnU_ifunc_wrapper)
+--26287-- REDIR: 0x575b440 (libc.so.6:strncasecmp) redirected to 0x4a266be (_vgnU_ifunc_wrapper)
+--26287-- REDIR: 0x5756fa0 (libc.so.6:strpbrk) redirected to 0x4a266be (_vgnU_ifunc_wrapper)
+--26287-- REDIR: 0x5757330 (libc.so.6:strspn) redirected to 0x4a266be (_vgnU_ifunc_wrapper)
+--26287-- REDIR: 0x57588a0 (libc.so.6:memcpy@GLIBC_2.2.5) redirected to 0x4a266be (_vgnU_ifunc_wrapper)
+--26287-- REDIR: 0x5756cb0 (libc.so.6:rindex) redirected to 0x4c2d4e0 (rindex)
+--26287-- REDIR: 0x574f2d0 (libc.so.6:malloc) redirected to 0x4c2ab49 (malloc)
+--26287-- REDIR: 0x5754fd0 (libc.so.6:strlen) redirected to 0x4c2dba0 (strlen)
+--26287-- REDIR: 0x5758300 (libc.so.6:__GI_memcmp) redirected to 0x4c307d0 (__GI_memcmp)
+--26287-- REDIR: 0x5753580 (libc.so.6:strcmp) redirected to 0x4a266be (_vgnU_ifunc_wrapper)
+--26287-- REDIR: 0x5764870 (libc.so.6:__strcmp_sse2_unaligned) redirected to 0x4c2ebd0 (strcmp)
+--26287-- REDIR: 0x4ec5950 (libstdc++.so.6:operator new(unsigned long)) redirected to 0x4c2b051 (operator new(unsigned long))
+--26287-- REDIR: 0x5758b00 (libc.so.6:__GI_mempcpy) redirected to 0x4c31be0 (__GI_mempcpy)
+--26287-- REDIR: 0x57582c0 (libc.so.6:bcmp) redirected to 0x4a266be (_vgnU_ifunc_wrapper)
+--26287-- REDIR: 0x581e6e0 (libc.so.6:__memcmp_sse4_1) redirected to 0x4c30910 (__memcmp_sse4_1)
+--26287-- REDIR: 0x580e710 (libc.so.6:__memmove_ssse3_back) redirected to 0x4c2ee70 (memcpy@GLIBC_2.2.5)
+--26287-- REDIR: 0x4ec3950 (libstdc++.so.6:operator delete(void*)) redirected to 0x4c2c07d (operator delete(void*))
+--26287-- REDIR: 0x574f9b0 (libc.so.6:free) redirected to 0x4c2bc63 (free)
+==26287== 
+==26287== HEAP SUMMARY:
+==26287==     in use at exit: 72,704 bytes in 1 blocks
+==26287==   total heap usage: 30 allocs, 29 frees, 76,104 bytes allocated
+==26287== 
+==26287== Searching for pointers to 1 not-freed blocks
+==26287== Checked 104,848 bytes
+==26287== 
+==26287== 72,704 bytes in 1 blocks are still reachable in loss record 1 of 1
+==26287==    at 0x4C2ABD0: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==26287==    by 0x4EC193F: pool (eh_alloc.cc:123)
+==26287==    by 0x4EC193F: __static_initialization_and_destruction_0 (eh_alloc.cc:250)
+==26287==    by 0x4EC193F: _GLOBAL__sub_I_eh_alloc.cc (eh_alloc.cc:326)
+==26287==    by 0x400F4A9: call_init.part.0 (in /usr/lib/ld-2.23.so)
+==26287==    by 0x400F5BA: _dl_init (in /usr/lib/ld-2.23.so)
+==26287==    by 0x4000DC9: ??? (in /usr/lib/ld-2.23.so)
+==26287== 
+==26287== LEAK SUMMARY:
+==26287==    definitely lost: 0 bytes in 0 blocks
+==26287==    indirectly lost: 0 bytes in 0 blocks
+==26287==      possibly lost: 0 bytes in 0 blocks
+==26287==    still reachable: 72,704 bytes in 1 blocks
+==26287==         suppressed: 0 bytes in 0 blocks
+==26287== 
+==26287== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==26287== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

@@ -10,7 +10,7 @@ typedef enum {
   ERR_LEVEL_MAX
 } errHandlerTagEnumType;
 
-#define PRINT_TAG __FILE__<<"\t"<<__LINE__<<"\t"<<__DATE__<<"\t"<<__TIME__<<"\t"
+#define PRINT_TAG __FILE__<<"\t"<<__LINE__<<"\t"<<__FUNCTION__<<"\t"<<__DATE__<<"\t"<<__TIME__<<"\t"
 #define OUTPUT_MSG(TAG, MSG) OUTPUT_MSG_##TAG(MSG)
 
 
