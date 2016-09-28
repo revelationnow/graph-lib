@@ -1,0 +1,6 @@
+How is the graph library provided to users?
+How is a user expected to use the library?
+  -> 1. User has a real world graph in mind, like a graph of airports connected by the number of flights each one has to another and user wants to represent that
+  -> 2. User has wants to generate a random graph
+  -> 3. Graphs of facebook friends
+What needs to be optimized for best user experience?

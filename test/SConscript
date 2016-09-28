@@ -1,0 +1,26 @@
+import os
+VariantDir('build','src')
+
+Import('verbose')
+env = Environment()
+
+
+
+env.Library('build/gtest','googletest/googletest/src/gtest-all.cc')
+env.Program(target='build/test1', LIBS=['gtest','pthread'], LIBPATH='build', source='src/unitTest1.cpp')
+
+
+paths = []
+paths.append('/dev/inc/core')
+paths.append('/dev/inc/ds/trees')
+paths.append('googletest/googletest/include')
+paths.append('googletest/googletest')
+
+if int(verbose) == 1:
+  paths.append('/dev/inc/diagnostic/verbose')
+else:
+  paths.append('/dev/inc/diagnostic/quiet')
+
+
+env.Append(CPPPATH = paths)
+env.Append(CPPFLAGS=['-std=c++11'])
